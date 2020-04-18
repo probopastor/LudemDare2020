@@ -5,13 +5,25 @@ using TMPro;
 
 public class GameOverManager : MonoBehaviour
 {
-    public TextMeshProUGUI currentScore;
+    public TextMeshProUGUI currentScoreText;
+    public TextMeshProUGUI highScoreText;
+
+    public static int highScore = 0;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentScore.text = ScoringManager.currentScore.ToString();   
+        currentScoreText.text = ScoringManager.currentScore.ToString();   
+
+        if(ScoringManager.currentScore > highScore)
+        {
+            highScoreText.text = ScoringManager.currentScore.ToString();
+            highScore = ScoringManager.currentScore;
+            ScoringManager.currentScore = 0;
+        }
+
     }
 
 }
