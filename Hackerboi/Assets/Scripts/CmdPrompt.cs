@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class CmdPrompt : MonoBehaviour
 {
@@ -128,6 +130,11 @@ public class CmdPrompt : MonoBehaviour
         if (timeTillDecrease <= currentTimeTillDecrease)
         {
             hackerSlider.value--;
+            if(hackerSlider.value <= 0)
+            {
+                SceneManager.LoadScene(2);
+                return;
+            }
             currentTimeTillDecrease = 0;
            // print("decrease bar");
         }
