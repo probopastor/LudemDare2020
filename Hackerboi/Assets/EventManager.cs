@@ -27,9 +27,9 @@ public class EventManager : MonoBehaviour
 
     private IEnumerator GenerateEvent()
     {
+        eventWaitTime = Random.Range(minTimeBeforeEvent, maxTimeBeforeEvent);
         yield return new WaitForSeconds(eventWaitTime);
 
-        eventWaitTime = Random.Range(minTimeBeforeEvent, maxTimeBeforeEvent);
         eventIndex = Random.Range(0, numberOfEvents + 1);
         StartCoroutine(GenerateEvent());
     }
