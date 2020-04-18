@@ -14,7 +14,7 @@ public class LightController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isOn = false;
+        isOn = true;
 
         for (int i = 0; i != lights.Length; i++)
         {
