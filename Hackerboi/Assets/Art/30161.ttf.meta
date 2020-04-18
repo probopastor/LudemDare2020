@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a80fdfbb53f74744a21c7c80d2ee783
+guid: 740c81f3e061e3047852944f4aae8bf3
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,11 +12,11 @@ TrueTypeFontImporter:
   fontNames:
   - Shimano
   fallbackFontReferences: []
-  customCharacters: 
+  customCharacters:
   fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  assetBundleName:
+  assetBundleVariant:

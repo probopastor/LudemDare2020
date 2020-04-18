@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0dc1ecfb3a29e54295ce0d81b71a0b5
+guid: bbaff931928f1bf498b877351cadaddd
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,11 +12,11 @@ TrueTypeFontImporter:
   fontNames:
   - Narly OT
   fallbackFontReferences: []
-  customCharacters: 
+  customCharacters:
   fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:
