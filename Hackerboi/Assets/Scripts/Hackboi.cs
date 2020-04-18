@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Hackboi : MonoBehaviour
 {
@@ -78,6 +79,11 @@ public class Hackboi : MonoBehaviour
         if (timeTillDecrease <= currentTimeTillDecrease)
         {
             hackerSlider.value--;
+            if(hackerSlider.value <= 0)
+            {
+                SceneManager.LoadScene(2);
+                return;
+            }
             currentTimeTillDecrease = 0;
             print("decrease bar");
         }
@@ -86,8 +92,11 @@ public class Hackboi : MonoBehaviour
     //don't think this actually does anything
     private void OnDisable()
     {
-        StopCoroutine(coroutine);
-        cmdPromptEnabled = false;
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            cmdPromptEnabled = false;
+        }
     }
 
     //function to be called by buttons to open/close the cmdPrompt and to start/stop the hacking text
@@ -118,6 +127,7 @@ public class Hackboi : MonoBehaviour
         if (cmdPromptEnabled == true)
         {
             index = Random.Range(0, possibleMessages.Length);
+
             hackerText.text = hackerText.text + "\n" + possibleMessages[index];
 
             float timeBeforeNextMessage = Random.Range(minMessageDelay, maxMessageDelay);
