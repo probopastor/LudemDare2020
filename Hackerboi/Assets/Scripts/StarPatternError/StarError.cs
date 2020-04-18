@@ -9,7 +9,7 @@ public class StarError : MonoBehaviour
 
     public float timeToComplete = 15;
 
-    string result = "";
+    public string result = "";
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +21,13 @@ public class StarError : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeToComplete -= Time.deltaTime;
+        //timeToComplete -= Time.deltaTime;
 
-        if (timeToComplete <= 0)
-        {
-            //penalty
-            Debug.Log("did not finish in time");
-        }
+        //if (timeToComplete <= 0)
+        //{
+        //    //penalty
+        //    Debug.Log("did not finish in time");
+        //}
     }
 
     public string GenerateErrorNum()

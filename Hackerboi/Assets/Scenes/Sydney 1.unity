@@ -189,9 +189,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1
-
-'
+  m_Text: 7
 --- !u!222 &48157778
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -358,7 +356,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 439082116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 643053286}
+        m_MethodName: ButtonCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &439082116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +485,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 594026869}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 643053286}
+        m_MethodName: ButtonCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &594026869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643053285}
   - component: {fileID: 643053284}
+  - component: {fileID: 643053286}
   m_Layer: 0
   m_Name: StarPatternError
   m_TagString: Untagged
@@ -551,6 +572,8 @@ MonoBehaviour:
   - {fileID: 2018503419}
   - {fileID: 594026866}
   - {fileID: 439082113}
+  timeToComplete: 15
+  result: 
 --- !u!4 &643053285
 Transform:
   m_ObjectHideFlags: 0
@@ -565,6 +588,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643053286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643053283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc61ddca2b5fdc4eb9d04ef6bc3f85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 00000000000000000000000000000000
 --- !u!1 &646142351
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +682,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 646142354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 643053286}
+        m_MethodName: ButtonCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &646142354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,6 +807,7 @@ GameObject:
   - component: {fileID: 1004763941}
   - component: {fileID: 1004763943}
   - component: {fileID: 1004763942}
+  - component: {fileID: 1004763944}
   m_Layer: 5
   m_Name: StarErrorPanel
   m_TagString: Untagged
@@ -830,6 +878,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004763940}
   m_CullTransparentMesh: 0
+--- !u!114 &1004763944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004763940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb33a718575e064f97e2ad256d8a094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
 --- !u!1 &1005292791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,8 +1120,8 @@ Canvas:
   m_GameObject: {fileID: 1132847653}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1023705395}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1172,7 +1233,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1195568542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 643053286}
+        m_MethodName: ButtonCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1195568542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,7 +1439,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1483637101}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 643053286}
+        m_MethodName: ButtonCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1483637101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,7 +1568,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1519248490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 643053286}
+        m_MethodName: ButtonCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1519248490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1667,7 +1761,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 7
+  m_Text: 6
 --- !u!222 &1684376651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1757,7 +1851,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1848772753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 643053286}
+        m_MethodName: ButtonCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1848772753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1875,7 +1980,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2018503422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 643053286}
+        m_MethodName: ButtonCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2018503422
 MonoBehaviour:
   m_ObjectHideFlags: 0
