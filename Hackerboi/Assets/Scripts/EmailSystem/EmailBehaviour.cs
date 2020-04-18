@@ -10,10 +10,27 @@ public class EmailBehaviour : MonoBehaviour
     public GameObject deleteButton;
     public GameObject responseImg;
 
+    public bool hasOpened = false;
+    public float timeToOpen = 10;
+
     // Start is called before the first frame update
     void Start()
     {
         e = GetComponent<Email>();
+    }
+
+    public void Update()
+    {
+        if(hasOpened == false)
+        {
+            timeToOpen -= Time.deltaTime;
+        }
+
+        if(timeToOpen <= 0)
+        {
+            //penalty
+            Debug.Log("did not open in time");
+        }
     }
 
     public void DeleteButton()
