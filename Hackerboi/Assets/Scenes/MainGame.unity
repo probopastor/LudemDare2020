@@ -939,6 +939,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3401688713481968234, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
+<<<<<<< HEAD
       propertyPath: m_AnchoredPosition.y
       value: -5.23
       objectReference: {fileID: 0}
@@ -961,6 +962,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: -19.06
+=======
+      propertyPath: m_AnchoredPosition.x
+      value: -5
+>>>>>>> 121cf8de1581d0fdacdcb9a9449b0d1bc64fa19d
       objectReference: {fileID: 0}
     - target: {fileID: 3401688713585193198, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
@@ -972,6 +977,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 3401688713585193199, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_FillAmount
@@ -996,6 +1002,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+=======
+    - target: {fileID: 3401688713866771840, guid: f9ac84991aa221846a1e6f69dbb1a919,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.9100037
+>>>>>>> 121cf8de1581d0fdacdcb9a9449b0d1bc64fa19d
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
@@ -1055,22 +1067,38 @@ PrefabInstance:
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_AnchoredPosition.x
+<<<<<<< HEAD
       value: 757.9
+=======
+      value: 1550
+>>>>>>> 121cf8de1581d0fdacdcb9a9449b0d1bc64fa19d
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+<<<<<<< HEAD
       value: 472.2
+=======
+      value: 972
+>>>>>>> 121cf8de1581d0fdacdcb9a9449b0d1bc64fa19d
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_SizeDelta.x
+<<<<<<< HEAD
       value: 276.5
+=======
+      value: 594.6
+>>>>>>> 121cf8de1581d0fdacdcb9a9449b0d1bc64fa19d
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_SizeDelta.y
+<<<<<<< HEAD
       value: 88.71
+=======
+      value: 307.2
+>>>>>>> 121cf8de1581d0fdacdcb9a9449b0d1bc64fa19d
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
@@ -1107,6 +1135,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hacker Slider
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 3401688714848620686, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_IsActive
@@ -1131,6 +1160,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MinValue
       value: 0
+=======
+    - target: {fileID: 3401688714848620687, guid: f9ac84991aa221846a1e6f69dbb1a919,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.08
+>>>>>>> 121cf8de1581d0fdacdcb9a9449b0d1bc64fa19d
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9ac84991aa221846a1e6f69dbb1a919, type: 3}
