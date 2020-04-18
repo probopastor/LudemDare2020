@@ -54,6 +54,11 @@ public class ProgramManager : MonoBehaviour
         }
     }
 
+    public bool CmdPromptEnabled()
+    {
+        return commandPromptEnabled;
+    }
+
     //public void EnableEmail()
     //{
     //    if (!emailEnabled)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class cmdMinimize : MonoBehaviour
 {
     public Animator cmdAnimator;
-    public Hackboi HB;
+    public CmdPrompt HB;
 
     public void MinimizeCmd()
     {
