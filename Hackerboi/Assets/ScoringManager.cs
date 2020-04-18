@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoringManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    public int currentScore = 0;
+    public static int currentScore = 0;
     
     public void Start()
     {
@@ -16,7 +16,7 @@ public class ScoringManager : MonoBehaviour
     void IncreaseScore()
     {
         currentScore++;
-        scoreText.text = "<< Score Counter ->" + currentScore.ToString();
+        scoreText.text = "Hacker Score: " + currentScore.ToString();
     }
 
 
