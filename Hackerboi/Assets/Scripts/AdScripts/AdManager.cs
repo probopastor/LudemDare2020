@@ -7,7 +7,6 @@ public class AdManager : MonoBehaviour
     #region variables
     public GameObject adPrefab;
     public GameObject canvas;
-    public GameObject adInstance;
     public int amountOfAds = 4;
     #endregion
 
@@ -23,14 +22,4 @@ public class AdManager : MonoBehaviour
             newAd.transform.SetParent(canvas.transform);
         }
     }
-    public void CloseAd()
-    {
-        Destroy(adInstance);
-        
-    }
-
-
-
-
-
-}
+ }

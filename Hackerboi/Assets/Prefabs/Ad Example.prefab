@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1410592858677868866}
   - component: {fileID: 1410592858677868867}
   - component: {fileID: 1410592858677868864}
-  - component: {fileID: 1410592858677868869}
+  - component: {fileID: 3950455965106947620}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1410592858677868869}
+      - m_Target: {fileID: 3950455965106947620}
         m_MethodName: CloseAd
         m_Mode: 1
         m_Arguments:
@@ -129,7 +129,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1410592858677868869
+--- !u!114 &3950455965106947620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,11 +138,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1410592858677868894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564d337af42e2824ca8104c32e2ff5fb, type: 3}
+  m_Script: {fileID: 11500000, guid: ec52d2feb43986b479cabf205147b9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adPrefab: {fileID: 0}
-  canvas: {fileID: 0}
   adInstance: {fileID: 1410592858904145187}
 --- !u!1 &1410592858904145187
 GameObject:
