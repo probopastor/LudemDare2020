@@ -43,6 +43,7 @@ public class CmdPrompt : MonoBehaviour
     private bool errorInProgress;
     private bool cmdTextErrorClear;
 
+    bool tempFixed;
     #endregion
 
 
@@ -54,11 +55,20 @@ public class CmdPrompt : MonoBehaviour
     {
         eventManager = FindObjectOfType<EventManager>();
         errorText.text = " ";
+        cmdTextErrorClear = false;
     }
 
 
     public void Update()
     {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            if(!tempFixed)
+            {
+                tempFixed = true;
+            }
+        }
+
         //if the cmdPrompt is open and assigned than run the fill slider function
         if (hackerSlider != null && cmdPromptEnabled)
         {
@@ -75,15 +85,20 @@ public class CmdPrompt : MonoBehaviour
             switch (eventManager.GetEventIndex())
             {
                 case 0:
-                    errorInProgress = true;
-                    Debug.Log(eventManager.GetEventIndex());
-                    errorIndex = 0;
-                    StartCoroutine(ConfirmationError());
+                    //
+                    errorInProgress = false;
                     break;
                 case 1:
                     errorInProgress = true;
-                    Debug.Log(eventManager.GetEventIndex());
-                    errorIndex = 1;
+                    tempFixed = false;
+                    errorIndex = 0;
+                    StartCoroutine(ConfirmationError());
+                    break;
+                case 2:
+                    errorInProgress = true;
+                    tempFixed = false;
+                    errorIndex = 0;
+                    StartCoroutine(ConfirmationError());
                     break;
                 default:
                     break;
@@ -101,7 +116,7 @@ public class CmdPrompt : MonoBehaviour
         { 
             hackerSlider.value++;
             currentTimeTillIncrease = 0;
-            print("increase bar");
+            //print("increase bar");
         }
     }
 
@@ -114,7 +129,7 @@ public class CmdPrompt : MonoBehaviour
         {
             hackerSlider.value--;
             currentTimeTillDecrease = 0;
-            print("decrease bar");
+           // print("decrease bar");
         }
     }
 
@@ -157,11 +172,6 @@ public class CmdPrompt : MonoBehaviour
 
     private IEnumerator ConfirmationError()
     {
-        if (coroutine != null)
-        {
-            StopCoroutine(coroutine);
-        }
-
         cmdPromptEnabled = false;
 
         if(!cmdTextErrorClear)
@@ -178,19 +188,20 @@ public class CmdPrompt : MonoBehaviour
             errorText.text = " ";
 
             errorInProgress = false;
-            cmdPromptEnabled = true;
             cmdTextErrorClear = false;
-            coroutine = SendMessages();
-            StartCoroutine(coroutine);
+            cmdPromptEnabled = true;
+            eventManager.SetErrorStatus(true);
         }
-        else if(Input.GetKeyDown(KeyCode.G))
+
+        if (tempFixed)
         {
             hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED ";
             errorText.text = " ";
 
             errorInProgress = false;
-            cmdPromptEnabled = true;
             cmdTextErrorClear = false;
+            cmdPromptEnabled = true;
+            eventManager.SetErrorStatus(true);
             coroutine = SendMessages();
             StartCoroutine(coroutine);
         }
