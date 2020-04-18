@@ -9,4 +9,9 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
     }
+
+    public void Go(int scene)
+    {
+        GoTo(scene);
+    }
 }
