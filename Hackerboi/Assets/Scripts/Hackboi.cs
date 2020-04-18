@@ -6,8 +6,9 @@ using TMPro;
 
 public class Hackboi : MonoBehaviour
 {
-    public string[] possibleMessages;
+    #region variables
 
+    public string[] possibleMessages;
     public float minMessageDelay = 1f;
     public float maxMessageDelay = 10f;
 
@@ -21,6 +22,31 @@ public class Hackboi : MonoBehaviour
     public Slider hackerSlider;
     public float sliderSpeed = 1;
     public TextMeshProUGUI hackerText;
+
+    #endregion
+
+
+
+
+    #region functions
+
+
+    
+    public void Update()
+    {
+        //if the cmdPrompt is open and assigned than run the fill slider function
+        if (hackerSlider != null && cmdPromptEnabled)
+        {
+            IncreaseHackerSlider();
+        }
+    }
+
+
+    //function that fills the hacker slidier
+    public void IncreaseHackerSlider()
+    {
+        hackerSlider.value += 1 * Time.deltaTime * sliderSpeed;
+    }
 
 
     //don't think this actually does anything
@@ -65,12 +91,5 @@ public class Hackboi : MonoBehaviour
         }
     }
 
-    //if the cmdPrompt is open than fill the hacker slider
-    public void Update()
-    {
-        if(hackerSlider != null && cmdPromptEnabled)
-        {
-            hackerSlider.value += 1 * Time.deltaTime * sliderSpeed;
-        }
-    }
+    #endregion
 }
