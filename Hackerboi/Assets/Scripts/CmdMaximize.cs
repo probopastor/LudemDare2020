@@ -12,6 +12,5 @@ public class CmdMaximize : MonoBehaviour
         cmdAnimator.SetBool("cmdIsMaximized", true);
         cmdAnimator.SetBool("cmdIsMinimized", false);
         HB.cmdPromptOpen(true);
-
     }
 }
