@@ -54,6 +54,7 @@ public class CmdPrompt : MonoBehaviour
     {
         eventManager = FindObjectOfType<EventManager>();
         errorText.text = " ";
+        cmdTextErrorClear = false;
     }
 
 
@@ -75,15 +76,20 @@ public class CmdPrompt : MonoBehaviour
             switch (eventManager.GetEventIndex())
             {
                 case 0:
+                    //
+                    errorInProgress = false;
+                    break;
+                case 1:
                     errorInProgress = true;
                     Debug.Log(eventManager.GetEventIndex());
                     errorIndex = 0;
                     StartCoroutine(ConfirmationError());
                     break;
-                case 1:
+                case 2:
                     errorInProgress = true;
                     Debug.Log(eventManager.GetEventIndex());
-                    errorIndex = 1;
+                    errorIndex = 0;
+                    StartCoroutine(ConfirmationError());
                     break;
                 default:
                     break;
@@ -180,6 +186,7 @@ public class CmdPrompt : MonoBehaviour
             errorInProgress = false;
             cmdPromptEnabled = true;
             cmdTextErrorClear = false;
+            eventManager.SetErrorStatus(true);
             coroutine = SendMessages();
             StartCoroutine(coroutine);
         }
@@ -191,6 +198,7 @@ public class CmdPrompt : MonoBehaviour
             errorInProgress = false;
             cmdPromptEnabled = true;
             cmdTextErrorClear = false;
+            eventManager.SetErrorStatus(true);
             coroutine = SendMessages();
             StartCoroutine(coroutine);
         }
