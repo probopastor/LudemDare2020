@@ -9,6 +9,11 @@ public class EmailGenerator : MonoBehaviour
     public List<string> goodDateTime = new List<string>();
     public List<string> badDateTime = new List<string>();
 
+    //the responses will correspond with the same index as the good subject
+    public List<string> goodResponse = new List<string>();
+    public List<string> neutralResponse = new List<string>();
+    public List<string> badResponse = new List<string>();
+
     public GameObject emailPrefab;
     public GameObject emailPanel;
 
@@ -18,7 +23,7 @@ public class EmailGenerator : MonoBehaviour
         int randDateTime = Random.Range(0, goodDateTime.Count);
 
         GameObject g = Instantiate(emailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetVars(goodSubjects[randSubject], goodDateTime[randDateTime], false);
+        g.GetComponent<Email>().SetGoodVars(goodSubjects[randSubject], goodDateTime[randDateTime], false, goodResponse[randSubject], neutralResponse[randSubject], badResponse[randSubject]);
         g.GetComponent<Email>().SetText();
 
         return g;
@@ -30,7 +35,7 @@ public class EmailGenerator : MonoBehaviour
         int randDateTime = Random.Range(0, badDateTime.Count);
 
         GameObject g = Instantiate(emailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetVars(badSubjects[randSubject], badDateTime[randDateTime], true);
+        g.GetComponent<Email>().SetBadVars(badSubjects[randSubject], badDateTime[randDateTime], true);
         g.GetComponent<Email>().SetText();
 
         return g;
