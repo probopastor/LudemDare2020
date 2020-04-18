@@ -33,4 +33,13 @@ public class EventManager : MonoBehaviour
         eventIndex = Random.Range(0, numberOfEvents + 1);
         StartCoroutine(GenerateEvent());
     }
+
+    /// <summary>
+    /// Gets which event index should currently be running
+    /// </summary>
+    /// <returns></returns>
+    public int GetEventIndex()
+    {
+        return eventIndex;
+    }
 }
