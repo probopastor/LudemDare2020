@@ -5,16 +5,12 @@ using UnityEngine;
 public class cmdMinimize : MonoBehaviour
 {
     public Animator cmdAnimator;
-
+    public Hackboi HB;
 
     public void MinimizeCmd()
     {
-        cmdAnimator.SetTrigger("cmdMinimize");
+        cmdAnimator.SetBool("cmdIsMinimized", true);
+        cmdAnimator.SetBool("cmdIsMaximized", false);
+        HB.cmdPromptOpen(false);
     }
-    
-
-
-
-
-
 }

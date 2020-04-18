@@ -18,19 +18,40 @@ public class Hackboi : MonoBehaviour
     private int index = 0;
     private IEnumerator coroutine;
 
-    private void OnEnable()
-    {
-        coroutine = SendMessages();
-        StartCoroutine(coroutine);
-    }
+
+    //cmd prompt mechanics
+    
+    public bool cmdPromptEnabled = false;
+    public Slider hackerSlider;
+    public float sliderSpeed = 1;
 
     private void OnDisable()
     {
         StopCoroutine(coroutine);
+        cmdPromptEnabled = false;
     }
+
+    public void cmdPromptOpen(bool enabled)
+    {
+        if (enabled && cmdPromptEnabled == false)
+        {
+            print("we happeneing");
+            coroutine = SendMessages();
+            StartCoroutine(coroutine);
+            cmdPromptEnabled = true;
+        }
+        else if(!enabled &&cmdPromptEnabled == true)
+        {
+            print("bruh");
+            StopCoroutine(coroutine);
+            cmdPromptEnabled = false;
+        }
+    }
+
 
     private IEnumerator SendMessages()
     {
+        
         index = Random.Range(0, possibleMessages.Length);
         hackerText.text = hackerText.text + "\n" + possibleMessages[index];
 
@@ -38,5 +59,13 @@ public class Hackboi : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeNextMessage);
 
         StartCoroutine(SendMessages());
+    }
+
+    public void Update()
+    {
+        if(hackerSlider != null && cmdPromptEnabled)
+        {
+            hackerSlider.value += 1 * Time.deltaTime * sliderSpeed;
+        }
     }
 }

@@ -17,6 +17,24 @@ TextureImporter:
   - first:
       213: 5785374219890066851
     second: Menu Icons_4
+  - first:
+      213: 1827528370421929119
+    second: Menu Icons_0
+  - first:
+      213: 3250149044542895202
+    second: Menu Icons_1
+  - first:
+      213: 7276078922849059559
+    second: Menu Icons_2
+  - first:
+      213: -1714379554255512288
+    second: Menu Icons_3
+  - first:
+      213: 171289600773340779
+    second: Menu Icons_4
+  - first:
+      213: -1684483135040468597
+    second: Menu Icons_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -127,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0f256b2d5d182bf0800000000000000
-      internalID: -348996685123997938
+      spriteID: f9492f7ce5fac5910800000000000000
+      internalID: 1827528370421929119
       vertices: []
       indices: 
       edges: []
@@ -148,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f546a985b9e99d50800000000000000
-      internalID: 6744678882871756276
+      spriteID: 264fd030659da1d20800000000000000
+      internalID: 3250149044542895202
       vertices: []
       indices: 
       edges: []
@@ -169,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 617a669a32a0a8b40800000000000000
-      internalID: 5443174247912875798
+      spriteID: 7e20022ea33d9f460800000000000000
+      internalID: 7276078922849059559
       vertices: []
       indices: 
       edges: []
@@ -190,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30002e085155fbe90800000000000000
-      internalID: -7007788944320233469
+      spriteID: 02d586ae0ec4538e0800000000000000
+      internalID: -1714379554255512288
       vertices: []
       indices: 
       edges: []
@@ -211,8 +229,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a500456337c94050800000000000000
-      internalID: 5785374219890066851
+      spriteID: b6e30dffbfa806200800000000000000
+      internalID: 171289600773340779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Icons_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89c6c173838f98e0800000000000000
+      internalID: -1684483135040468597
       vertices: []
       indices: 
       edges: []
