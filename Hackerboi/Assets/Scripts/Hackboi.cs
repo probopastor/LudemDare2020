@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Hackboi : MonoBehaviour
 {
     public string[] possibleMessages;
 
-    public Text hackerText;
+    public TextMeshProUGUI hackerText;
 
     private bool isEnabled;
 
@@ -37,19 +38,5 @@ public class Hackboi : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeNextMessage);
 
         StartCoroutine(SendMessages());
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-
     }
 }
