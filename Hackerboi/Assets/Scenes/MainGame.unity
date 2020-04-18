@@ -937,10 +937,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 456194341}
     m_Modifications:
+    - target: {fileID: 3401688713481968234, guid: f9ac84991aa221846a1e6f69dbb1a919,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 3401688713585193198, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401688713585193198, guid: f9ac84991aa221846a1e6f69dbb1a919,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401688713866771840, guid: f9ac84991aa221846a1e6f69dbb1a919,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.9100037
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
@@ -1000,22 +1015,22 @@ PrefabInstance:
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1714
+      value: 1550
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 999
+      value: 972
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 270.2
+      value: 594.6
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 92.4
+      value: 307.2
       objectReference: {fileID: 0}
     - target: {fileID: 3401688714848620684, guid: f9ac84991aa221846a1e6f69dbb1a919,
         type: 3}
@@ -1051,6 +1066,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hacker Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401688714848620687, guid: f9ac84991aa221846a1e6f69dbb1a919,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9ac84991aa221846a1e6f69dbb1a919, type: 3}
