@@ -36,29 +36,32 @@ public class Hackboi : MonoBehaviour
         if (enabled && cmdPromptEnabled == false)
         {
             print("we happeneing");
+            cmdPromptEnabled = true;
             coroutine = SendMessages();
             StartCoroutine(coroutine);
-            cmdPromptEnabled = true;
+            
         }
         else if(!enabled &&cmdPromptEnabled == true)
         {
-            print("bruh");
-            StopCoroutine(coroutine);
             cmdPromptEnabled = false;
+            StopCoroutine(coroutine);
+            
         }
     }
 
 
     private IEnumerator SendMessages()
     {
-        
-        index = Random.Range(0, possibleMessages.Length);
-        hackerText.text = hackerText.text + "\n" + possibleMessages[index];
+        if (cmdPromptEnabled == true)
+        {
+            index = Random.Range(0, possibleMessages.Length);
+            hackerText.text = hackerText.text + "\n" + possibleMessages[index];
 
-        float timeBeforeNextMessage = Random.Range(minMessageDelay, maxMessageDelay);
-        yield return new WaitForSeconds(timeBeforeNextMessage);
+            float timeBeforeNextMessage = Random.Range(minMessageDelay, maxMessageDelay);
+            yield return new WaitForSeconds(timeBeforeNextMessage);
 
-        StartCoroutine(SendMessages());
+            StartCoroutine(SendMessages());
+        }
     }
 
     public void Update()
