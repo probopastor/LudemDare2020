@@ -134,7 +134,10 @@ public class CmdPrompt : MonoBehaviour
             hackerSlider.value--;
             if(hackerSlider.value <= 0)
             {
-                outro.Lose();
+                if (outro != null)
+                {
+                    outro.Lose();
+                }
                 return;
             }
             currentTimeTillDecrease = 0;
