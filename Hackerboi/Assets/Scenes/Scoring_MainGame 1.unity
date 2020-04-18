@@ -1611,7 +1611,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1025775483}
-  currentScore: 0
 --- !u!1 &1151183180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,7 +2669,7 @@ PrefabInstance:
     - target: {fileID: 6353380992193962650, guid: b96934946de056f46b1e4aca09fa1717,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b96934946de056f46b1e4aca09fa1717, type: 3}
@@ -3424,7 +3423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0037183, y: 0.000806843}
+  m_AnchoredPosition: {x: 0.0037183, y: 0.004052664}
   m_SizeDelta: {x: 662.92, y: 414.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2575617890047970237
@@ -3957,6 +3956,7 @@ MonoBehaviour:
   decreaseSliderSpeed: 1
   timeTillDecrease: 2
   currentTimeTillDecrease: 0
+  outro: {fileID: 0}
 --- !u!224 &2575617890927155780
 RectTransform:
   m_ObjectHideFlags: 0
