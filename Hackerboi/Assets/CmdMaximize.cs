@@ -8,8 +8,9 @@ public class CmdMaximize : MonoBehaviour
     public Hackboi HB;
 
     public void ClickCmdMaximize()
-    {
-        cmdAnimator.SetTrigger("cmdMaximize");
+    {     
+        cmdAnimator.SetBool("cmdIsMaximized", true);
+        cmdAnimator.SetBool("cmdIsMinimized", false);
         HB.cmdPromptOpen(true);
 
     }

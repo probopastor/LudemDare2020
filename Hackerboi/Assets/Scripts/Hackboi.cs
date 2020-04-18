@@ -20,6 +20,7 @@ public class Hackboi : MonoBehaviour
 
 
     //cmd prompt mechanics
+    
     public bool cmdPromptEnabled = false;
     public Slider hackerSlider;
     public float sliderSpeed = 1;
@@ -32,14 +33,16 @@ public class Hackboi : MonoBehaviour
 
     public void cmdPromptOpen(bool enabled)
     {
-        if (enabled)
+        if (enabled && cmdPromptEnabled == false)
         {
+            print("we happeneing");
             coroutine = SendMessages();
             StartCoroutine(coroutine);
             cmdPromptEnabled = true;
         }
-        else
+        else if(!enabled &&cmdPromptEnabled == true)
         {
+            print("bruh");
             StopCoroutine(coroutine);
             cmdPromptEnabled = false;
         }
@@ -48,6 +51,7 @@ public class Hackboi : MonoBehaviour
 
     private IEnumerator SendMessages()
     {
+        
         index = Random.Range(0, possibleMessages.Length);
         hackerText.text = hackerText.text + "\n" + possibleMessages[index];
 

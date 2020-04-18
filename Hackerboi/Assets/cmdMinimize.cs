@@ -9,7 +9,8 @@ public class cmdMinimize : MonoBehaviour
 
     public void MinimizeCmd()
     {
-        cmdAnimator.SetTrigger("cmdMinimize");
+        cmdAnimator.SetBool("cmdIsMinimized", true);
+        cmdAnimator.SetBool("cmdIsMaximized", false);
         HB.cmdPromptOpen(false);
     }
 }
