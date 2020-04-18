@@ -13,6 +13,8 @@ public class EventManager : MonoBehaviour
 
     private int eventIndex = 0;
 
+    private bool errorSolved; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,8 @@ public class EventManager : MonoBehaviour
         eventWaitTime = Random.Range(minTimeBeforeEvent, maxTimeBeforeEvent);
         yield return new WaitForSeconds(eventWaitTime);
 
-        eventIndex = Random.Range(0, numberOfEvents + 1);
+        eventIndex = Random.Range(1, numberOfEvents + 1);
+        errorSolved = false;
         StartCoroutine(GenerateEvent());
     }
 
@@ -40,6 +43,18 @@ public class EventManager : MonoBehaviour
     /// <returns></returns>
     public int GetEventIndex()
     {
-        return eventIndex;
+        if(!errorSolved)
+        {
+            return eventIndex;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public void SetErrorStatus(bool isSolved)
+    {
+        errorSolved = isSolved;
     }
 }
