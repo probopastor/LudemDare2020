@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Shimano Atlas Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Shimano SDF
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   hashCode: 150652046
   material: {fileID: -325025701313809948}
   materialHashCode: -1722881665
@@ -521,17 +521,17 @@ MonoBehaviour:
       m_Height: 39
     m_Scale: 1
     m_AtlasIndex: 0
-  - m_Index: 68
+  - m_Index: 64
     m_Metrics:
-      m_Width: 47.15625
+      m_Width: 9.796875
       m_Height: 52.734375
       m_HorizontalBearingX: 4.6875
       m_HorizontalBearingY: 52.734375
-      m_HorizontalAdvance: 56.515625
+      m_HorizontalAdvance: 19.265625
     m_GlyphRect:
       m_X: 146
       m_Y: 68
-      m_Width: 48
+      m_Width: 11
       m_Height: 53
     m_Scale: 1
     m_AtlasIndex: 0
@@ -557,8 +557,8 @@ MonoBehaviour:
       m_HorizontalBearingY: 36.625
       m_HorizontalAdvance: 34.5625
     m_GlyphRect:
-      m_X: 177
-      m_Y: 140
+      m_X: 176
+      m_Y: 61
       m_Width: 31
       m_Height: 32
     m_Scale: 1
@@ -799,8 +799,8 @@ MonoBehaviour:
     m_GlyphIndex: 111
     m_Scale: 1
   - m_ElementType: 1
-    m_Unicode: 77
-    m_GlyphIndex: 68
+    m_Unicode: 73
+    m_GlyphIndex: 64
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 60
@@ -956,14 +956,14 @@ MonoBehaviour:
     m_Height: 58
   - m_X: 136
     m_Y: 58
-    m_Width: 67
+    m_Width: 30
     m_Height: 72
   - m_X: 162
     m_Y: 0
     m_Width: 50
     m_Height: 51
-  - m_X: 167
-    m_Y: 130
+  - m_X: 166
+    m_Y: 51
     m_Width: 50
     m_Height: 51
   - m_X: 203
@@ -1053,35 +1053,23 @@ MonoBehaviour:
     m_Height: 42
   - m_X: 136
     m_Y: 130
-    m_Width: 31
+    m_Width: 887
     m_Height: 42
   - m_X: 167
-    m_Y: 181
+    m_Y: 102
     m_Width: 856
-    m_Height: 49
+    m_Height: 128
   - m_X: 180
-    m_Y: 181
+    m_Y: 102
     m_Width: 843
-    m_Height: 842
-  - m_X: 162
-    m_Y: 51
-    m_Width: 41
-    m_Height: 7
-  - m_X: 203
-    m_Y: 123
-    m_Width: 820
-    m_Height: 7
+    m_Height: 921
   - m_X: 212
     m_Y: 0
     m_Width: 811
     m_Height: 51
-  - m_X: 217
-    m_Y: 123
-    m_Width: 806
-    m_Height: 900
-  - m_X: 233
+  - m_X: 216
     m_Y: 0
-    m_Width: 790
+    m_Width: 807
     m_Height: 1023
   - m_X: 88
     m_Y: 545
@@ -1104,7 +1092,7 @@ MonoBehaviour:
     m_Width: 936
     m_Height: 345
   m_fontInfo:
-    Name: 
+    Name:
     PointSize: 0
     Scale: 0
     CharacterCount: 0
@@ -1138,7 +1126,7 @@ MonoBehaviour:
   fallbackFontAssets: []
   m_FallbackFontAssetTable: []
   m_CreationSettings:
-    sourceFontFileName: 
+    sourceFontFileName:
     sourceFontFileGUID: 25a48d9720e10e34a8ffe20c123c60ee
     pointSizeSamplingMode: 0
     pointSize: 90
@@ -1147,9 +1135,9 @@ MonoBehaviour:
     atlasWidth: 1024
     atlasHeight: 1024
     characterSetSelectionMode: 7
-    characterSequence: 
-    referencedFontAssetGUID: 
-    referencedTextAssetGUID: 
+    characterSequence:
+    referencedFontAssetGUID:
+    referencedTextAssetGUID:
     fontStyle: 0
     fontStyleModifier: 0
     renderMode: 4165
@@ -1222,4 +1210,4 @@ Texture2D:
   m_StreamData:
     offset: 0
     size: 0
-    path: 
+    path:

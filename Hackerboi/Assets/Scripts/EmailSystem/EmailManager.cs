@@ -11,6 +11,8 @@ public class EmailManager : MonoBehaviour
 
     private int emailAmount = 10;
 
+    public GameObject notificationImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,15 @@ public class EmailManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SendGoodEmail();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SendBadEmail();
+        }
     }
 
     public void CreateEmailList()
@@ -41,10 +51,28 @@ public class EmailManager : MonoBehaviour
         int randEmail = Random.Range(0, goodEmails.Count);
 
         goodEmails[randEmail].SetActive(true);
+
+        EmailNotificationOn();
     }
 
     public void SendBadEmail()
     {
+        int randEmail = Random.Range(0, badEmails.Count);
 
+        badEmails[randEmail].SetActive(true);
+
+        EmailNotificationOn();
+    }
+
+    public void EmailNotificationOn()
+    {
+        Debug.Log("new email alert");
+        notificationImage.SetActive(true);
+    }
+
+    public void EmailNotificationOff()
+    {
+        Debug.Log("email checked");
+        notificationImage.SetActive(false);
     }
 }
