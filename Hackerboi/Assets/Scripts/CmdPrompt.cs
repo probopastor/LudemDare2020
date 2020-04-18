@@ -46,6 +46,8 @@ public class CmdPrompt : MonoBehaviour
     private bool cmdTextErrorClear;
 
     bool tempFixed;
+
+    public SceneTransitionerMainGameOut outro;
     #endregion
 
 
@@ -132,7 +134,7 @@ public class CmdPrompt : MonoBehaviour
             hackerSlider.value--;
             if(hackerSlider.value <= 0)
             {
-                SceneManager.LoadScene(2);
+                outro.Lose();
                 return;
             }
             currentTimeTillDecrease = 0;
