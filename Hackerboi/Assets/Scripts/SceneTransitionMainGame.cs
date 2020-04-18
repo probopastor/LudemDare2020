@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneTransition : MonoBehaviour
+public class SceneTransitionMainGame : MonoBehaviour
 {
     private ParticleSystem ps;
     private bool ramping;
