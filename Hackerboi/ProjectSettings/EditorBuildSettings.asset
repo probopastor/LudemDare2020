@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Luke Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 95effaf86c9d960438bee2dc90e6801d
+  - enabled: 1
+    path: Assets/Scenes/MainGame.unity
+    guid: 6bc76d5140e8723439eccc3dbb86271e
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 42eca431263d3ed4fa66c6a88265a2a3
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 5f3dcf68d062a054fa6c22ce9956bc14
   m_configObjects: {}

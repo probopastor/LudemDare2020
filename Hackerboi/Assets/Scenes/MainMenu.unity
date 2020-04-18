@@ -5602,6 +5602,11 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 4048646666996035844, guid: 5470cee81885ae0418db5dbf7a85ba98,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4048646666996035845, guid: 5470cee81885ae0418db5dbf7a85ba98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10557,6 +10562,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2124651202}
     m_Modifications:
+    - target: {fileID: 4048646666996035844, guid: 5470cee81885ae0418db5dbf7a85ba98,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4048646666996035845, guid: 5470cee81885ae0418db5dbf7a85ba98,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -1227,27 +1227,37 @@ PrefabInstance:
     - target: {fileID: 4048646665445159753, guid: 5470cee81885ae0418db5dbf7a85ba98,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4048646665445159753, guid: 5470cee81885ae0418db5dbf7a85ba98,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4048646665445159753, guid: 5470cee81885ae0418db5dbf7a85ba98,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4048646665445159753, guid: 5470cee81885ae0418db5dbf7a85ba98,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4048646665445159753, guid: 5470cee81885ae0418db5dbf7a85ba98,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048646665445159753, guid: 5470cee81885ae0418db5dbf7a85ba98,
+        type: 3}
+      propertyPath: m_text
+      value: Back to Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048646665445159753, guid: 5470cee81885ae0418db5dbf7a85ba98,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4048646666996035845, guid: 5470cee81885ae0418db5dbf7a85ba98,
         type: 3}
@@ -1359,6 +1369,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Back Button
       objectReference: {fileID: 0}
+    - target: {fileID: 4048646667356155480, guid: 5470cee81885ae0418db5dbf7a85ba98,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5443174247912875798, guid: eb8806a3966742d4d94c225755dba8df,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5470cee81885ae0418db5dbf7a85ba98, type: 3}
 --- !u!224 &1795983089 stripped
