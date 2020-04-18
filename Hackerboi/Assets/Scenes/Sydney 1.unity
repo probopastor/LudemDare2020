@@ -572,8 +572,10 @@ MonoBehaviour:
   - {fileID: 2018503419}
   - {fileID: 594026866}
   - {fileID: 439082113}
+  nums: 
   timeToComplete: 15
   result: 
+  buttonParents: {fileID: 1004763940}
 --- !u!4 &643053285
 Transform:
   m_ObjectHideFlags: 0
@@ -601,6 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 00000000000000000000000000000000
+  pos: 0
 --- !u!1 &646142351
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69b89c8f9dab6334b91cb832d40134f5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -891,6 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: []
+  m: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &1005292791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1133,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 192103945
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1132847657

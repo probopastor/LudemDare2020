@@ -29,10 +29,9 @@ public class StarErrorCheck : MonoBehaviour
         if(order[pos].ToString().Equals(num.ToString()))
         {
             pos++;
-
             FindObjectOfType<Path>().DrawLine();
 
-            if(pos == 8)
+            if (pos == 8)
             {
                 //turn off error
                 Debug.Log("finsihed correct");
