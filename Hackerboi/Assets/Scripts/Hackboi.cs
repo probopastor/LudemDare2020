@@ -20,8 +20,18 @@ public class Hackboi : MonoBehaviour
     
     public bool cmdPromptEnabled = false;
     public Slider hackerSlider;
-    public float sliderSpeed = 1;
+    
     public TextMeshProUGUI hackerText;
+
+    [Header("Increase Slider Values")]
+    public float increaseSliderSpeed = 1;
+    public float timeTillIncrease;
+    public float currentTimeTillIncrease;
+
+    [Header("Decrease Slider Values")]
+    public float decreaseSliderSpeed = 1;
+    public float timeTillDecrease;
+    public float currentTimeTillDecrease;
 
     #endregion
 
@@ -39,15 +49,39 @@ public class Hackboi : MonoBehaviour
         {
             IncreaseHackerSlider();
         }
+
+        if(hackerSlider != null && cmdPromptEnabled == false)
+        {
+            DecreaseHackerSlider();
+        }
     }
 
 
     //function that fills the hacker slidier
     public void IncreaseHackerSlider()
     {
-        hackerSlider.value += 1 * Time.deltaTime * sliderSpeed;
+        currentTimeTillIncrease += 1 * Time.deltaTime * increaseSliderSpeed;
+
+        if(timeTillIncrease <= currentTimeTillIncrease)
+        { 
+            hackerSlider.value++;
+            currentTimeTillIncrease = 0;
+            print("increase bar");
+        }
     }
 
+    public void DecreaseHackerSlider()
+    {
+
+        currentTimeTillDecrease += 1 * Time.deltaTime * decreaseSliderSpeed;
+
+        if (timeTillDecrease <= currentTimeTillDecrease)
+        {
+            hackerSlider.value--;
+            currentTimeTillDecrease = 0;
+            print("decrease bar");
+        }
+    }
 
     //don't think this actually does anything
     private void OnDisable()
@@ -63,6 +97,7 @@ public class Hackboi : MonoBehaviour
         //for when this function runs to open the command prompts. Starts hacking
         if (enabled && cmdPromptEnabled == false)
         {
+            currentTimeTillDecrease = 0;
             cmdPromptEnabled = true;
             coroutine = SendMessages();
             StartCoroutine(coroutine);     
@@ -71,6 +106,7 @@ public class Hackboi : MonoBehaviour
         //for when this function runs to close the command prompt. Stops the hacking
         else if(!enabled &&cmdPromptEnabled == true)
         {
+            currentTimeTillIncrease = 0;
             cmdPromptEnabled = false;
             StopCoroutine(coroutine);
         }
