@@ -184,7 +184,7 @@ public class CmdPrompt : MonoBehaviour
 
         if (currentText.text == "Yes" || currentText.text == "yes")
         {
-            hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED ";
+            hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED " + "\n" + currentText.text;
             errorText.text = " ";
             currentText.text = " ";
 
