@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    public static EventManager instance;
+
     public float minTimeBeforeEvent = 1f;
     public float maxTimeBeforeEvent = 60f;
 
@@ -13,7 +15,12 @@ public class EventManager : MonoBehaviour
 
     private int eventIndex = 0;
 
-    private bool errorSolved; 
+    private bool errorSolved;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

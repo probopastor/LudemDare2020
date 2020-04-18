@@ -46,13 +46,12 @@ public class HackerTimeController : MonoBehaviour
     {
         if (offset > -moneyZone && offset < moneyZone)
         {
-
-            Debug.Log("You do it.");
-            //Succeed
+            
         } else
         {
-            Debug.Log("Fail");
-            //Fail
+            LightController.instance.Lose();
         }
+
+        EventManager.instance.SetErrorStatus(true);
     }
 }
