@@ -12,7 +12,7 @@ using UnityEngine;
 public class MusicTracker : MonoBehaviour
 {
 
-    //Finds if the scene includes a Music playing object and destroys itself if there is new music
+    //Finds if the scene includes a Music playing object and destroys the new music
     //If there isn't any new music, the object is not destroyed
 
     void Awake()
@@ -21,9 +21,20 @@ public class MusicTracker : MonoBehaviour
 
         if (objs.Length > 1)
         {
-            Destroy(objs[0]);
+            Destroy(objs[1]);
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void Stop() //Deletes the Current Music Playing Object after 5 seconds
+    {
+        StartCoroutine(Deletion());
+    }
+
+    public IEnumerator Deletion()
+    {
+        yield return new WaitForSeconds(6.25f);
+        Destroy(gameObject);
     }
 }
