@@ -47,6 +47,7 @@ public class EventManager : MonoBehaviour
         int index = Random.Range(0, problems.Length);
 
         problems[index].CauseProblem();
+        CmdPrompt.instance.SendError(index);
     }
 
     private IEnumerator GenerateEvent()
