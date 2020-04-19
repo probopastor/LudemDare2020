@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface Problem
 {
-    void CauseProblem();
+    public void CauseProblem();
 }
 
