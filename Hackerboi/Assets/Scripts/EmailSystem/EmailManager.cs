@@ -114,10 +114,10 @@ public class EmailManager : MonoBehaviour
         notificationImage.SetActive(false);
     }
 
-    public void CreatePasswordEmail()
+    public GameObject CreatePasswordEmail()
     {
         EmailNotificationOn();
-        eg.GeneratePasswordEmail();
+        return eg.GeneratePasswordEmail();
     }
 
     public void CreateProgramEmail()

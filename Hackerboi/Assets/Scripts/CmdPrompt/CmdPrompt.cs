@@ -50,6 +50,9 @@ public class CmdPrompt : MonoBehaviour
 
     private bool errorActive;
 
+    private bool passwordError;
+    private string passwordToEnter;
+
     public SceneTransitionerMainGameOut outro;
     #endregion
 
@@ -191,6 +194,19 @@ public class CmdPrompt : MonoBehaviour
              * To do this, type SetCommandPromptRunning(false); 
              * 4. When the error is solved, be sure to have it say SetCommandPromptRunning(true); so that normal Command Prompt messages can be resent
              */
+
+            if (passwordError)
+            {
+                if(currentText.text == passwordToEnter)
+                {
+                    passwordError = false;
+                    hackerText.text += "\n<color=blue>" + ">>Error Solved" + "</color>";
+                }
+                else if(currentText.text != null && currentText.text != passwordToEnter)
+                {
+                    hackerText.text += "\n<color=red>" + ">>PASSWORD INCORRECT" + "</color>";
+                }
+            }
         }
 
         yield return new WaitForEndOfFrame();
@@ -278,6 +294,12 @@ public class CmdPrompt : MonoBehaviour
     public void ErrorActive(bool errorRunning)
     {
         errorActive = errorRunning;
+    }
+
+    public void SetPasswordError(string password)
+    {
+        passwordToEnter = password;
+        passwordError = true;
     }
 
     #endregion

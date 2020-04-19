@@ -7,15 +7,12 @@ public class HackButtonsManager : Problem
     public GameObject hackButton;
     public Vector3[] buttonPositions;
     public GameObject computer;
-    public cmdMinimize minimized;
 
     /// <summary>
     /// Stop the command prompt and begin problems
     /// </summary>
     public override void CauseProblem()
     {
-        minimized = FindObjectOfType<cmdMinimize>();
-
         HackButtonCounter.instance.ResetHackCount();
         HackButtonCounter.instance.ActivateCounter();
         CmdPrompt.instance.ErrorActive(true);

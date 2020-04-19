@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackTimeManager : Problem
+public class SubmitPasswordError : Problem
 {
-    public GameObject hackTimer;
-
+    private EmailManager emailManager;
     public override void CauseProblem()
     {
+        emailManager = FindObjectOfType<EmailManager>();
+
         CmdPrompt.instance.ErrorActive(true);
-        Instantiate(hackTimer, transform.position, Quaternion.identity, transform);
+        GameObject passwordEmail = emailManager.CreatePasswordEmail();
+        CmdPrompt.instance.SetPasswordError(passwordEmail.);
     }
 
     public override void SolveProblem()
