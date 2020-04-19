@@ -174,7 +174,7 @@ public class CmdPrompt : MonoBehaviour
                 if(!showOnceUntilEnabledInternet)
                 {
                     showOnceUntilEnabledInternet = true;
-                    hackerText.text = hackerText.text + "\n" + ">> Error: No Internet Connection";
+                    hackerText.text = hackerText.text + "\n" + "<color=red>>> Error: No Internet Connection</color>";
                 }
             }
         }
