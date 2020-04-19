@@ -75,6 +75,7 @@ public class LightController : MonoBehaviour
             if (animators[i].GetBool("Lost") == false)
             {
                 Lose(i);
+                return;
             }
         }
     }
