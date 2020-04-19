@@ -24,7 +24,7 @@ public class HackerTimeController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (movingRight)
         {
