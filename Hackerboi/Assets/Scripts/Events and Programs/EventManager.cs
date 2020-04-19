@@ -17,6 +17,8 @@ public class EventManager : MonoBehaviour
 
     private bool errorSolved;
 
+    public Problem[] problems;
+
     private void Awake()
     {
         instance = this;
@@ -25,13 +27,23 @@ public class EventManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GenerateEvent());
+        //StartCoroutine(GenerateEvent());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ProblemTime();
+        }
+    }
+
+    void ProblemTime()
+    {
+        int index = Random.Range(0, problems.Length);
+
+        problems[index].CauseProblem();
     }
 
     private IEnumerator GenerateEvent()
