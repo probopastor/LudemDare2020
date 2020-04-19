@@ -14,6 +14,8 @@ public class EmailBehaviour : MonoBehaviour
     public bool hasOpened = false;
     public float timeToOpen = 10;
 
+    public bool isTimed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class EmailBehaviour : MonoBehaviour
 
     public void Update()
     {
-        if(hasOpened == false && (e.isBad == true || e.isBad == false))
+        if(hasOpened == false && isTimed == true)
         {
             timeToOpen -= Time.deltaTime;
         }
