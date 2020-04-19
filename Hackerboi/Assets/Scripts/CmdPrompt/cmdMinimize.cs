@@ -8,11 +8,22 @@ public class cmdMinimize : MonoBehaviour
 
     public Animator emailAnimator;
 
+    private AudioSource windowAudio;
+    public AudioClip minimize;
+
     /// <summary>
     /// Minimizes the Command Prompt upon clicking it's close button
     /// </summary>
+    /// 
+
+    void Start()
+    {
+        windowAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+    }
+
     public void MinimizeCmd()
     {
+        windowAudio.PlayOneShot(minimize);
         cmdAnimator.SetBool("cmdIsMinimized", true);
         cmdAnimator.SetBool("cmdIsMaximized", false);
 
@@ -21,6 +32,7 @@ public class cmdMinimize : MonoBehaviour
 
     public void MinimizeEmail()
     {
+        windowAudio.PlayOneShot(minimize);
         emailAnimator.SetBool("emailMinimized", true);
         emailAnimator.SetBool("emailMaximized", false);
     }

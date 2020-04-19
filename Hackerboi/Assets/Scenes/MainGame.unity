@@ -1851,6 +1851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cmdAnimator: {fileID: 1975414937}
   emailAnimator: {fileID: 0}
+  minimize: {fileID: 8300000, guid: 2dfe4e222d82b5a4786f5f8b779d626b, type: 3}
 --- !u!114 &360218914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2483,6 +2484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cmdAnimator: {fileID: 0}
   emailAnimator: {fileID: 2145553661}
+  minimize: {fileID: 8300000, guid: 2dfe4e222d82b5a4786f5f8b779d626b, type: 3}
 --- !u!114 &526099722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3044,6 +3046,7 @@ MonoBehaviour:
   contactsAnimator: {fileID: 0}
   emailAnimator: {fileID: 2145553661}
   doOnce: 0
+  maximize: {fileID: 8300000, guid: a45290bfb56d1e241b49af0f97200b29, type: 3}
 --- !u!1 &672115116
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3462,7 @@ MonoBehaviour:
   contactsAnimator: {fileID: 1838422210}
   emailAnimator: {fileID: 0}
   doOnce: 0
+  maximize: {fileID: 8300000, guid: a45290bfb56d1e241b49af0f97200b29, type: 3}
 --- !u!1001 &895555478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6674,6 +6678,7 @@ MonoBehaviour:
   contactsAnimator: {fileID: 0}
   emailAnimator: {fileID: 0}
   doOnce: 0
+  maximize: {fileID: 8300000, guid: a45290bfb56d1e241b49af0f97200b29, type: 3}
 --- !u!1 &1543375370
 GameObject:
   m_ObjectHideFlags: 0
