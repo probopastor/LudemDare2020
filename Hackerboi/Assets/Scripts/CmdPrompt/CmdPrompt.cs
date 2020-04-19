@@ -125,6 +125,7 @@ public class CmdPrompt : MonoBehaviour
             hackerSlider.value--;
             if(hackerSlider.value <= 0)
             {
+                print("bruh");
                 if (outro != null)
                 {
                     outro.Lose();
