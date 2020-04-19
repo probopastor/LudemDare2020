@@ -52,6 +52,7 @@ public class CmdPrompt : MonoBehaviour
 
     private bool passwordError;
     private string passwordToEnter;
+    private bool displayPasswordIncorrectOnce;
 
     public SceneTransitionerMainGameOut outro;
     #endregion
@@ -202,10 +203,12 @@ public class CmdPrompt : MonoBehaviour
                     passwordError = false;
                     SubmitPasswordError submitPasswordError = FindObjectOfType<SubmitPasswordError>();
                     submitPasswordError.SolveProblem();
+                    currentText.text = " ";
                     hackerText.text += "\n<color=blue>" + ">>Error Solved" + "</color>";
                 }
-                else if(currentText.text != null && currentText.text != passwordToEnter)
+                else if(!displayPasswordIncorrectOnce)
                 {
+                    displayPasswordIncorrectOnce = true;
                     hackerText.text += "\n<color=red>" + ">>PASSWORD INCORRECT" + "</color>";
                 }
             }
@@ -302,6 +305,7 @@ public class CmdPrompt : MonoBehaviour
     {
         passwordToEnter = password;
         passwordError = true;
+        displayPasswordIncorrectOnce = false;
     }
 
     #endregion
