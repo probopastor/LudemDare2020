@@ -21,6 +21,7 @@ public class CmdPrompt : MonoBehaviour
     public float minMessageDelay = 1f;
     public float maxMessageDelay = 10f;
 
+
     private int index = 0;
     private IEnumerator coroutine;
     private bool showOnceUntilEnabledInternet;
@@ -194,6 +195,12 @@ public class CmdPrompt : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
         StartCoroutine(SendMessages());
+    }
+
+    public void SendError(int index)
+    {
+        string errorString = errorMessages[index];
+        hackerText.text += "\n<color=red>" + errorString + "</color>";
     }
 
     //THIS IS OLD I WANT TO REFERENCE THE CODE HERE, PLEASE SAVE:
