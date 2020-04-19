@@ -2070,6 +2070,7 @@ MonoBehaviour:
   problems:
   - {fileID: 2139738948}
   - {fileID: 1861569664}
+  - {fileID: 1159241294}
 --- !u!114 &380865302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4956,6 +4957,49 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0fd59933bf5706c4e9cb3c431a311056, type: 3}
   - {fileID: 8300000, guid: 60916dab17f971b48876ae35b3fdabd4, type: 3}
   - {fileID: 8300000, guid: 95403350cc6e58745974bd62736fa4b6, type: 3}
+--- !u!1 &1159241292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1159241293}
+  - component: {fileID: 1159241294}
+  m_Layer: 0
+  m_Name: PasswordError
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1159241293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159241292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1851508354}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1159241294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159241292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1a8ff45c5c47c438345b4d6dd15db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1228462704
 GameObject:
   m_ObjectHideFlags: 0
@@ -8329,7 +8373,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1159241293}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8597,7 +8642,6 @@ MonoBehaviour:
   - {x: -33, y: -378, z: 0}
   - {x: 93, y: 22, z: 0}
   computer: {fileID: 1861569661}
-  minimized: {fileID: 0}
 --- !u!1001 &1869693142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9161,9 +9205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   errorMessages:
-  - '>>Confirmation Error: Are You The Administrator? : '
   - '>>PLEASE INITIATE THE HACK NOW.'
   - '>>ERROR: FROWNY FACE DETECTED.'
+  - '>>ERROR: PASSCODE REQUIRED. PLEASE ENTER PASSCODE:'
   currentText: {fileID: 941172487}
   possibleMessages:
   - 'struct group_info init_groups = { .usage = ATOMIC_INIT(2) }; '
@@ -9797,7 +9841,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hackTimer: {fileID: 7547802497673991938, guid: 6568da93950517f4395da578b9f83ea6,
     type: 3}
-  minimized: {fileID: 0}
 --- !u!1 &2145553659
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class SubmitPasswordError : Problem
 
         CmdPrompt.instance.ErrorActive(true);
         GameObject passwordEmail = emailManager.CreatePasswordEmail();
-        CmdPrompt.instance.SetPasswordError(passwordEmail.);
+        CmdPrompt.instance.SetPasswordError(passwordEmail.GetComponent<Email>().pass);
     }
 
     public override void SolveProblem()

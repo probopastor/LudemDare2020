@@ -200,6 +200,8 @@ public class CmdPrompt : MonoBehaviour
                 if(currentText.text == passwordToEnter)
                 {
                     passwordError = false;
+                    SubmitPasswordError submitPasswordError = FindObjectOfType<SubmitPasswordError>();
+                    submitPasswordError.SolveProblem();
                     hackerText.text += "\n<color=blue>" + ">>Error Solved" + "</color>";
                 }
                 else if(currentText.text != null && currentText.text != passwordToEnter)
