@@ -253,7 +253,7 @@ public class CmdPrompt : MonoBehaviour
     }
 
     /// <summary>
-    /// Sets the state of the command prompt. If true is passed in, Command Prompt will send its regular messages. 
+    /// Sets the state of the command prompt when opened or closed. If true is passed in, Command Prompt will send its regular messages. 
     /// If false, the Command Prompt will not run until true is passed in.
     /// </summary>
     /// <param name="isRunning"></param>
@@ -261,7 +261,12 @@ public class CmdPrompt : MonoBehaviour
     {
         cmdPromptEnabled = isRunning;
     }
-    
+
+    /// <summary>
+    /// Sets the state of the command prompt from active errors. If true is passed in, Command Prompt will send its regular messages. 
+    /// If false, the Command Prompt will not run until true is passed in.
+    /// </summary>
+    /// <param name="errorRunning"></param>
     public void ErrorActive(bool errorRunning)
     {
         errorActive = errorRunning;
