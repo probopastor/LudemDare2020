@@ -18,7 +18,7 @@ public class HackButtonsManager : Problem
 
         HackButtonCounter.instance.ResetHackCount();
         HackButtonCounter.instance.ActivateCounter();
-        CmdPrompt.instance.SetCommandPromptRunning(false);
+        CmdPrompt.instance.ErrorActive(true);
     }
 
     /// <summary>
@@ -26,9 +26,6 @@ public class HackButtonsManager : Problem
     /// </summary>
     public override void SolveProblem()
     {
-        if(!minimized.cmdAnimator.GetBool("cmdIsMinimized"))
-        {
-            CmdPrompt.instance.SetCommandPromptRunning(true);
-        }
+        CmdPrompt.instance.ErrorActive(false);
     }
 }

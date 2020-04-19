@@ -47,6 +47,8 @@ public class CmdPrompt : MonoBehaviour
     private EventManager eventManager;
     private bool cmdTextErrorClear;
 
+    private bool errorActive;
+
     public SceneTransitionerMainGameOut outro;
     #endregion
 
@@ -151,7 +153,7 @@ public class CmdPrompt : MonoBehaviour
     /// <returns></returns>
     private IEnumerator SendMessages()
     {
-        if (cmdPromptEnabled == true)
+        if (cmdPromptEnabled == true && !errorActive)
         {
             //Determines if the router is on or off
             if(LightController.instance.GetRouterStatus())
@@ -258,6 +260,11 @@ public class CmdPrompt : MonoBehaviour
     public void SetCommandPromptRunning(bool isRunning)
     {
         cmdPromptEnabled = isRunning;
+    }
+    
+    public void ErrorActive(bool errorRunning)
+    {
+        errorActive = errorRunning;
     }
 
     #endregion

@@ -10,15 +10,12 @@ public class HackTimeManager : Problem
     public override void CauseProblem()
     {
         minimized = FindObjectOfType<cmdMinimize>();
-        CmdPrompt.instance.SetCommandPromptRunning(false);
+        CmdPrompt.instance.ErrorActive(true);
         Instantiate(hackTimer, transform.position, Quaternion.identity, transform);
     }
 
     public override void SolveProblem()
     {
-        if (!minimized.cmdAnimator.GetBool("cmdIsMinimized"))
-        {
-            CmdPrompt.instance.SetCommandPromptRunning(true);
-        }
+        CmdPrompt.instance.ErrorActive(false);
     }
 }
