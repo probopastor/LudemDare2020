@@ -54,6 +54,8 @@ public class CmdPrompt : MonoBehaviour
     private string passwordToEnter;
     private bool displayPasswordIncorrectOnce;
 
+    private string lastPasswordAttempt;
+
     public SceneTransitionerMainGameOut outro;
     #endregion
 
@@ -209,7 +211,13 @@ public class CmdPrompt : MonoBehaviour
                 else if(!displayPasswordIncorrectOnce)
                 {
                     displayPasswordIncorrectOnce = true;
+                    lastPasswordAttempt = currentText.text;
                     hackerText.text += "\n<color=red>" + ">>PASSWORD INCORRECT" + "</color>";
+                }
+
+                if(currentText.text != lastPasswordAttempt)
+                {
+                    displayPasswordIncorrectOnce = false;
                 }
             }
         }
