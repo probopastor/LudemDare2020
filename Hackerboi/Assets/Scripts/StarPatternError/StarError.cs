@@ -57,6 +57,7 @@ public class StarError : MonoBehaviour
         }
 
         FindObjectOfType<Path>().SetPointArray();
+        GetComponent<StarErrorCheck>().order = result.ToCharArray();
 
         return result;
     }
