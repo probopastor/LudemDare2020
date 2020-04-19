@@ -18,8 +18,7 @@ public class StarError : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string s = GenerateErrorNum();
-        Debug.Log(s);
+        //string s = GenerateErrorNum();
 
         for(int i = 0; i < buttonParents.transform.childCount; i++)
         {

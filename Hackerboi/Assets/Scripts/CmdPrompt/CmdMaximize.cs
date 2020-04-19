@@ -56,4 +56,10 @@ public class CmdMaximize : MonoBehaviour
         emailAnimator.SetBool("emailMaximized", true);
         emailAnimator.SetBool("emailMinimized", false);
     }
+
+    public void ClickPatternMinigameMaximize()
+    {
+        emailAnimator.SetBool("patternOn", true);
+        emailAnimator.SetBool("patternOff", false);
+    }
 }
