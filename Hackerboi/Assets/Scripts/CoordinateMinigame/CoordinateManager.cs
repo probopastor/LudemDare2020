@@ -15,7 +15,8 @@ public class CoordinateManager : MonoBehaviour
     {
         for(int i = 0; i < 9; i++)
         {
-            buttons.Add(CoordinatePanel.transform.GetChild(i).gameObject);
+            //buttons.Add(CoordinatePanel.transform.GetChild(i).gameObject);
+            buttons.Add(CoordinatePanel.GetComponent<ButtonStore>().children[i]);
         }
 
         CreateErrorString();
