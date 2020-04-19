@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Problem
+[System.Serializable]
+public abstract class Problem : MonoBehaviour
 {
-    void CauseProblem();
+    public abstract void CauseProblem();
+    public abstract void SolveProblem();
 }
 
