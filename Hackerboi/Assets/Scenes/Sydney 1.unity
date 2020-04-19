@@ -881,6 +881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cmdAnimator: {fileID: 0}
   emailAnimator: {fileID: 0}
+  minimize: {fileID: 0}
 --- !u!114 &740234638
 MonoBehaviour:
   m_ObjectHideFlags: 0
