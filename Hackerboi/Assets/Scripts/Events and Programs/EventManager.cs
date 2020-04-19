@@ -33,12 +33,15 @@ public class EventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1)) //debug purposes
         {
             ProblemTime();
         }
     }
 
+    /// <summary>
+    /// Call this to generate a random error event. Make sure to add the problem to the array!
+    /// </summary>
     void ProblemTime()
     {
         int index = Random.Range(0, problems.Length);
