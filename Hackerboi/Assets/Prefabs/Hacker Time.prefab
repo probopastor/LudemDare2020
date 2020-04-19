@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 7547802497691614971}
   range: 192
-  moneyZone: 52
+  moneyZone: 36
   speed: 8
 --- !u!222 &1282906973332595776
 CanvasRenderer:
@@ -360,7 +360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190.7, y: 37}
+  m_AnchoredPosition: {x: -192, y: 37}
   m_SizeDelta: {x: 24, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7547802497691614965

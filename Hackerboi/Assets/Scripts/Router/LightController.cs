@@ -51,6 +51,7 @@ public class LightController : MonoBehaviour
         if(LineLost(0) && LineLost(1) && LineLost(2))
         {
             isOn = false;
+            //routerAudio.PlayOneShot(lightsounds[2], 0.9F);
         }
     }
     /// <summary>
@@ -87,8 +88,9 @@ public class LightController : MonoBehaviour
     public void Lose(int lostLine)
     {
         animators[lostLine].SetBool("Lost", true);
-        
-        foreach(Animator anim in animators)
+        routerAudio.PlayOneShot(lightsounds[4], 0.8F);
+
+        foreach (Animator anim in animators)
         {
             if (anim.GetBool("Lost") == false) return;
         }
@@ -102,6 +104,7 @@ public class LightController : MonoBehaviour
     /// </summary>
     public void Lose()
     {
+        routerAudio.PlayOneShot(lightsounds[4], 0.8F);
         for (int i = 0; i != animators.Length; i++)
         {
             if (i == 3) return;
@@ -154,6 +157,7 @@ public class LightController : MonoBehaviour
         if(!gameStarted)
         {
             gameStarted = true;
+            routerAudio.PlayOneShot(lightsounds[3], 0.75F);
         }
     }
 
