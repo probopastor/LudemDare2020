@@ -45,7 +45,6 @@ public class CmdPrompt : MonoBehaviour
     public float currentTimeTillDecrease;
 
     private EventManager eventManager;
-    private bool errorInProgress;
     private bool cmdTextErrorClear;
 
     public SceneTransitionerMainGameOut outro;
@@ -69,7 +68,7 @@ public class CmdPrompt : MonoBehaviour
 
     public void Update()
     {
-        //if the cmdPrompt is open and assigned than run the fill slider function
+        //If the Command Prompt is running, increase the hacker slider.
         if (hackerSlider != null && cmdPromptEnabled)
         {
             if(LightController.instance.GetGameStarted())
@@ -78,6 +77,7 @@ public class CmdPrompt : MonoBehaviour
             }
         }
 
+        //If the command prompt is not running, decrease the hacker slider.
         if (hackerSlider != null && !cmdPromptEnabled)
         {
             if(LightController.instance.GetGameStarted())
@@ -86,37 +86,17 @@ public class CmdPrompt : MonoBehaviour
             }
         }
 
-        if (!errorInProgress)
-        {
-            switch (eventManager.GetEventIndex())
-            {
-                case 0:
-                    //
-                    errorInProgress = false;
-                    break;
-                case 1:
-                    errorInProgress = true;
-                    errorIndex = 0;
-                    StartCoroutine(ConfirmationError());
-                    break;
-                case 2:
-                    errorInProgress = true;
-                    errorIndex = 0;
-                    StartCoroutine(ConfirmationError());
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        if(LightController.instance.GetRouterStatus())
+        //When the router is active, disable showOnceUntilEnabledInternet to reset it. This boolean is used in SendMessages().
+        if (LightController.instance.GetRouterStatus())
         {
             showOnceUntilEnabledInternet = false;
         }
     }
 
 
-    //function that fills the hacker slidier
+    /// <summary>
+    /// Increases the hacker slider when the command prompt is open and running
+    /// </summary>
     public void IncreaseHackerSlider()
     {
         currentTimeTillIncrease += 1 * Time.deltaTime * increaseSliderSpeed;
@@ -126,11 +106,13 @@ public class CmdPrompt : MonoBehaviour
         {
             hackerSlider.value++;
             currentTimeTillIncrease = 0;
-            //print("increase bar");
         }
 
     }
 
+    /// <summary>
+    /// Decreases the hacker slider when the command prompt is closed or glitched
+    /// </summary>
     public void DecreaseHackerSlider()
     {
 
@@ -152,7 +134,9 @@ public class CmdPrompt : MonoBehaviour
         }
     }
 
-    //function to be called by buttons to open/close the cmdPrompt and to start/stop the hacking text
+    /// <summary>
+    /// Function is called the first time the Command Prompt is opened. Starts SendMessages() coroutine to run throughout the game
+    /// </summary>
     public void cmdPromptOpen()
     {
         currentTimeTillDecrease = 0;
@@ -160,26 +144,29 @@ public class CmdPrompt : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
-    public void cmdPromptClosed()
-    {
-
-    }
-
-    //picks a random message from a list and displays it one line down from the previous text and then runs again at a random time range
+    /// <summary>
+    /// Chooses messages from possibleMessages[] to send after a period of time. 
+    /// If messages cannot be sent, sends error messages instead.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SendMessages()
     {
         if (cmdPromptEnabled == true)
         {
+            //Determines if the router is on or off
             if(LightController.instance.GetRouterStatus())
             {
+                //Chooses a random index from possibleMessages[] tp send as a message
                 index = Random.Range(0, possibleMessages.Length);
                 hackerText.text = hackerText.text + "\n" + possibleMessages[index];
 
                 float timeBeforeNextMessage = Random.Range(minMessageDelay, maxMessageDelay);
                 yield return new WaitForSeconds(timeBeforeNextMessage);
             }
+            //If the router is off, display No Internet Connection error
             else
             {
+                //Display this error once to prevent text spam
                 if(!showOnceUntilEnabledInternet)
                 {
                     showOnceUntilEnabledInternet = true;
@@ -187,67 +174,87 @@ public class CmdPrompt : MonoBehaviour
                 }
             }
         }
+        //If the command prompt is not enabled, run other appropriate error messages in this else
         else
         {
-            //Other error messages here
+            //Other error messages here. 
+
+            /* Steps to do this: 
+             * 1. Have EventManager.cs set a public Setter method on this script. 
+             * For example, public void SetTestError() { testError = true;} <-- Be sure to create a testError boolean at the top of the script first that starts as false.
+             * 2. Here, check if testError is true: if(testError) {  hackerText.text = hackerText.text + "\n" + ">> Error: This is a test error";}
+             * 3. Depending on what the error does, be sure to prevent the Command Prompt from displaying any more messages.
+             * To do this, type SetCommandPromptRunning(false); 
+             * 4. When the error is solved, be sure to have it say SetCommandPromptRunning(true); so that normal Command Prompt messages can be resent
+             */
         }
 
         yield return new WaitForEndOfFrame();
         StartCoroutine(SendMessages());
     }
 
-    private IEnumerator ConfirmationError()
-    {
-        if (LightController.instance.GetRouterStatus())
-        {
-            cmdPromptEnabled = false;
+    //THIS IS OLD I WANT TO REFERENCE THE CODE HERE, PLEASE SAVE:
+    //private IEnumerator ConfirmationError()
+    //{
+    //    if (LightController.instance.GetRouterStatus())
+    //    {
+    //        cmdPromptEnabled = false;
 
-            if (!cmdTextErrorClear)
-            {
-                hackerText.text = hackerText.text + "\n";
-                cmdTextErrorClear = true;
-            }
+    //        if (!cmdTextErrorClear)
+    //        {
+    //            hackerText.text = hackerText.text + "\n";
+    //            cmdTextErrorClear = true;
+    //        }
 
-            errorText.text = errorMessages[errorIndex];
+    //        errorText.text = errorMessages[errorIndex];
 
-            if (currentText.text == "Yes" || currentText.text == "yes")
-            {
-                hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED " + "\n" + currentText.text;
-                errorText.text = " ";
-                currentText.text = " ";
+    //        if (currentText.text == "Yes" || currentText.text == "yes")
+    //        {
+    //            hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED " + "\n" + currentText.text;
+    //            errorText.text = " ";
+    //            currentText.text = " ";
 
-                errorInProgress = false;
-                cmdTextErrorClear = false;
-                cmdPromptEnabled = true;
-                eventManager.SetErrorStatus(true);
+    //            errorInProgress = false;
+    //            cmdTextErrorClear = false;
+    //            cmdPromptEnabled = true;
+    //            eventManager.SetErrorStatus(true);
 
-                yield return new WaitForEndOfFrame();
-                //coroutine = SendMessages();
-                //StartCoroutine(coroutine);
-                SetCommandPromptRunning(true);
+    //            yield return new WaitForEndOfFrame();
+    //            //coroutine = SendMessages();
+    //            //StartCoroutine(coroutine);
+    //            SetCommandPromptRunning(true);
 
-            }
-            else
-            {
-                yield return new WaitForSeconds(1f);
-                errorText.text = " ";
-                yield return new WaitForSeconds(1f);
-                errorText.text = errorMessages[errorIndex];
-                yield return new WaitForSeconds(1f);
+    //        }
+    //        else
+    //        {
+    //            yield return new WaitForSeconds(1f);
+    //            errorText.text = " ";
+    //            yield return new WaitForSeconds(1f);
+    //            errorText.text = errorMessages[errorIndex];
+    //            yield return new WaitForSeconds(1f);
 
-                SetCommandPromptRunning(false);
-                StartCoroutine(ConfirmationError());
-            }
+    //            SetCommandPromptRunning(false);
+    //            StartCoroutine(ConfirmationError());
+    //        }
 
-            yield return new WaitForEndOfFrame();
-        }
-    }
+    //        yield return new WaitForEndOfFrame();
+    //    }
+    //}
 
+        /// <summary>
+        /// Checks if the command prompt can be run properly
+        /// </summary>
+        /// <returns></returns>
     public bool CommandPromptOpen()
     {
         return cmdPromptEnabled;
     }
 
+    /// <summary>
+    /// Sets the state of the command prompt. If true is passed in, Command Prompt will send its regular messages. 
+    /// If false, the Command Prompt will not run until true is passed in.
+    /// </summary>
+    /// <param name="isRunning"></param>
     public void SetCommandPromptRunning(bool isRunning)
     {
         cmdPromptEnabled = isRunning;
