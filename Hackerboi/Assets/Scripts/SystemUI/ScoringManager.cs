@@ -16,6 +16,9 @@ public class ScoringManager : MonoBehaviour
         InvokeRepeating("IncreaseScore", 1, 1);
     }
 
+    /// <summary>
+    /// If the command prompt is open, the game has started, and the router is on, increase the hacker score
+    /// </summary>
     void IncreaseScore()
     {
         if(cmdPrompt.CommandPromptOpen() && LightController.instance.GetRouterStatus() && LightController.instance.GetGameStarted())
