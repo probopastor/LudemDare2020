@@ -241,10 +241,10 @@ public class CmdPrompt : MonoBehaviour
     //    }
     //}
 
-        /// <summary>
-        /// Checks if the command prompt can be run properly
-        /// </summary>
-        /// <returns></returns>
+    /// <summary>
+    /// Checks if the command prompt can be run properly
+    /// </summary>
+    /// <returns></returns>
     public bool CommandPromptOpen()
     {
         return cmdPromptEnabled;

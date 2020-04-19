@@ -9,6 +9,9 @@ public class HackButtonsManager : Problem
     public GameObject computer;
     public cmdMinimize minimized;
 
+    /// <summary>
+    /// Stop the command prompt and begin problems
+    /// </summary>
     public override void CauseProblem()
     {
         minimized = FindObjectOfType<cmdMinimize>();
@@ -18,6 +21,9 @@ public class HackButtonsManager : Problem
         CmdPrompt.instance.SetCommandPromptRunning(false);
     }
 
+    /// <summary>
+    /// If the Command Prompt is not minimized, set it to true
+    /// </summary>
     public override void SolveProblem()
     {
         if(!minimized.cmdAnimator.GetBool("cmdIsMinimized"))
