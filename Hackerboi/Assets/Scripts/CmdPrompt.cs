@@ -13,7 +13,7 @@ public class CmdPrompt : MonoBehaviour
     public string[] errorMessages;
     private int errorIndex = 0;
 
-    public TextMeshProUGUI currentText;
+    public TMP_InputField currentText;
 
     public string[] possibleMessages;
     public float minMessageDelay = 1f;
@@ -45,8 +45,6 @@ public class CmdPrompt : MonoBehaviour
     private bool errorInProgress;
     private bool cmdTextErrorClear;
 
-    bool tempFixed;
-
     public SceneTransitionerMainGameOut outro;
     #endregion
 
@@ -65,14 +63,6 @@ public class CmdPrompt : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            if(!tempFixed)
-            {
-                tempFixed = true;
-            }
-        }
-
         //if the cmdPrompt is open and assigned than run the fill slider function
         if (hackerSlider != null && cmdPromptEnabled)
         {
@@ -94,13 +84,11 @@ public class CmdPrompt : MonoBehaviour
                     break;
                 case 1:
                     errorInProgress = true;
-                    tempFixed = false;
                     errorIndex = 0;
                     StartCoroutine(ConfirmationError());
                     break;
                 case 2:
                     errorInProgress = true;
-                    tempFixed = false;
                     errorIndex = 0;
                     StartCoroutine(ConfirmationError());
                     break;
@@ -196,24 +184,15 @@ public class CmdPrompt : MonoBehaviour
 
         if (currentText.text == "Yes" || currentText.text == "yes")
         {
-            hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED ";
+            hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED " + "\n" + currentText.text;
             errorText.text = " ";
+            currentText.text = " ";
 
             errorInProgress = false;
             cmdTextErrorClear = false;
             cmdPromptEnabled = true;
             eventManager.SetErrorStatus(true);
-        }
 
-        if (tempFixed)
-        {
-            hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED ";
-            errorText.text = " ";
-
-            errorInProgress = false;
-            cmdTextErrorClear = false;
-            cmdPromptEnabled = true;
-            eventManager.SetErrorStatus(true);
             coroutine = SendMessages();
             StartCoroutine(coroutine);
         }

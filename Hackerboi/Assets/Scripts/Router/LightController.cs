@@ -88,4 +88,14 @@ public class LightController : MonoBehaviour
             else anim.SetBool("Off", false);
         }
     }
+
+    public bool GetRouterStatus()
+    {
+        return isOn;
+    }
+
+    public bool LineLost(int line)
+    {
+        return animators[line].GetBool("Lost");
+    }
 }

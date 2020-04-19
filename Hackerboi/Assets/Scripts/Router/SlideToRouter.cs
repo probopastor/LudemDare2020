@@ -21,7 +21,10 @@ using UnityEngine.EventSystems;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!sliding) sliding = true;
+        if (!sliding)
+        {
+            sliding = true;
+        }
     }
 
     private void OnEnable()
@@ -45,5 +48,17 @@ using UnityEngine.EventSystems;
                 otherArrow.SetActive(true);
             }
         } 
+    }
+
+    public bool isShifted()
+    {
+        if(gameObject.activeInHierarchy && !sliding)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

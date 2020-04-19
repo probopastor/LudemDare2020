@@ -13,9 +13,14 @@ public class EmailManager : MonoBehaviour
 
     public GameObject notificationImage;
 
+    private EventManager eventManager;
+    private bool errorInProgress;
+    private int errorIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        eventManager = FindObjectOfType<EventManager>();
         eg = GetComponent<EmailGenerator>();
         //eg.GenerateGoodEmails();
         CreateEmailList();
@@ -24,15 +29,47 @@ public class EmailManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        //case numbers to be changed later
+        switch (eventManager.GetEventIndex())
         {
-            SendGoodEmail();
+            case 0:
+                errorInProgress = false;
+                break;
+            case 1:
+                errorInProgress = true;
+                errorIndex = 0;
+                CreatePasswordEmail();
+                break;
+            case 2:
+                errorInProgress = true;
+                errorIndex = 0;
+                CreateProgramEmail();
+                break;
+            default:
+                break;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SendBadEmail();
-        }
+        //if(Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    SendGoodEmail();
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    SendBadEmail();
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    CreatePasswordEmail();
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    CreateProgramEmail();
+        //}
+
+
     }
 
     public void CreateEmailList()
@@ -74,5 +111,15 @@ public class EmailManager : MonoBehaviour
     {
         Debug.Log("email checked");
         notificationImage.SetActive(false);
+    }
+
+    public void CreatePasswordEmail()
+    {
+        eg.GeneratePasswordEmail();
+    }
+
+    public void CreateProgramEmail()
+    {
+        eg.GenerateProgramEmail();
     }
 }

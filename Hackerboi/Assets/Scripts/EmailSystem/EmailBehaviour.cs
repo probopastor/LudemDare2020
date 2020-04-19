@@ -9,6 +9,7 @@ public class EmailBehaviour : MonoBehaviour
     public GameObject replyButton;
     public GameObject deleteButton;
     public GameObject responseImg;
+    public GameObject bodyImg;
 
     public bool hasOpened = false;
     public float timeToOpen = 10;
@@ -21,7 +22,7 @@ public class EmailBehaviour : MonoBehaviour
 
     public void Update()
     {
-        if(hasOpened == false)
+        if(hasOpened == false && (e.isBad == true || e.isBad == false))
         {
             timeToOpen -= Time.deltaTime;
         }
@@ -44,7 +45,7 @@ public class EmailBehaviour : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        else
+        else if(e.isBad == false)
         {
             //wrong response for good email
             //call for penalty
@@ -52,7 +53,10 @@ public class EmailBehaviour : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Reply()
@@ -75,6 +79,13 @@ public class EmailBehaviour : MonoBehaviour
 
             responseImg.SetActive(true);
         }
+    }
+
+    public void OpenEmail()
+    {
+        FindObjectOfType<EmailManager>().EmailNotificationOff();
+
+        bodyImg.SetActive(true);
     }
 
     public void ResponseActions(ResponseBehaviour rb)

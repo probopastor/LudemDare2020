@@ -256,9 +256,20 @@ MonoBehaviour:
   - No it wont fuck you
   - No it wasnt fuck you
   - No fuck you
+  emailEventSubjects:
+  - 'Urgent: Use this'
+  - 'Urgent: Try this'
+  programs:
+  - Program 1
+  - Program 2
+  - Program 3
+  contacts:
+  - Bob
   emailPrefab: {fileID: 3289771479131961613, guid: 11433c2a2afacdb40bd16c28d8d9c489,
     type: 3}
   emailPanel: {fileID: 1004763940}
+  eventEmailPrefab: {fileID: 5056432302353912971, guid: e5c0ca9c164f54345b1f87d51707a901,
+    type: 3}
 --- !u!114 &447034023
 MonoBehaviour:
   m_ObjectHideFlags: 0
