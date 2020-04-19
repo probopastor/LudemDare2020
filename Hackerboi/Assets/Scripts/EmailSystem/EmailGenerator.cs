@@ -52,7 +52,7 @@ public class EmailGenerator : MonoBehaviour
     {
         string pass = "";
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             int a = Random.Range(0, characters.Length);
             pass += characters[a];

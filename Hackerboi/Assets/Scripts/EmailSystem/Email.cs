@@ -23,6 +23,7 @@ public class Email : MonoBehaviour
     public string contact;
     public string body;
     public string pass;
+    public string program;
 
     public GameObject contactText;
     public GameObject bodyText;

@@ -120,9 +120,9 @@ public class EmailManager : MonoBehaviour
         return eg.GeneratePasswordEmail();
     }
 
-    public void CreateProgramEmail()
+    public GameObject CreateProgramEmail()
     {
         EmailNotificationOn();
-        eg.GenerateProgramEmail();
+        return eg.GenerateProgramEmail();
     }
 }
