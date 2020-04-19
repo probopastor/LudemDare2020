@@ -46,7 +46,8 @@ public class HackerTimeController : MonoBehaviour
 
     public void Activate()
     {
-        if (offset > -moneyZone && offset < moneyZone)
+        Debug.Log(offset);
+        if (offset >= -56 && offset <= 32)
         {
                 
         } else
