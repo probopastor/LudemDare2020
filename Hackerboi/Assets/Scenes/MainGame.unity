@@ -6081,8 +6081,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   errorMessages:
   - '>>Confirmation Error: Are You The Administrator? : '
-  currentText: {fileID: 0}
-  possibleMessages: []
+  currentText: {fileID: 941172487}
+  possibleMessages:
+  - 'struct group_info init_groups = { .usage = ATOMIC_INIT(2) }; '
+  - '>struct group_info *groups_alloc(int gidsetsize){ '
+  - 'struct group_info *group_info; '
+  - 'C:\nblocks = (gidsetsize + NGROUPS_PER_BLOCK - 1) / NGROUPS_PER_BLOCK; '
+  - '> free_page((unsigned long)group_info->blocks[i]); '
+  - void groups_free(struct group_info *group_info)
+  - C:\EXPORT_SYMBOL(groups_alloc);
+  - 'void groups_free(struct group_info *group_info) '
+  - 'out_undo_partial_alloc:'
   minMessageDelay: 1
   maxMessageDelay: 10
   cmdPromptEnabled: 0
