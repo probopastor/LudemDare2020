@@ -22,6 +22,7 @@ public class Email : MonoBehaviour
 
     public string contact;
     public string body;
+    public string pass;
 
     public GameObject contactText;
     public GameObject bodyText;
@@ -53,12 +54,13 @@ public class Email : MonoBehaviour
         isBad = isEvil;
     }
 
-    public void SetEventVars(string s, string dt, string con, string bod)
+    public void SetEventVars(string s, string dt, string con, string bod, string pa)
     {
         subject = s;
         dateTime = dt;
         contact = con;
         body = bod;
+        pass = pa;
     }
 
     public void SetText()

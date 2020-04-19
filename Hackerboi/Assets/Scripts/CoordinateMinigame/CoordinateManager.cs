@@ -31,27 +31,23 @@ public class CoordinateManager : MonoBehaviour
     public string CreateErrorString()
     {
         int rand = Random.Range(0, 2);
-        int amount = Random.Range(0, buttons.Count);
-        Debug.Log(amount);
+        int amount = Random.Range(2, buttons.Count);
+        temp = buttons;
 
-        int index = 0;
-
+        int index;
         if (rand == 0) //letter num letter num
         {
-            for(int i = 0; i < amount; i++)
+
+            for (int k = 0; k < amount; k++)
             {
-                temp = buttons;
+                index = Random.Range(0, temp.Count);
 
-                for (int k = 0; k < amount; k++)
-                {
-                    index = Random.Range(0, temp.Count);
+                result += buttons[index].GetComponent<CoordinateButtonBehaviour>().coorLet;
+                result += buttons[index].GetComponent<CoordinateButtonBehaviour>().coorNum;
+                buttons[index].GetComponent<CoordinateButtonBehaviour>().isNeeded = true;
 
-                    result += buttons[index].GetComponent<CoordinateButtonBehaviour>().coorLet;
-                    result += buttons[index].GetComponent<CoordinateButtonBehaviour>().coorNum;
-
-                    temp.RemoveAt(index);
-                } 
-            }
+                temp.RemoveAt(index);
+            } 
         }
 
         if(rand == 1) //letter letter num num
@@ -59,19 +55,15 @@ public class CoordinateManager : MonoBehaviour
             string letter = "";
             string number = "";
 
-            for (int i = 0; i < amount; i++)
+            for (int k = 0; k < amount; k++)
             {
-                temp = buttons;
+                index = Random.Range(0, temp.Count);
 
-                for (int k = 0; k < amount; k++)
-                {
-                    index = Random.Range(0, temp.Count);
+                letter += buttons[index].GetComponent<CoordinateButtonBehaviour>().coorLet;
+                number += buttons[index].GetComponent<CoordinateButtonBehaviour>().coorNum;
+                buttons[index].GetComponent<CoordinateButtonBehaviour>().isNeeded = true;
 
-                    letter += buttons[index].GetComponent<CoordinateButtonBehaviour>().coorLet;
-                    number += buttons[index].GetComponent<CoordinateButtonBehaviour>().coorNum;
-
-                    temp.RemoveAt(index);
-                }
+                temp.RemoveAt(index);
             }
 
             result += letter + number;
