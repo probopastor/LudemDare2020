@@ -22,23 +22,27 @@ public class ComprimisedManager : MonoBehaviour
 
     private IEnumerator ComprimiseRouter()
     {
-        float randomTime = Random.Range(minComprimiseTime, maxComprimiseTime + 1);
-
-        yield return new WaitForSeconds(randomTime);
-
-        if(!LightController.instance.LineLost(0))
+        if(LightController.instance.GetRouterStatus())
         {
-            LightController.instance.Compromise(0);
-        }
-        else if(!LightController.instance.LineLost(3))
-        {
-            LightController.instance.Compromise(3);
-        }
-        else if (!LightController.instance.LineLost(2))
-        {
-            LightController.instance.Compromise(2);
+            float randomTime = Random.Range(minComprimiseTime, maxComprimiseTime + 1);
+
+            yield return new WaitForSeconds(randomTime);
+
+            if (!LightController.instance.LineLost(0) && !LightController.instance.LineComprimised(0))
+            {
+                LightController.instance.Compromise(0);
+            }
+            else if (!LightController.instance.LineLost(2) && !LightController.instance.LineComprimised(2))
+            {
+                LightController.instance.Compromise(2);
+            }
+            else if (!LightController.instance.LineLost(1) && !LightController.instance.LineComprimised(1))
+            {
+                LightController.instance.Compromise(1);
+            }
         }
 
+        yield return new WaitForEndOfFrame();
         StartCoroutine(ComprimiseRouter());
     }
 }

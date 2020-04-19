@@ -182,6 +182,16 @@ public class LightController : MonoBehaviour
     }
 
     /// <summary>
+    /// Pass in a router line to determine if it is comprimised or not.
+    /// Returns true if comprimised, lost if alive.
+    /// </summary>
+    /// <param name="compromisedLine"></param>
+    public bool LineComprimised(int line)
+    {
+        return animators[line].GetBool("Compromised");
+    }
+
+    /// <summary>
     /// Returns false if the router has not been turned on for the first time.
     /// </summary>
     /// <returns></returns>
