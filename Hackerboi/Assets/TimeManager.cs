@@ -9,6 +9,12 @@ public class TimeManager : MonoBehaviour
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dateText;
 
+    private string hour;
+    private string minute;
+    private string day;
+    private string month;
+    private string year;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,19 +25,37 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         DateTime time = DateTime.Now;
-        string hour = time.Hour.ToString();
-        string minute = time.Minute.ToString();
+        hour = time.Hour.ToString();
+        minute = time.Minute.ToString();
 
         if(time.Minute < 10)
         {
             minute = "0" + time.Minute.ToString();
         }
 
-        string day = time.Day.ToString();
-        string month = time.Month.ToString();
-        string year = time.Year.ToString();
+        day = time.Day.ToString();
+        month = time.Month.ToString();
+        year = time.Year.ToString();
 
         timeText.text = hour + ":" + minute;
         dateText.text = month + "/" + day + "/" + year;
+    }
+
+    /// <summary>
+    /// Gets the current system time
+    /// </summary>
+    /// <returns></returns>
+    public string GetTime()
+    {
+        return hour + ":" + minute;
+    }
+
+    /// <summary>
+    /// Gets the current system date
+    /// </summary>
+    /// <returns></returns>
+    public string GetDate()
+    {
+        return month + "/" + day + "/" + year;
     }
 }
