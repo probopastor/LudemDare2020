@@ -8,6 +8,8 @@ public class cmdMinimize : MonoBehaviour
 
     public Animator emailAnimator;
 
+    public Animator howToPlayAnimator;
+
     private AudioSource windowAudio;
     public AudioClip minimize;
 
@@ -41,5 +43,13 @@ public class cmdMinimize : MonoBehaviour
     {
         emailAnimator.SetBool("patternOff", true);
         emailAnimator.SetBool("patternOn", false);
+    }
+
+    public void ClickHowToPlayMinimize()
+    {
+        windowAudio.PlayOneShot(minimize);
+        howToPlayAnimator.SetBool("HowToPlayMaximized", false);
+        howToPlayAnimator.SetBool("HowToPlayMinimized", true);
+
     }
 }
