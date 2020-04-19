@@ -16,10 +16,12 @@ public class HackerTimeController : MonoBehaviour
     private int offset;
 
     private bool movingRight;
+    private HackTimeManager hackTimeManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        hackTimeManager = FindObjectOfType<HackTimeManager>();
         offset = -range;
     }
 
@@ -51,6 +53,7 @@ public class HackerTimeController : MonoBehaviour
         {
             LightController.instance.Lose();
         }
+        hackTimeManager.SolveProblem();
         Destroy(gameObject);
         
     }

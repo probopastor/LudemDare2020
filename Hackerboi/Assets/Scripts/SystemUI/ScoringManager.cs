@@ -18,7 +18,7 @@ public class ScoringManager : MonoBehaviour
 
     void IncreaseScore()
     {
-        if(cmdPrompt.CommandPromptOpen() && LightController.instance.GetGameStarted())
+        if(cmdPrompt.CommandPromptOpen() && LightController.instance.GetRouterStatus() && LightController.instance.GetGameStarted())
         {
             currentScore++;
             scoreText.text = "Hacker Score: " + currentScore.ToString();

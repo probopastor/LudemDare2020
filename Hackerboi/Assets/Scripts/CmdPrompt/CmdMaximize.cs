@@ -5,15 +5,22 @@ using UnityEngine;
 public class CmdMaximize : MonoBehaviour
 {
     public Animator cmdAnimator;
-    public CmdPrompt HB;
 
     public Animator contactsAnimator;
+
+    public bool doOnce;
 
     public void ClickCmdMaximize()
     {     
         cmdAnimator.SetBool("cmdIsMaximized", true);
         cmdAnimator.SetBool("cmdIsMinimized", false);
-        HB.cmdPromptOpen(true);
+
+        CmdPrompt.instance.SetCommandPromptRunning(true);
+        if(!doOnce)
+        {
+            doOnce = true;
+            CmdPrompt.instance.cmdPromptOpen();
+        }
     }
 
     public void ClickContactsMaximize()

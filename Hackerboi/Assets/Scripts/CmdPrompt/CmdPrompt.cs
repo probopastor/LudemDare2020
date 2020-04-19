@@ -10,6 +10,8 @@ public class CmdPrompt : MonoBehaviour
 {
     #region variables
 
+    public static CmdPrompt instance;
+
     public string[] errorMessages;
     private int errorIndex = 0;
 
@@ -56,6 +58,8 @@ public class CmdPrompt : MonoBehaviour
 
     public void Start()
     {
+        instance = this;
+
         eventManager = FindObjectOfType<EventManager>();
         errorText.text = " ";
         cmdTextErrorClear = false;
@@ -149,25 +153,16 @@ public class CmdPrompt : MonoBehaviour
     }
 
     //function to be called by buttons to open/close the cmdPrompt and to start/stop the hacking text
-    public void cmdPromptOpen(bool enabled)
+    public void cmdPromptOpen()
+    {
+        currentTimeTillDecrease = 0;
+        coroutine = SendMessages();
+        StartCoroutine(coroutine);
+    }
+
+    public void cmdPromptClosed()
     {
 
-        //for when this function runs to open the command prompts. Starts hacking
-        if (enabled && cmdPromptEnabled == false && !errorInProgress)
-        {
-            currentTimeTillDecrease = 0;
-            cmdPromptEnabled = true;
-            coroutine = SendMessages();
-            StartCoroutine(coroutine);     
-        }
-
-        //for when this function runs to close the command prompt. Stops the hacking
-        else if(!enabled &&cmdPromptEnabled == true)
-        {
-            currentTimeTillIncrease = 0;
-            cmdPromptEnabled = false;
-            StopCoroutine(coroutine);
-        }
     }
 
     //picks a random message from a list and displays it one line down from the previous text and then runs again at a random time range
@@ -191,9 +186,14 @@ public class CmdPrompt : MonoBehaviour
                     hackerText.text = hackerText.text + "\n" + ">> Error: No Internet Connection";
                 }
             }
-
-            StartCoroutine(SendMessages());
         }
+        else
+        {
+            //Other error messages here
+        }
+
+        yield return new WaitForEndOfFrame();
+        StartCoroutine(SendMessages());
     }
 
     private IEnumerator ConfirmationError()
@@ -221,8 +221,11 @@ public class CmdPrompt : MonoBehaviour
                 cmdPromptEnabled = true;
                 eventManager.SetErrorStatus(true);
 
-                coroutine = SendMessages();
-                StartCoroutine(coroutine);
+                yield return new WaitForEndOfFrame();
+                //coroutine = SendMessages();
+                //StartCoroutine(coroutine);
+                SetCommandPromptRunning(true);
+
             }
             else
             {
@@ -232,6 +235,7 @@ public class CmdPrompt : MonoBehaviour
                 errorText.text = errorMessages[errorIndex];
                 yield return new WaitForSeconds(1f);
 
+                SetCommandPromptRunning(false);
                 StartCoroutine(ConfirmationError());
             }
 
@@ -242,6 +246,11 @@ public class CmdPrompt : MonoBehaviour
     public bool CommandPromptOpen()
     {
         return cmdPromptEnabled;
+    }
+
+    public void SetCommandPromptRunning(bool isRunning)
+    {
+        cmdPromptEnabled = isRunning;
     }
 
     #endregion

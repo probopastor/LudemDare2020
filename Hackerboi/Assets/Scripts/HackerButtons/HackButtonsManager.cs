@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackTimeManager : Problem
+public class HackButtonsManager : Problem
 {
-    public GameObject hackTimer;
+    public GameObject hackButton;
+    public Vector3[] buttonPositions;
+    public GameObject computer;
     public cmdMinimize minimized;
 
     public override void CauseProblem()
     {
         minimized = FindObjectOfType<cmdMinimize>();
+
+        HackButtonCounter.instance.ResetHackCount();
+        HackButtonCounter.instance.ActivateCounter();
         CmdPrompt.instance.SetCommandPromptRunning(false);
-        Instantiate(hackTimer, transform.position, Quaternion.identity, transform);
     }
 
     public override void SolveProblem()
     {
-        if (!minimized.cmdAnimator.GetBool("cmdIsMinimized"))
+        if(!minimized.cmdAnimator.GetBool("cmdIsMinimized"))
         {
             CmdPrompt.instance.SetCommandPromptRunning(true);
         }

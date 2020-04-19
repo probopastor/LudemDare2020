@@ -37,6 +37,14 @@ public class LightController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(LineLost(0) && LineLost(1) && LineLost(2))
+        {
+            isOn = false;
+        }
+    }
+
     public int GetLives()
     {
         int i = 0;
