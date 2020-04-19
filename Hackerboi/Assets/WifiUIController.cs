@@ -157,17 +157,6 @@ public class WifiUIController : MonoBehaviour
                 }
             }
         }
-        else if (!wifiSymbolOnScreen)
-        {
-            //wifiBandsActive = 0;
-            //firstBandEnableChecked = false;
-            //secondBandEnableChecked = false;
-            //thirdBandEnableChecked = false;
-
-            //firstBandDisableChecked = false;
-            //secondBandDisableChecked = false;
-            //thirdBandDisableChecked = false;
-        }
     }
 
     private void EnableBands()
