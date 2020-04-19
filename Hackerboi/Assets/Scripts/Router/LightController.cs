@@ -93,4 +93,9 @@ public class LightController : MonoBehaviour
     {
         return isOn;
     }
+
+    public bool LineLost(int line)
+    {
+        return animators[line].GetBool("Lost");
+    }
 }
