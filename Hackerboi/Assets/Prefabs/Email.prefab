@@ -914,7 +914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30.4, y: -52.4}
+  m_AnchoredPosition: {x: 32.3, y: -52.4}
   m_SizeDelta: {x: 54.9, y: 16.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3289771479040260003
@@ -971,8 +971,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1164,6 +1164,10 @@ MonoBehaviour:
   res1: {fileID: 828819731154550790}
   res2: {fileID: 3237261433250210568}
   res3: {fileID: 3968379793932149484}
+  contact: 
+  body: 
+  contactText: {fileID: 0}
+  bodyText: {fileID: 0}
 --- !u!114 &5424287591115210242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,6 +1183,9 @@ MonoBehaviour:
   replyButton: {fileID: 6873712310022949335}
   deleteButton: {fileID: 433983064610612218}
   responseImg: {fileID: 7091929744571548371}
+  bodyImg: {fileID: 0}
+  hasOpened: 0
+  timeToOpen: 10
 --- !u!1 &3968379793932149484
 GameObject:
   m_ObjectHideFlags: 0

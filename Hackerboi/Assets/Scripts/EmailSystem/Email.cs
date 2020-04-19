@@ -20,6 +20,12 @@ public class Email : MonoBehaviour
     public GameObject res2;
     public GameObject res3;
 
+    public string contact;
+    public string body;
+
+    public GameObject contactText;
+    public GameObject bodyText;
+
     public void SetGoodVars(string s, string dt, bool isEvil, string gr, string nr, string br)
     {
         subject = s;
@@ -35,6 +41,14 @@ public class Email : MonoBehaviour
         subject = s;
         dateTime = dt;
         isBad = isEvil;
+    }
+
+    public void SetEventVars(string s, string dt, string con, string bod)
+    {
+        subject = s;
+        dateTime = dt;
+        contact = con;
+        body = bod;
     }
 
     public void SetText()
@@ -106,5 +120,13 @@ public class Email : MonoBehaviour
                 res1.GetComponent<ResponseBehaviour>().type = 3;
             }
         }
+    }
+
+    public void SetEventText()
+    {
+        subjectText.GetComponent<TextMeshProUGUI>().text = subject;
+        dateTimeText.GetComponent<TextMeshProUGUI>().text = dateTime;
+        contactText.GetComponent<TextMeshProUGUI>().text = contact;
+        bodyText.GetComponent<TextMeshProUGUI>().text = body;
     }
 }
