@@ -9,6 +9,8 @@ public class LightController : MonoBehaviour
 
     private Animator[] animators = new Animator[4];
 
+    public float timeToLoseCompromise;
+
     private bool isOn;
     private bool gameStarted;
 
@@ -74,7 +76,9 @@ public class LightController : MonoBehaviour
     {
         animators[compromisedLine].SetBool("Compromised", true);
         animators[3].SetBool("Compromised", true);
+        Invoke("Lose", timeToLoseCompromise);
     }
+    
 
     /// <summary>
     /// Sets router line to lost animation state

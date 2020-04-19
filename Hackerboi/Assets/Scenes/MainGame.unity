@@ -5067,6 +5067,7 @@ MonoBehaviour:
   - {fileID: 2028386022}
   - {fileID: 1716078423}
   - {fileID: 491126161}
+  timeToLoseCompromise: 10.01
   lightsounds:
   - {fileID: 8300000, guid: 89c5a806d9271cb4bb298b755af2d7c2, type: 3}
   - {fileID: 8300000, guid: 6ca5f0bb8980d6742b6a7d86138f2c35, type: 3}
