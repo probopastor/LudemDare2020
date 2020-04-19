@@ -830,6 +830,7 @@ MonoBehaviour:
   minTimeBeforeEvent: 10
   maxTimeBeforeEvent: 60
   numberOfEvents: 1
+  problems: []
 --- !u!1 &452185649
 GameObject:
   m_ObjectHideFlags: 0
