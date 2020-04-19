@@ -119,6 +119,7 @@ public class LightController : MonoBehaviour
     void ResetLight()
     {
         animators[3].SetBool("Lost", false);
+        animators[3].SetBool("Compromised", false);
     }
 
     /// <summary>
@@ -137,6 +138,8 @@ public class LightController : MonoBehaviour
             isOn = false;
             routerAudio.PlayOneShot(lightsounds[2], 0.9F);
         }
+
+        CancelInvoke();
 
         //If a router line is comprimised when the router is shut off, line is no longer comprimised
         foreach (Animator anim in animators)
