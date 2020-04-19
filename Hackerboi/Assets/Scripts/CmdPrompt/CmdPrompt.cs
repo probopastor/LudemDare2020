@@ -239,5 +239,10 @@ public class CmdPrompt : MonoBehaviour
         }
     }
 
+    public bool CommandPromptOpen()
+    {
+        return cmdPromptEnabled;
+    }
+
     #endregion
 }
