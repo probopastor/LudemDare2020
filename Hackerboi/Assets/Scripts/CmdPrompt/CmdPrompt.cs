@@ -21,6 +21,7 @@ public class CmdPrompt : MonoBehaviour
 
     private int index = 0;
     private IEnumerator coroutine;
+    private bool showOnceUntilEnabledInternet;
 
 
     //cmd prompt mechanics
@@ -58,6 +59,7 @@ public class CmdPrompt : MonoBehaviour
         eventManager = FindObjectOfType<EventManager>();
         errorText.text = " ";
         cmdTextErrorClear = false;
+        showOnceUntilEnabledInternet = false;
     }
 
 
@@ -66,12 +68,18 @@ public class CmdPrompt : MonoBehaviour
         //if the cmdPrompt is open and assigned than run the fill slider function
         if (hackerSlider != null && cmdPromptEnabled)
         {
-            IncreaseHackerSlider();
+            if(LightController.instance.GetGameStarted())
+            {
+                IncreaseHackerSlider();
+            }
         }
 
-        if (hackerSlider != null && cmdPromptEnabled == false)
+        if (hackerSlider != null && !cmdPromptEnabled)
         {
-            DecreaseHackerSlider();
+            if(LightController.instance.GetGameStarted())
+            {
+                DecreaseHackerSlider();
+            }
         }
 
         if (!errorInProgress)
@@ -96,6 +104,11 @@ public class CmdPrompt : MonoBehaviour
                     break;
             }
         }
+
+        if(LightController.instance.GetRouterStatus())
+        {
+            showOnceUntilEnabledInternet = false;
+        }
     }
 
 
@@ -104,12 +117,14 @@ public class CmdPrompt : MonoBehaviour
     {
         currentTimeTillIncrease += 1 * Time.deltaTime * increaseSliderSpeed;
 
-        if(timeTillIncrease <= currentTimeTillIncrease)
-        { 
+
+        if (timeTillIncrease <= currentTimeTillIncrease)
+        {
             hackerSlider.value++;
             currentTimeTillIncrease = 0;
             //print("increase bar");
         }
+
     }
 
     public void DecreaseHackerSlider()
@@ -160,11 +175,22 @@ public class CmdPrompt : MonoBehaviour
     {
         if (cmdPromptEnabled == true)
         {
-            index = Random.Range(0, possibleMessages.Length);
-            hackerText.text = hackerText.text + "\n" + possibleMessages[index];
+            if(LightController.instance.GetRouterStatus())
+            {
+                index = Random.Range(0, possibleMessages.Length);
+                hackerText.text = hackerText.text + "\n" + possibleMessages[index];
 
-            float timeBeforeNextMessage = Random.Range(minMessageDelay, maxMessageDelay);
-            yield return new WaitForSeconds(timeBeforeNextMessage);
+                float timeBeforeNextMessage = Random.Range(minMessageDelay, maxMessageDelay);
+                yield return new WaitForSeconds(timeBeforeNextMessage);
+            }
+            else
+            {
+                if(!showOnceUntilEnabledInternet)
+                {
+                    showOnceUntilEnabledInternet = true;
+                    hackerText.text = hackerText.text + "\n" + ">> Error: No Internet Connection";
+                }
+            }
 
             StartCoroutine(SendMessages());
         }
@@ -172,42 +198,45 @@ public class CmdPrompt : MonoBehaviour
 
     private IEnumerator ConfirmationError()
     {
-        cmdPromptEnabled = false;
-
-        if(!cmdTextErrorClear)
+        if (LightController.instance.GetRouterStatus())
         {
-            hackerText.text = hackerText.text + "\n";
-            cmdTextErrorClear = true;
-        }
+            cmdPromptEnabled = false;
 
-        errorText.text = errorMessages[errorIndex];
+            if (!cmdTextErrorClear)
+            {
+                hackerText.text = hackerText.text + "\n";
+                cmdTextErrorClear = true;
+            }
 
-        if (currentText.text == "Yes" || currentText.text == "yes")
-        {
-            hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED " + "\n" + currentText.text;
-            errorText.text = " ";
-            currentText.text = " ";
-
-            errorInProgress = false;
-            cmdTextErrorClear = false;
-            cmdPromptEnabled = true;
-            eventManager.SetErrorStatus(true);
-
-            coroutine = SendMessages();
-            StartCoroutine(coroutine);
-        }
-        else
-        {
-            yield return new WaitForSeconds(1f);
-            errorText.text = " ";
-            yield return new WaitForSeconds(1f);
             errorText.text = errorMessages[errorIndex];
-            yield return new WaitForSeconds(1f);
 
-            StartCoroutine(ConfirmationError());
+            if (currentText.text == "Yes" || currentText.text == "yes")
+            {
+                hackerText.text = hackerText.text + "\n" + errorMessages[errorIndex] + " >>SOLVED " + "\n" + currentText.text;
+                errorText.text = " ";
+                currentText.text = " ";
+
+                errorInProgress = false;
+                cmdTextErrorClear = false;
+                cmdPromptEnabled = true;
+                eventManager.SetErrorStatus(true);
+
+                coroutine = SendMessages();
+                StartCoroutine(coroutine);
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
+                errorText.text = " ";
+                yield return new WaitForSeconds(1f);
+                errorText.text = errorMessages[errorIndex];
+                yield return new WaitForSeconds(1f);
+
+                StartCoroutine(ConfirmationError());
+            }
+
+            yield return new WaitForEndOfFrame();
         }
-
-        yield return new WaitForEndOfFrame();
     }
 
     #endregion

@@ -10,6 +10,7 @@ public class LightController : MonoBehaviour
     private Animator[] animators = new Animator[4];
 
     private bool isOn;
+    private bool gameStarted;
 
     //Lights 0, 1, 2
 
@@ -21,11 +22,18 @@ public class LightController : MonoBehaviour
 
     void Start()
     {
-        isOn = true;
+        isOn = false;
+        gameStarted = false;
 
         for (int i = 0; i != lights.Length; i++)
         {
             animators[i] = lights[i].gameObject.GetComponent<Animator>();
+        }
+
+        foreach (Animator anim in animators)
+        {
+            if (!isOn) anim.SetBool("Off", true);
+            else anim.SetBool("Off", false);
         }
     }
 
@@ -78,7 +86,14 @@ public class LightController : MonoBehaviour
 
     public void PowerToggle()
     {
-        isOn = !isOn;
+        if(!isOn)
+        {
+            isOn = true;
+        }
+        else if(isOn)
+        {
+            isOn = false;
+        }
 
         foreach (Animator anim in animators)
         {
@@ -86,6 +101,11 @@ public class LightController : MonoBehaviour
 
             if (!isOn) anim.SetBool("Off", true);
             else anim.SetBool("Off", false);
+        }
+
+        if(!gameStarted)
+        {
+            gameStarted = true;
         }
     }
 
@@ -97,5 +117,10 @@ public class LightController : MonoBehaviour
     public bool LineLost(int line)
     {
         return animators[line].GetBool("Lost");
+    }
+
+    public bool GetGameStarted()
+    {
+        return gameStarted;
     }
 }
