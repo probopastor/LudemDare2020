@@ -12,6 +12,9 @@ public class LightController : MonoBehaviour
     private bool isOn;
     private bool gameStarted;
 
+    private AudioSource routerAudio;
+    public AudioClip[] lightsounds;
+
     //Lights 0, 1, 2
 
     // Start is called before the first frame update
@@ -22,6 +25,7 @@ public class LightController : MonoBehaviour
 
     void Start()
     {
+        routerAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
         isOn = false;
         gameStarted = false;
 
@@ -122,10 +126,12 @@ public class LightController : MonoBehaviour
         if(!isOn)
         {
             isOn = true;
+            routerAudio.PlayOneShot(lightsounds[0], 0.9F);
         }
         else if(isOn)
         {
             isOn = false;
+            routerAudio.PlayOneShot(lightsounds[2], 0.9F);
         }
 
         //If a router line is comprimised when the router is shut off, line is no longer comprimised
