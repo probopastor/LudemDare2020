@@ -1322,6 +1322,7 @@ MonoBehaviour:
   res3: {fileID: 3968379793932149484}
   contact: 
   body: 
+  pass: 
   contactText: {fileID: 0}
   bodyText: {fileID: 0}
   tm: {fileID: 0}
@@ -1343,6 +1344,7 @@ MonoBehaviour:
   bodyImg: {fileID: 0}
   hasOpened: 0
   timeToOpen: 10
+  isTimed: 1
 --- !u!1 &3968379793932149484
 GameObject:
   m_ObjectHideFlags: 0
