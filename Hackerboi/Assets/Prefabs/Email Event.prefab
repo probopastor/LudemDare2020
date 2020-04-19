@@ -628,7 +628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 86.1, y: -41.4}
+  m_AnchoredPosition: {x: 31, y: -52.7}
   m_SizeDelta: {x: 54.9, y: 16.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5056432302295702053
@@ -685,8 +685,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 6
+  m_fontSizeBase: 6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -882,6 +882,7 @@ MonoBehaviour:
   body: 
   contactText: {fileID: 571444432989902213}
   bodyText: {fileID: 2550512914745481703}
+  tm: {fileID: 0}
 --- !u!114 &2363654275293877124
 MonoBehaviour:
   m_ObjectHideFlags: 0
