@@ -12,11 +12,21 @@ public class CmdMaximize : MonoBehaviour
 
     public bool doOnce;
 
+    private AudioSource windowAudio;
+    public AudioClip maximize;
+
+
+    void Start()
+    {
+        windowAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+    }
+
     /// <summary>
     /// Maximizes the Command Prompt upon clicking it's button
     /// </summary>
     public void ClickCmdMaximize()
-    {     
+    {
+        windowAudio.PlayOneShot(maximize);
         cmdAnimator.SetBool("cmdIsMaximized", true);
         cmdAnimator.SetBool("cmdIsMinimized", false);
 
@@ -35,12 +45,14 @@ public class CmdMaximize : MonoBehaviour
     /// </summary>
     public void ClickContactsMaximize()
     {
+        windowAudio.PlayOneShot(maximize);
         contactsAnimator.SetBool("ContactsEnabled", true);
         contactsAnimator.SetBool("ContactsDisabled", false);
     }
 
     public void ClickEmailMaximize()
     {
+        windowAudio.PlayOneShot(maximize);
         emailAnimator.SetBool("emailMaximized", true);
         emailAnimator.SetBool("emailMinimized", false);
     }

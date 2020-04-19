@@ -15,16 +15,22 @@ public class GameOverManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
-        
-        currentScoreText.text = ScoringManager.currentScore.ToString();   
-
-        if(ScoringManager.currentScore > PlayerPrefs.GetInt("HighScore", 0))
+        if (highScoreText != null)
         {
-            PlayerPrefs.SetInt("HighScore", ScoringManager.currentScore);
-            highScoreText.text = ScoringManager.currentScore.ToString();
-            highScore = ScoringManager.currentScore;
-            ScoringManager.currentScore = 0;
+            highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        }
+        
+        currentScoreText.text = ScoringManager.currentScore.ToString();
+
+        if (highScoreText != null)
+        {
+            if (ScoringManager.currentScore > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                PlayerPrefs.SetInt("HighScore", ScoringManager.currentScore);
+                highScoreText.text = ScoringManager.currentScore.ToString();
+                highScore = ScoringManager.currentScore;
+                ScoringManager.currentScore = 0;
+            }
         }
 
     }
