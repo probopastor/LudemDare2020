@@ -31,6 +31,9 @@ public class EmailBehaviour : MonoBehaviour
         {
             //penalty
             Debug.Log("did not open in time");
+            hasOpened = false;
+            timeToOpen = 10;
+            gameObject.SetActive(false);
         }
     }
 

@@ -8,6 +8,8 @@ public class CmdMaximize : MonoBehaviour
 
     public Animator contactsAnimator;
 
+    public Animator emailAnimator;
+
     public bool doOnce;
 
     /// <summary>
@@ -35,5 +37,11 @@ public class CmdMaximize : MonoBehaviour
     {
         contactsAnimator.SetBool("ContactsEnabled", true);
         contactsAnimator.SetBool("ContactsDisabled", false);
+    }
+
+    public void ClickEmailMaximize()
+    {
+        emailAnimator.SetBool("emailMaximized", true);
+        emailAnimator.SetBool("emailMinimized", false);
     }
 }

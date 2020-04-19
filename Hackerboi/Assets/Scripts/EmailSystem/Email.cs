@@ -26,6 +26,16 @@ public class Email : MonoBehaviour
     public GameObject contactText;
     public GameObject bodyText;
 
+    public TimeManager tm;
+
+    public void Awake()
+    {
+        if (tm == null)
+        {
+            tm = FindObjectOfType<TimeManager>();
+        }
+    }
+
     public void SetGoodVars(string s, string dt, bool isEvil, string gr, string nr, string br)
     {
         subject = s;
@@ -54,7 +64,7 @@ public class Email : MonoBehaviour
     public void SetText()
     {
         subjectText.GetComponent<TextMeshProUGUI>().text = subject;
-        dateTimeText.GetComponent<TextMeshProUGUI>().text = dateTime;
+        dateTimeText.GetComponent<TextMeshProUGUI>().text = dateTime; //if it is bad set to the listed times
 
         if(isBad == false)
         {
@@ -125,8 +135,13 @@ public class Email : MonoBehaviour
     public void SetEventText()
     {
         subjectText.GetComponent<TextMeshProUGUI>().text = subject;
-        dateTimeText.GetComponent<TextMeshProUGUI>().text = dateTime;
+        dateTimeText.GetComponent<TextMeshProUGUI>().text = tm.GetTime() + tm.GetDate();
         contactText.GetComponent<TextMeshProUGUI>().text = contact;
         bodyText.GetComponent<TextMeshProUGUI>().text = body;
+    }
+
+    public void SetDateTime()
+    {
+        dateTimeText.GetComponent<TextMeshProUGUI>().text = tm.GetTime() + tm.GetDate(); //if it is good use time on computer
     }
 }

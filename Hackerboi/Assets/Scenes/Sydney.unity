@@ -241,9 +241,9 @@ MonoBehaviour:
   - 2-28  1:35
   - 6-02  10:02
   badDateTime:
-  - 15-32  12:34
-  - 3-56  144:26
-  - 20-00  6:66
+  - '12:34  15/32/20 '
+  - '144:26  3/56/19  '
+  - '6:66  20/04/20  '
   goodResponse:
   - Thank you it helped
   - Twas a great subject

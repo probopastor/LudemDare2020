@@ -30,24 +30,24 @@ public class EmailManager : MonoBehaviour
     void Update()
     {
         //case numbers to be changed later
-        switch (eventManager.GetEventIndex())
-        {
-            case 0:
-                errorInProgress = false;
-                break;
-            case 1:
-                errorInProgress = true;
-                errorIndex = 0;
-                CreatePasswordEmail();
-                break;
-            case 2:
-                errorInProgress = true;
-                errorIndex = 0;
-                CreateProgramEmail();
-                break;
-            default:
-                break;
-        }
+        //switch (eventManager.GetEventIndex())
+        //{
+        //    case 0:
+        //        errorInProgress = false;
+        //        break;
+        //    case 1:
+        //        errorInProgress = true;
+        //        errorIndex = 0;
+        //        CreatePasswordEmail();
+        //        break;
+        //    case 2:
+        //        errorInProgress = true;
+        //        errorIndex = 0;
+        //        CreateProgramEmail();
+        //        break;
+        //    default:
+        //        break;
+        //}
 
         //if(Input.GetKeyDown(KeyCode.Alpha1))
         //{
@@ -87,6 +87,7 @@ public class EmailManager : MonoBehaviour
     {
         int randEmail = Random.Range(0, goodEmails.Count);
 
+        goodEmails[randEmail].GetComponent<Email>().SetDateTime();
         goodEmails[randEmail].SetActive(true);
 
         EmailNotificationOn();
@@ -115,11 +116,13 @@ public class EmailManager : MonoBehaviour
 
     public void CreatePasswordEmail()
     {
+        EmailNotificationOn();
         eg.GeneratePasswordEmail();
     }
 
     public void CreateProgramEmail()
     {
+        EmailNotificationOn();
         eg.GenerateProgramEmail();
     }
 }
