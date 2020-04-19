@@ -270,7 +270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 25.40033, y: 488.8003}
+  m_AnchoredPosition: {x: 25.400269, y: 488.8003}
   m_SizeDelta: {x: 181.4, y: 1080}
   m_Pivot: {x: 1.14, y: 0.45}
 --- !u!114 &239921575
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e48d50bd24822d4fa11d065b58c7422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  computer: {fileID: 0}
+  computer: {fileID: 951623784}
   router: {fileID: 292630335}
   slideDistance: 1900
   slideSpeed: -50
@@ -4048,7 +4048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e48d50bd24822d4fa11d065b58c7422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  computer: {fileID: 0}
+  computer: {fileID: 951623784}
   router: {fileID: 292630335}
   slideDistance: 1900
   slideSpeed: 50
@@ -5933,6 +5933,7 @@ MonoBehaviour:
   wifiBand3: {fileID: 672115116}
   wifiBand4: {fileID: 1118805962}
   noWifiSymbol: {fileID: 2013679965}
+  arrowToRouter: {fileID: 239921573}
 --- !u!1 &2013679965
 GameObject:
   m_ObjectHideFlags: 0
