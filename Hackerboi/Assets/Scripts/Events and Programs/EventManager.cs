@@ -48,6 +48,7 @@ public class EventManager : MonoBehaviour
 
         problems[index].CauseProblem();
         CmdPrompt.instance.SendError(index);
+        HeadController.instance.Startle();
     }
 
     private IEnumerator GenerateEvent()
