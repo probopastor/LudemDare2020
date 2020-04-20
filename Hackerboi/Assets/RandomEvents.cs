@@ -18,12 +18,15 @@ public class RandomEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LightController.instance.GetGameStarted())
+        if(LightController.instance != null)
         {
-            if (!generateEventsCoroutineStarted)
+            if (LightController.instance.GetGameStarted())
             {
-                generateEventsCoroutineStarted = true;
-                StartCoroutine(GenerateEvents());
+                if (!generateEventsCoroutineStarted)
+                {
+                    generateEventsCoroutineStarted = true;
+                    StartCoroutine(GenerateEvents());
+                }
             }
         }
     }

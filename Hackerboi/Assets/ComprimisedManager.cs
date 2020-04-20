@@ -8,11 +8,11 @@ public class ComprimisedManager : MonoBehaviour
     public float maxComprimiseTime = 70f;
     private bool comprimiseCoroutineStarted;
 
-    private void Update()
+    private void LateUpdate()
     {
-        if(LightController.instance.GetGameStarted())
+        if (LightController.instance.GetGameStarted())
         {
-            if(!comprimiseCoroutineStarted)
+            if (!comprimiseCoroutineStarted)
             {
                 comprimiseCoroutineStarted = true;
                 StartCoroutine(ComprimiseRouter());
