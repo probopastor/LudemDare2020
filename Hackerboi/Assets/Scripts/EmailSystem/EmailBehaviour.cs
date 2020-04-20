@@ -118,6 +118,7 @@ public class EmailBehaviour : MonoBehaviour
 
         if (disableDelete)
         {
+            Debug.Log("here");
             deleteButton.SetActive(false);
             disableDelete = false;
         }
