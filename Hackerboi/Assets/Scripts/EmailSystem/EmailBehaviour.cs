@@ -16,10 +16,14 @@ public class EmailBehaviour : MonoBehaviour
 
     public bool isTimed = false;
 
+    private AudioSource emailAudio;
+    public AudioClip goodSend, badSend, badTrash, goodReply, mehReply, badReply, trashed;
+
     // Start is called before the first frame update
     void Start()
     {
         e = GetComponent<Email>();
+        emailAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -48,6 +52,7 @@ public class EmailBehaviour : MonoBehaviour
             //corrent response for bad email
             Debug.Log("pass");
             gameObject.SetActive(false);
+            emailAudio.PlayOneShot((trashed), 0.95F);
         }
 
         else if(e.isBad == false)
@@ -56,6 +61,7 @@ public class EmailBehaviour : MonoBehaviour
             //call for penalty
             Debug.Log("penalty");
             gameObject.SetActive(false);
+            emailAudio.PlayOneShot((badTrash), 0.8f);
         }
 
         else
@@ -75,6 +81,7 @@ public class EmailBehaviour : MonoBehaviour
             Debug.Log("penalty");
             gameObject.SetActive(false);
             e.BadEffect();
+            emailAudio.PlayOneShot((badSend), 0.8f);
         }
 
         else
@@ -82,9 +89,10 @@ public class EmailBehaviour : MonoBehaviour
             //correct response for good email
             replyButton.SetActive(false);
             deleteButton.SetActive(false);
+            emailAudio.PlayOneShot((goodSend), 0.8f);
 
             responseImg.SetActive(true);
-            
+
         }
     }
 
@@ -103,13 +111,16 @@ public class EmailBehaviour : MonoBehaviour
             //gives a bonus?
             Debug.Log("good");
             e.GoodEffect();
+            emailAudio.PlayOneShot((goodReply), 0.8f);
         }
 
         if (rb.type == 2) //neutral
         {
-            //ok response 
+            //ok response
             //just passed no good or bad
-            Debug.Log("eh"); 
+            Debug.Log("eh");
+            e.NeutralEffect();
+            emailAudio.PlayOneShot((mehReply), 0.8f);
         }
 
         if (rb.type == 3) //bad
@@ -117,6 +128,7 @@ public class EmailBehaviour : MonoBehaviour
             //worst response
             //call for penalty
             Debug.Log("fuck");
+            emailAudio.PlayOneShot((badReply), 0.8f);
         }
 
         gameObject.transform.GetChild(4).gameObject.SetActive(false);

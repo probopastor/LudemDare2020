@@ -9,6 +9,14 @@ public class RandomEvents : MonoBehaviour
 
     private bool generateEventsCoroutineStarted;
 
+    private bool difficultyStage1;
+    private bool difficultyStage2;
+    private bool difficultyStage3;
+    private bool difficultyStage4;
+    private bool difficultyStage5;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +24,46 @@ public class RandomEvents : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        if(LightController.instance != null)
+        if (LightController.instance.GetGameStarted())
         {
-            if (LightController.instance.GetGameStarted())
+            if (!generateEventsCoroutineStarted)
             {
-                if (!generateEventsCoroutineStarted)
-                {
-                    generateEventsCoroutineStarted = true;
-                    StartCoroutine(GenerateEvents());
-                }
+                generateEventsCoroutineStarted = true;
+                StartCoroutine(GenerateEvents());
             }
+        }
+
+        if(ScoringManager.currentScore > 200 && !difficultyStage1)
+        {
+            difficultyStage1 = true;
+            minEventTime -= 4;
+            maxEventTime -= 4;
+        }
+        else if (ScoringManager.currentScore > 500 && !difficultyStage2)
+        {
+            difficultyStage2 = true;
+            minEventTime -= 4;
+            maxEventTime -= 4;
+        }
+        else if (ScoringManager.currentScore > 800 && !difficultyStage3)
+        {
+            difficultyStage3 = true;
+            maxEventTime -= 2;
+            maxEventTime -= 4;
+        }
+        else if (ScoringManager.currentScore > 1000 && !difficultyStage4)
+        {
+            difficultyStage4 = true;
+            minEventTime -= 2;
+            maxEventTime -= 4;
+        }
+        else if (ScoringManager.currentScore > 1400 && !difficultyStage5)
+        {
+            difficultyStage5 = true;
+            minEventTime -= 2;
+            maxEventTime -= 4;
         }
     }
 

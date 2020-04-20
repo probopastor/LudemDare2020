@@ -711,7 +711,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.0254555, y: 1.171957, z: 1.7579327, w: 1.7579346}
   m_textInfo:
     textComponent: {fileID: 194212433248632978}
     characterCount: 5
@@ -1347,6 +1347,13 @@ MonoBehaviour:
   hasOpened: 0
   timeToOpen: 10
   isTimed: 1
+  goodSend: {fileID: 8300000, guid: acffa3842e60ba9498152204ea87c82c, type: 3}
+  badSend: {fileID: 8300000, guid: f79187c77f40dee44a3bb6c0c9e6a5e9, type: 3}
+  badTrash: {fileID: 8300000, guid: f79187c77f40dee44a3bb6c0c9e6a5e9, type: 3}
+  goodReply: {fileID: 8300000, guid: 5d3560a65fcfb054aa5ec22800edf25f, type: 3}
+  mehReply: {fileID: 8300000, guid: 147c0dc121cda584d875144fd42f7e38, type: 3}
+  badReply: {fileID: 8300000, guid: f79187c77f40dee44a3bb6c0c9e6a5e9, type: 3}
+  trashed: {fileID: 8300000, guid: e2be93aad301f1e41a512881c2f62b86, type: 3}
 --- !u!1 &3968379793932149484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,7 +2013,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.0254631, y: 1.0254631, z: 1.7579308, w: 1.6114426}
   m_textInfo:
     textComponent: {fileID: 4925693822298851250}
     characterCount: 5
@@ -2161,7 +2168,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.1719685, y: 1.0254631, z: 1.3184395, w: 1.9044342}
   m_textInfo:
     textComponent: {fileID: 2954680538900729691}
     characterCount: 5
