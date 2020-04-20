@@ -346,7 +346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 135.6, y: -48.1}
+  m_AnchoredPosition: {x: 113.5, y: -48.1}
   m_SizeDelta: {x: 30, y: 25.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7988589038581718836
@@ -792,7 +792,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 154, y: 63}
+  m_SizeDelta: {x: 130, y: 63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5056432302353912967
 CanvasRenderer:
@@ -880,6 +880,8 @@ MonoBehaviour:
   res3: {fileID: 0}
   contact: 
   body: 
+  pass: 
+  program: 
   contactText: {fileID: 571444432989902213}
   bodyText: {fileID: 2550512914745481703}
   tm: {fileID: 0}
@@ -901,6 +903,7 @@ MonoBehaviour:
   bodyImg: {fileID: 6367660771678671207}
   hasOpened: 0
   timeToOpen: 10
+  isTimed: 0
 --- !u!1 &5056432303886359218
 GameObject:
   m_ObjectHideFlags: 0
