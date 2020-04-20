@@ -56,7 +56,7 @@ public class CheckCoordinate : MonoBehaviour
                 isCorrect = true;
             }
 
-            Debug.Log(isCorrect);
+            //Debug.Log(isCorrect);
         }
 
         return isCorrect;

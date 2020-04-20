@@ -12,6 +12,8 @@ public class CmdMaximize : MonoBehaviour
 
     public Animator howToPlayAnimator;
 
+    public Animator patternAnimator;
+
     public bool doOnce;
 
     private AudioSource windowAudio;
@@ -61,8 +63,8 @@ public class CmdMaximize : MonoBehaviour
 
     public void ClickPatternMinigameMaximize()
     {
-        emailAnimator.SetBool("patternOn", true);
-        emailAnimator.SetBool("patternOff", false);
+        patternAnimator.SetBool("patternOn", true);
+        patternAnimator.SetBool("patternOff", false);
     }
 
     public void ClickHowToPlayMaximize()

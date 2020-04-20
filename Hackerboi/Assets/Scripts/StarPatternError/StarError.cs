@@ -38,7 +38,7 @@ public class StarError : MonoBehaviour
         //}
     }
 
-    public string GenerateErrorNum()
+    public string GenerateError()
     {
         result = "";
         int index = 0;

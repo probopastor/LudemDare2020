@@ -19,7 +19,7 @@ public class CoordinateManager : MonoBehaviour
             buttons.Add(CoordinatePanel.GetComponent<ButtonStore>().children[i]);
         }
 
-        CreateErrorString();
+        //CreateErrorString();
     }
 
     // Update is called once per frame

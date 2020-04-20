@@ -56,6 +56,9 @@ public class CmdPrompt : MonoBehaviour
 
     private string lastPasswordAttempt;
 
+    private bool emailProgramError;
+    private GameObject managerProgramNeeded;
+
     public SceneTransitionerMainGameOut outro;
     #endregion
 
@@ -220,6 +223,11 @@ public class CmdPrompt : MonoBehaviour
                     displayPasswordIncorrectOnce = false;
                 }
             }
+
+            if(emailProgramError)
+            {
+
+            }
         }
 
         yield return new WaitForEndOfFrame();
@@ -314,6 +322,14 @@ public class CmdPrompt : MonoBehaviour
         passwordToEnter = password;
         passwordError = true;
         displayPasswordIncorrectOnce = false;
+    }
+
+    public void SetProgramError(string programName)
+    {
+        emailProgramError = true;
+        //the name used in the email will be the tag for the programs manager to create it
+        managerProgramNeeded = GameObject.FindGameObjectWithTag(programName);
+        //managerProgramNeeded
     }
 
     #endregion
