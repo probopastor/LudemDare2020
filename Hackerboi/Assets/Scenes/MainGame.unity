@@ -3144,7 +3144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &380865297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11535,30 +11535,36 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'How To Play.txt
+  m_text: '1. To begin, turn on your router.
 
-    -Press the button on your rotuer to start hacking.
+    2. Keep your <color=green>LIVE
+    FEED</color> running by keeping Hack.exe open.
 
-    -Open
-    Hack.exe to fill the live feed bar and increase your score.
+    3. Watch Hack.exe for <color=red>ERRORS.</color>
+    Solve the <color=red>ERRORS</color> as they appear.
 
-    -Check your
-    email for help but only trust emails from those in your contacts list!
 
-    -Lines
-    on your router will occasionally get compromised. Turn the router off/on to fix
-    them.
+    E-MAILS:
 
-    -Fail to fix an uncompromised line in time and it will be lost (turn
-    red).
+    Check
+    contacts.txt to make sure you have a valid source!
 
-    -Complete minigames or else a line will be lost.
+    Check the date and time
+    to make sure this e-mail isn''t a virus.
 
-    -The live feed
-    bar depletes faster for each line lost on the router.
+    Respond nicely or else you could
+    get attacked!
 
-    -If the live feed
-    bar reaches 0 it''s you who will be hacked >:)'
+
+    ROUTER:
+
+    Lines on the router can get <color=orange>compromised.</color>
+    Turn the router off to fix them!
+
+    Fail to fix the compromised line and you''ll
+    <color=red>lose a line.</color>
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 405a5554c463f1b4ba2a1af0db2348c3, type: 2}
   m_sharedMaterial: {fileID: -1231854197590935178, guid: 405a5554c463f1b4ba2a1af0db2348c3,
@@ -11597,7 +11603,7 @@ MonoBehaviour:
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 54.6
+  m_lineSpacing: 30.83
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -11628,12 +11634,12 @@ MonoBehaviour:
   m_margin: {x: 3.6042137, y: 11.881496, z: 4.4051776, w: 0}
   m_textInfo:
     textComponent: {fileID: 1530414720}
-    characterCount: 565
+    characterCount: 472
     spriteCount: 0
-    spaceCount: 104
-    wordCount: 107
+    spaceCount: 88
+    wordCount: 89
     linkCount: 0
-    lineCount: 10
+    lineCount: 12
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -14476,17 +14482,17 @@ PrefabInstance:
     - target: {fileID: 969354918970688039, guid: 390298fd87ab48048875e849c52a7d7a,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.112376794
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 969354918970688039, guid: 390298fd87ab48048875e849c52a7d7a,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 969354918970688039, guid: 390298fd87ab48048875e849c52a7d7a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.99999136
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 390298fd87ab48048875e849c52a7d7a, type: 3}
