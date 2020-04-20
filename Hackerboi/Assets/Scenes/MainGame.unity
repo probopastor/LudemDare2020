@@ -6075,7 +6075,7 @@ MonoBehaviour:
   howToPlayAnimator: {fileID: 0}
   patternAnimator: {fileID: 2093633239}
   coordinateAnimator: {fileID: 0}
-  minimize: {fileID: 0}
+  minimize: {fileID: 8300000, guid: 2dfe4e222d82b5a4786f5f8b779d626b, type: 3}
 --- !u!114 &905242585
 MonoBehaviour:
   m_ObjectHideFlags: 0
