@@ -10464,7 +10464,9 @@ MonoBehaviour:
   slideDistance: 1900
   slideSpeed: 50
   otherArrow: {fileID: 239921573}
-  arrowSounds: []
+  arrowSounds:
+  - {fileID: 8300000, guid: 49a83c0e419ff3141a96213b3129b2e6, type: 3}
+  - {fileID: 8300000, guid: 14936c86926c4904eaf3aaf804597f16, type: 3}
 --- !u!95 &1395065538
 Animator:
   serializedVersion: 3
