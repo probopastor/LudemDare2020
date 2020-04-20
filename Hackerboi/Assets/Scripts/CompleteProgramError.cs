@@ -35,8 +35,6 @@ public class CompleteProgramError : Problem
 
     public override void SolveProblem()
     {
-
-        
         GameObject[] icons = emailManager.GetEmailGenerator().GetProgramIcons();
 
         for(int i = 0; i < icons.Length; i++)
