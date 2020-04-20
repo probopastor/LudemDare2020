@@ -56,6 +56,8 @@ public class CmdPrompt : MonoBehaviour
     private GameObject managerProgramNeeded;
 
     public SceneTransitionerMainGameOut outro;
+
+    private bool enterPressed;
     #endregion
 
 
@@ -97,6 +99,11 @@ public class CmdPrompt : MonoBehaviour
         if (LightController.instance.GetRouterStatus())
         {
             showOnceUntilEnabledInternet = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            enterPressed = true;
         }
     }
 
@@ -159,10 +166,18 @@ public class CmdPrompt : MonoBehaviour
     /// <returns></returns>
     private IEnumerator SendMessages()
     {
+
         if (cmdPromptEnabled == true && !errorActive)
         {
+            if (enterPressed)
+            {
+                hackerText.text += "\n<color=blue>" + currentText.text + "</color>";
+                currentText.text = " ";
+                enterPressed = false;
+            }
+
             //Determines if the router is on or off
-            if(LightController.instance.GetRouterStatus())
+            if (LightController.instance.GetRouterStatus())
             {
                 //Chooses a random index from possibleMessages[] tp send as a message
                 index = Random.Range(0, possibleMessages.Length);
@@ -183,7 +198,7 @@ public class CmdPrompt : MonoBehaviour
             }
         }
         //If the command prompt is not enabled, run other appropriate error messages in this else
-        else
+        else if(cmdPromptEnabled == true && errorActive)
         {
             //Other error messages here. 
 
@@ -198,29 +213,28 @@ public class CmdPrompt : MonoBehaviour
 
             if (passwordError)
             {
-
-                if (currentText.text == passwordToEnter)
+                if(enterPressed)
                 {
-                    if(Input.GetKeyDown(KeyCode.Return))
+                    if (currentText.text == passwordToEnter)
                     {
                         passwordError = false;
                         SubmitPasswordError submitPasswordError = FindObjectOfType<SubmitPasswordError>();
                         submitPasswordError.SolveProblem();
+                        hackerText.text += "\n<color=blue>" + currentText.text + "</color>";
                         currentText.text = " ";
-                        hackerText.text += "\n<color=blue>" + ">>Error Solved" + "</color>";
+                        hackerText.text += "\n<color=green>" + ">>PASSWORD CORRECT" + "</color>";
                     }
-                }
-                else if(currentText.text != passwordToEnter)
-                {
-                    if (Input.GetKeyDown(KeyCode.Return))
+                    else if (currentText.text != passwordToEnter)
                     {
+                        hackerText.text += "\n<color=blue>" + currentText.text + "</color>";
                         currentText.text = " ";
                         hackerText.text += "\n<color=red>" + ">>PASSWORD INCORRECT" + "</color>";
                     }
+                    enterPressed = false;
                 }
             }
 
-            if(emailProgramError)
+            if (emailProgramError)
             {
 
             }
