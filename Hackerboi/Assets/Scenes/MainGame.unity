@@ -5784,7 +5784,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactsAnimator: {fileID: 1838422210}
-  minimize: {fileID: 0}
 --- !u!114 &1344172542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8902,7 +8901,7 @@ PrefabInstance:
     - target: {fileID: 969354918108035455, guid: 390298fd87ab48048875e849c52a7d7a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.86188
+      value: -24.852028
       objectReference: {fileID: 0}
     - target: {fileID: 969354918132027577, guid: 390298fd87ab48048875e849c52a7d7a,
         type: 3}
