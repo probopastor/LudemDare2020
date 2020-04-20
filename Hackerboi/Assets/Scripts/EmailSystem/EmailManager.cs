@@ -26,7 +26,7 @@ public class EmailManager : MonoBehaviour
         eventManager = FindObjectOfType<EventManager>();
         eg = GetComponent<EmailGenerator>();
         //eg.GenerateGoodEmails();
-        CreateEmailList();
+        //CreateEmailList();
         emailAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
@@ -89,19 +89,18 @@ public class EmailManager : MonoBehaviour
 
     public void SendGoodEmail()
     {
-        int randEmail = Random.Range(0, goodEmails.Count);
+        GameObject g = eg.GenerateGoodEmails();
+        //int randEmail = Random.Range(0, goodEmails.Count);
 
-        goodEmails[randEmail].GetComponent<Email>().SetDateTime();
-        goodEmails[randEmail].SetActive(true);
+        g.GetComponent<Email>().SetDateTime();
 
         EmailNotificationOn();
     }
 
     public void SendBadEmail()
     {
-        int randEmail = Random.Range(0, badEmails.Count);
-
-        badEmails[randEmail].SetActive(true);
+        GameObject g = eg.GenerateBadEmails();
+        //int randEmail = Random.Range(0, badEmails.Count);
 
         EmailNotificationOn();
     }
