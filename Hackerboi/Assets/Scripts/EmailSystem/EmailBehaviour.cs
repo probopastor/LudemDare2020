@@ -110,6 +110,7 @@ public class EmailBehaviour : MonoBehaviour
             //best response
             //gives a bonus?
             Debug.Log("good");
+            emailAudio.PlayOneShot((goodReply), 0.8f);
         }
 
         if (rb.type == 2) //neutral
