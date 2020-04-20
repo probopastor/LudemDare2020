@@ -20,6 +20,7 @@ public class HackButtonCounter : MonoBehaviour
 
     private AudioSource buttonSource;
     public AudioClip[] buttonList;
+    public AudioClip laughter;
     private int k = 0;
     private bool randomSet;
     private int randomButton;
@@ -80,6 +81,8 @@ public class HackButtonCounter : MonoBehaviour
         isActive = true;
         hackCount = 0;
         currentTime = timer;
+        buttonSource.PlayOneShot(laughter);
+
 
         //Determines buttonPressesToSucceed amount of random number of GameObjects from buttonObjects[] to enable.
         for (int i = 0; i < buttonPressesToSucceed; i++)
@@ -133,7 +136,7 @@ public class HackButtonCounter : MonoBehaviour
     public void IncreaseHackCount()
     {
         hackCount++;
-    /*    if (k <= buttonList.Length)
+        if (k <= buttonList.Length)
         {
             buttonSource.PlayOneShot(buttonList[k]);
             k++;
@@ -141,7 +144,7 @@ public class HackButtonCounter : MonoBehaviour
             {
                 k = 0;
             }
-        }*/
+        }
     }
 
     /// <summary>

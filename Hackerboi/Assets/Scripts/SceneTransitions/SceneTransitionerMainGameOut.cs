@@ -12,11 +12,15 @@ public class SceneTransitionerMainGameOut : MonoBehaviour
     private bool lost;
     private bool fade;
 
+    private AudioSource deathSource;
+    public AudioClip crackedScreen, blueScreen;
+
     // Start is called before the first frame update
     void Start()
     {
         lost = false;
         fade = false;
+        deathSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,10 +29,12 @@ public class SceneTransitionerMainGameOut : MonoBehaviour
         if (fade)
         {
             panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, panel.color.a + 0.0125f);
+            deathSource.PlayOneShot((blueScreen), 0.5F);
         }
 
         if (lost)
         {
+            deathSource.PlayOneShot((crackedScreen), 0.5F);
             cracks.fillAmount += 0.01f;
         }
     }

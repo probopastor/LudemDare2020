@@ -17,6 +17,9 @@ public class EmailManager : MonoBehaviour
     private bool errorInProgress;
     private int errorIndex = 0;
 
+    private AudioSource emailAudio;
+    public AudioClip gotEmailSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class EmailManager : MonoBehaviour
         eg = GetComponent<EmailGenerator>();
         //eg.GenerateGoodEmails();
         CreateEmailList();
+        emailAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -104,6 +108,7 @@ public class EmailManager : MonoBehaviour
 
     public void EmailNotificationOn()
     {
+        emailAudio.PlayOneShot((gotEmailSound), 0.7F);
         Debug.Log("new email alert");
         notificationImage.SetActive(true);
     }
