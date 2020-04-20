@@ -12,6 +12,7 @@ public class BinaryController : MonoBehaviour
 
     private void OnEnable()
     {
+        CmdPrompt.instance.SetCommandPromptRunning(false);
         settingText.text = "";
         for (int i = 0; i != pattern.Length; i++)
         {
@@ -39,6 +40,7 @@ public class BinaryController : MonoBehaviour
             }
         }
 
+        CmdPrompt.instance.SetCommandPromptRunning(true);
         gameObject.SetActive(false);
     }
 }
