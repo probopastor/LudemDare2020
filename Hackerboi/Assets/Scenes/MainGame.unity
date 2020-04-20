@@ -8817,6 +8817,8 @@ MonoBehaviour:
   order: 00000000000000000000000000000000
   pos: 0
   cpe: {fileID: 21657755}
+  good: {fileID: 8300000, guid: 817cac50ab33ff94d8e9536323e8c4d7, type: 3}
+  bad: {fileID: 8300000, guid: 494e5391acd01c947819356ed5e8eea2, type: 3}
 --- !u!114 &1192042582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14403,6 +14405,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDone: 0
   cpe: {fileID: 21657755}
+  pressButton:
+  - {fileID: 8300000, guid: ed55d614bb2d46c4f8427a7ead8ac045, type: 3}
+  - {fileID: 8300000, guid: 8ffdf99308a68634aa1b35407e47ce7a, type: 3}
+  - {fileID: 8300000, guid: c704dd6b1175b3d40a9dd8b692815227, type: 3}
+  unpressButton: {fileID: 8300000, guid: 8b952ac9cc731e744ba56dc153a0045d, type: 3}
+  solveButton: {fileID: 8300000, guid: 3a0aa705eb86ca14eb2ac581b8cdda85, type: 3}
 --- !u!114 &1888264338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14507,7 +14515,7 @@ PrefabInstance:
     - target: {fileID: 6353380992193962650, guid: b96934946de056f46b1e4aca09fa1717,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b96934946de056f46b1e4aca09fa1717, type: 3}
