@@ -8755,6 +8755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 00000000000000000000000000000000
   pos: 0
+  cpe: {fileID: 21657755}
 --- !u!114 &1192042582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13608,6 +13609,7 @@ MonoBehaviour:
   - {fileID: 1409599598}
   - {fileID: 895555480}
   hackButtonsManager: {fileID: 0}
+  buttonList: []
 --- !u!114 &1861569664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14017,6 +14019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDone: 0
+  cpe: {fileID: 21657755}
 --- !u!114 &1888264338
 MonoBehaviour:
   m_ObjectHideFlags: 0

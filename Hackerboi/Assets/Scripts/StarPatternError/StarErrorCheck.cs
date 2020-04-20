@@ -11,6 +11,8 @@ public class StarErrorCheck : MonoBehaviour
 
     private int check;
 
+    public CompleteProgramError cpe;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,7 @@ public class StarErrorCheck : MonoBehaviour
             {
                 //turn off error
                 Debug.Log("finsihed correct");
+                cpe.SolveProblem();
             }
         }
 

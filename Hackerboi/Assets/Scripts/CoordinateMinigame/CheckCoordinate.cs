@@ -9,6 +9,8 @@ public class CheckCoordinate : MonoBehaviour
 
     public bool isDone = false;
 
+    public CompleteProgramError cpe;
+
     public void Start()
     {
         manager = gameObject.GetComponent<CoordinateManager>();
@@ -35,6 +37,7 @@ public class CheckCoordinate : MonoBehaviour
         {
             Debug.Log("correct");
             //fix error
+            cpe.SolveProblem();
         }
     }
 
