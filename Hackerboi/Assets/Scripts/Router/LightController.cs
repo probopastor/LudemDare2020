@@ -16,6 +16,7 @@ public class LightController : MonoBehaviour
 
     private AudioSource routerAudio;
     public AudioClip[] lightsounds;
+    private bool routerOff = true;
 
     public CmdPrompt cmdPromptScript;
 
@@ -53,7 +54,11 @@ public class LightController : MonoBehaviour
         if(LineLost(0) && LineLost(1) && LineLost(2))
         {
             isOn = false;
-            //routerAudio.PlayOneShot(lightsounds[2], 0.9F);
+            if (routerOff)
+            {
+                routerAudio.PlayOneShot(lightsounds[2], 3.1F);
+                routerOff = false;
+            }
         }
     }
     /// <summary>
@@ -142,7 +147,7 @@ public class LightController : MonoBehaviour
         else if(isOn)
         {
             isOn = false;
-            routerAudio.PlayOneShot(lightsounds[2], 2.1F);
+            routerAudio.PlayOneShot(lightsounds[2], 3.1F);
         }
 
         CancelInvoke();
