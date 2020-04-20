@@ -92,7 +92,7 @@ public class EmailBehaviour : MonoBehaviour
             emailAudio.PlayOneShot((goodSend), 0.8f);
 
             responseImg.SetActive(true);
-            e.GoodEffect();
+
         }
     }
 
@@ -110,12 +110,11 @@ public class EmailBehaviour : MonoBehaviour
             //best response
             //gives a bonus?
             Debug.Log("good");
-            emailAudio.PlayOneShot((goodReply), 0.8f);
         }
 
         if (rb.type == 2) //neutral
         {
-            //ok response 
+            //ok response
             //just passed no good or bad
             Debug.Log("eh");
             emailAudio.PlayOneShot((mehReply), 0.8f);
