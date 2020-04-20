@@ -83,7 +83,7 @@ public class CmdPrompt : MonoBehaviour
     public void Update()
     {
         //If the Command Prompt is running, increase the hacker slider.
-        if ((hackerSlider != null && cmdPromptEnabled) && !errorActive)
+        if (hackerSlider != null && cmdPromptEnabled && !errorActive && LightController.instance.GetRouterStatus())
         {
             if(LightController.instance.GetGameStarted())
             {
@@ -92,7 +92,7 @@ public class CmdPrompt : MonoBehaviour
         }
 
         //If the command prompt is not running, decrease the hacker slider.
-        if ((hackerSlider != null && !cmdPromptEnabled) || errorActive)
+        if ((hackerSlider != null && !cmdPromptEnabled) || !LightController.instance.GetRouterStatus() || errorActive)
         {
             if(LightController.instance.GetGameStarted() && loseBool == true)
             {
