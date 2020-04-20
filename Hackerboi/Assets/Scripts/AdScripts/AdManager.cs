@@ -46,34 +46,34 @@ public class AdManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SpawnAds();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            HenkAdSpam();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            BigEarsAdSpam();
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            NeedAFixSpam();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            SpearAdSpam();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            BlindsAdSpam();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            RaveAdSpam();
-        }
+        //if(Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    SpawnAds();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    HenkAdSpam();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha5))
+        //{
+        //    BigEarsAdSpam();
+        //}
+        //else if(Input.GetKeyDown(KeyCode.Alpha6))
+        //{
+        //    NeedAFixSpam();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha7))
+        //{
+        //    SpearAdSpam();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha8))
+        //{
+        //    BlindsAdSpam();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha9))
+        //{
+        //    RaveAdSpam();
+        //}
     }
     
     public void SpawnAds()
