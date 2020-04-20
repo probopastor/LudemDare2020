@@ -19,11 +19,14 @@ public class EmailBehaviour : MonoBehaviour
     private AudioSource emailAudio;
     public AudioClip goodSend, badSend, badTrash, goodReply, mehReply, badReply, trashed;
 
+    private bool disableDelete;
+
     // Start is called before the first frame update
     void Start()
     {
         e = GetComponent<Email>();
         emailAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+        disableDelete = false;
     }
 
     public void Update()
@@ -41,6 +44,17 @@ public class EmailBehaviour : MonoBehaviour
         //    timeToOpen = 10;
         //    gameObject.SetActive(false);
         //}
+
+        //if(disableDelete)
+        //{
+        //    deleteButton.SetActive(false);
+        //    disableDelete = false;
+        //}
+    }
+
+    public void DisableDeleteButton()
+    {
+        disableDelete = true;
     }
 
     public void DeleteButton()
@@ -101,6 +115,12 @@ public class EmailBehaviour : MonoBehaviour
         FindObjectOfType<EmailManager>().EmailNotificationOff();
 
         bodyImg.SetActive(true);
+
+        if (disableDelete)
+        {
+            deleteButton.SetActive(false);
+            disableDelete = false;
+        }
     }
 
     public void ResponseActions(ResponseBehaviour rb)

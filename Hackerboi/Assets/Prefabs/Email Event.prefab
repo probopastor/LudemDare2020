@@ -905,6 +905,13 @@ MonoBehaviour:
   hasOpened: 0
   timeToOpen: 10
   isTimed: 0
+  goodSend: {fileID: 0}
+  badSend: {fileID: 0}
+  badTrash: {fileID: 0}
+  goodReply: {fileID: 0}
+  mehReply: {fileID: 0}
+  badReply: {fileID: 0}
+  trashed: {fileID: 0}
 --- !u!1 &5056432303886359218
 GameObject:
   m_ObjectHideFlags: 0

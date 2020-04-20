@@ -58,7 +58,10 @@ public class EmailGenerator : MonoBehaviour
         int randGoodContact = Random.Range(0, contacts.Count);
 
         int subjectToUse = Random.Range(0, goodSubjects.Count);
+        string theSubject = goodSubjects[subjectToUse];
+
         int contactToUse = Random.Range(0, contacts.Count);
+        string theContact = contacts[contactToUse];
 
         TimeManager thisTime = FindObjectOfType<TimeManager>();
         string phonyTime = thisTime.GetTime();
@@ -106,15 +109,17 @@ public class EmailGenerator : MonoBehaviour
         else if(phonyInformation < 74)
         {
             subjectToUse = randBadSubject;
+            theSubject = badSubjects[contactToUse];
         }
         else if(phonyInformation < 99)
         {
             contactToUse = randBadContact;
+            theContact = phoneyContacts[contactToUse];
         }
 
 
         GameObject g = Instantiate(emailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetBadVars(subjectToUse.ToString(), phonyTime + " " + randomDate, true, contactToUse.ToString());
+        g.GetComponent<Email>().SetBadVars(theSubject, phonyTime + " " + randomDate, true, theContact);
         g.GetComponent<Email>().SetText();
 
         return g;
@@ -145,6 +150,7 @@ public class EmailGenerator : MonoBehaviour
         g.GetComponent<Email>().SetEventVars(emailEventSubjects[0] + " the hak0r ", thisTime.GetTime() + " " + thisTime.GetDate(), contacts[randContact], "im on your side ~ i found this pswd on" +
             "the darkweb, try it: " + pass, pass, "not needed");
         g.GetComponent<Email>().SetEventText();
+        g.GetComponent<EmailBehaviour>().DisableDeleteButton();
 
         return g;
     }
@@ -162,6 +168,7 @@ public class EmailGenerator : MonoBehaviour
         g.GetComponent<Email>().SetEventText();
 
         programIcons[randProgram].SetActive(true);
+        g.GetComponent<EmailBehaviour>().DisableDeleteButton();
 
         return g;
     }
