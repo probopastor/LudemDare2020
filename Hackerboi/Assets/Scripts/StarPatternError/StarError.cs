@@ -22,7 +22,7 @@ public class StarError : MonoBehaviour
 
         for(int i = 0; i < buttonParents.transform.childCount; i++)
         {
-            buttons.Add(buttonParents.transform.GetChild(i).gameObject);
+            buttons.Add(buttonParents.GetComponent<ButtonStore>().children[i]);
         }
     }
 

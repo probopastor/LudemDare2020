@@ -5,6 +5,7 @@ using UnityEngine;
 public class SubmitPasswordError : Problem
 {
     private EmailManager emailManager;
+
     public override void CauseProblem()
     {
         emailManager = FindObjectOfType<EmailManager>();

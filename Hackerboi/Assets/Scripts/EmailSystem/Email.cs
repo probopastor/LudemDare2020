@@ -55,13 +55,14 @@ public class Email : MonoBehaviour
         isBad = isEvil;
     }
 
-    public void SetEventVars(string s, string dt, string con, string bod, string pa)
+    public void SetEventVars(string s, string dt, string con, string bod, string pa, string prog)
     {
         subject = s;
         dateTime = dt;
         contact = con;
         body = bod;
         pass = pa;
+        program = prog;
     }
 
     public void SetText()

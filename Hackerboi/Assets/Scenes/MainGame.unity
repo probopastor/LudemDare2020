@@ -991,7 +991,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1192042581}
         m_MethodName: ButtonCheck
         m_Mode: 3
         m_Arguments:
@@ -1453,7 +1453,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1192042581}
         m_MethodName: ButtonCheck
         m_Mode: 3
         m_Arguments:
@@ -1993,6 +1993,7 @@ GameObject:
   - component: {fileID: 239921575}
   - component: {fileID: 239921577}
   - component: {fileID: 239921578}
+  - component: {fileID: 239921579}
   m_Layer: 5
   m_Name: ArrowToRouter
   m_TagString: Untagged
@@ -2092,6 +2093,60 @@ MonoBehaviour:
   slideDistance: 1900
   slideSpeed: -50
   otherArrow: {fileID: 1395065535}
+--- !u!114 &239921579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239921573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 239921575}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 239921573}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &261248755
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,7 +6270,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1192042581}
         m_MethodName: ButtonCheck
         m_Mode: 3
         m_Arguments:
@@ -6477,7 +6532,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1192042581}
         m_MethodName: ButtonCheck
         m_Mode: 3
         m_Arguments:
@@ -8091,7 +8146,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1192042581}
         m_MethodName: ButtonCheck
         m_Mode: 3
         m_Arguments:
@@ -8712,15 +8767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4898d613db872c049b6ef1bb13ce87f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 1201503841}
-  - {fileID: 927666035}
-  - {fileID: 98090956}
-  - {fileID: 915345668}
-  - {fileID: 1663883698}
-  - {fileID: 2016697548}
-  - {fileID: 181340238}
-  - {fileID: 1136693833}
+  buttons: []
   nums: 
   timeToComplete: 15
   result: 
@@ -8821,7 +8868,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1192042581}
         m_MethodName: ButtonCheck
         m_Mode: 3
         m_Arguments:
@@ -12167,7 +12214,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1192042581}
         m_MethodName: ButtonCheck
         m_Mode: 3
         m_Arguments:
@@ -13381,6 +13428,7 @@ GameObject:
   - component: {fileID: 1854981052}
   - component: {fileID: 1854981051}
   - component: {fileID: 1854981050}
+  - component: {fileID: 1854981053}
   m_Layer: 5
   m_Name: StarErrorPanel
   m_TagString: Untagged
@@ -13466,6 +13514,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854981048}
   m_CullTransparentMesh: 0
+--- !u!114 &1854981053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854981048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6518f86cf4195584eaf55cb85f6fd74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  children:
+  - {fileID: 1201503841}
+  - {fileID: 927666035}
+  - {fileID: 98090956}
+  - {fileID: 915345668}
+  - {fileID: 1663883698}
+  - {fileID: 2016697548}
+  - {fileID: 181340238}
+  - {fileID: 1136693833}
 --- !u!1 &1861569661
 GameObject:
   m_ObjectHideFlags: 0
@@ -14568,7 +14637,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1192042581}
         m_MethodName: ButtonCheck
         m_Mode: 3
         m_Arguments:
