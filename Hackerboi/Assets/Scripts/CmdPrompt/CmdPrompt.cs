@@ -26,9 +26,12 @@ public class CmdPrompt : MonoBehaviour
     private IEnumerator coroutine;
     private bool showOnceUntilEnabledInternet;
 
+    private AudioSource hackSource;
+    public AudioClip ad, subtract;
+
 
     //cmd prompt mechanics
-    
+
     public bool cmdPromptEnabled = false;
     public Slider hackerSlider;
     
@@ -72,6 +75,7 @@ public class CmdPrompt : MonoBehaviour
         eventManager = FindObjectOfType<EventManager>();
         cmdTextErrorClear = false;
         showOnceUntilEnabledInternet = false;
+        hackSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
 
@@ -118,6 +122,7 @@ public class CmdPrompt : MonoBehaviour
 
         if (timeTillIncrease <= currentTimeTillIncrease)
         {
+            hackSource.PlayOneShot(ad);
             hackerSlider.value++;
             currentTimeTillIncrease = 0;
         }
@@ -134,6 +139,7 @@ public class CmdPrompt : MonoBehaviour
 
         if (timeTillDecrease <= currentTimeTillDecrease)
         {
+            hackSource.PlayOneShot(subtract);
             hackerSlider.value--;
             if(hackerSlider.value <= 0)
             {
