@@ -9888,7 +9888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactsAnimator: {fileID: 1838422210}
-  minimize: {fileID: 0}
+  minimize: {fileID: 8300000, guid: 2dfe4e222d82b5a4786f5f8b779d626b, type: 3}
 --- !u!114 &1344172542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14524,6 +14524,8 @@ MonoBehaviour:
   - 'out_undo_partial_alloc:'
   minMessageDelay: 1
   maxMessageDelay: 10
+  ad: {fileID: 8300000, guid: 12e45f3d4643c2f4da295461b1cb7bd3, type: 3}
+  subtract: {fileID: 8300000, guid: e88059e1ad949c84689a1f97a1c9b4e0, type: 3}
   cmdPromptEnabled: 0
   hackerSlider: {fileID: 1136330694}
   hackerText: {fileID: 440943148}
