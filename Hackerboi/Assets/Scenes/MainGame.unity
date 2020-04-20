@@ -13495,6 +13495,11 @@ MonoBehaviour:
   - Do you need Vitemin Suppplements?
   - Increuse Your Credit Scoore
   - Cure youre Diesase Now
+  - Cute Cat Video
+  - Work Schedule Update
+  - Surprise Birthday Party
+  - Join Ludum Dare
+  - I found a Meme for you
   goodResponse:
   - Awww that was adorable. I loved that
   - Thanks for letting me know it changed. Will be there.
@@ -13539,6 +13544,15 @@ MonoBehaviour:
   - Frank Tip
   - Adam Samdy
   - Ali Stone
+  - Pete Borger
+  - Sally Deets
+  - Jim Gerg
+  - Derek Hamil
+  - Kim Hanz
+  - Porter Lims
+  - Franz Tip
+  - Adam Sandy
+  - Eli Stone
   emailPrefab: {fileID: 3289771479131961613, guid: 11433c2a2afacdb40bd16c28d8d9c489,
     type: 3}
   emailPanel: {fileID: 110764189}

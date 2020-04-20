@@ -84,7 +84,7 @@ public class EmailBehaviour : MonoBehaviour
             deleteButton.SetActive(false);
 
             responseImg.SetActive(true);
-            e.GoodEffect();
+            
         }
     }
 
@@ -102,6 +102,7 @@ public class EmailBehaviour : MonoBehaviour
             //best response
             //gives a bonus?
             Debug.Log("good");
+            e.GoodEffect();
         }
 
         if (rb.type == 2) //neutral
