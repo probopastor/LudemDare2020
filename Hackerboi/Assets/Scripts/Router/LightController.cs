@@ -17,6 +17,8 @@ public class LightController : MonoBehaviour
     private AudioSource routerAudio;
     public AudioClip[] lightsounds;
 
+    public CmdPrompt cmdPromptScript;
+
     //Lights 0, 1, 2
 
     // Start is called before the first frame update
@@ -92,6 +94,7 @@ public class LightController : MonoBehaviour
 
         foreach (Animator anim in animators)
         {
+            cmdPromptScript.decreaseSliderSpeed *= 1.4f;
             if (anim.GetBool("Lost") == false) return;
         }
 
