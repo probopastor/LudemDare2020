@@ -41,7 +41,7 @@ public class EmailGenerator : MonoBehaviour
         TimeManager thisTime = FindObjectOfType<TimeManager>();
 
         GameObject g = Instantiate(emailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetGoodVars(goodSubjects[randSubject], thisTime.GetTime() + " " + thisTime.GetDate(), false, goodResponse[randSubject], neutralResponse[randSubject],
+        g.GetComponent<Email>().SetGoodVars(goodSubjects[randSubject], thisTime.GetTime() + "    " + thisTime.GetDate(), false, goodResponse[randSubject], neutralResponse[randSubject],
             badResponse[randSubject], contacts[randContact]);
         g.GetComponent<Email>().SetText();
         //g.GetComponent<Email>().GoodEffect();
@@ -119,7 +119,7 @@ public class EmailGenerator : MonoBehaviour
 
 
         GameObject g = Instantiate(emailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetBadVars(theSubject, phonyTime + " " + randomDate, true, theContact);
+        g.GetComponent<Email>().SetBadVars(theSubject, phonyTime + "    " + randomDate + "    ", true, theContact);
         g.GetComponent<Email>().SetText();
 
         return g;
