@@ -9,16 +9,16 @@ public class BinaryController : MonoBehaviour
     public BinaryToggle[] toggles;
     private bool[] pattern = new bool[8];
     private bool[] compArray = new bool[8];
-     
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        for (int i = 0; i!= pattern.Length; i++)
+        settingText.text = "";
+        for (int i = 0; i != pattern.Length; i++)
         {
             pattern[i] = (Random.Range(0, 2) == 1);
         }
 
-        foreach(bool myBool in pattern)
+        foreach (bool myBool in pattern)
         {
             int num;
             if (myBool) num = 1;
@@ -28,7 +28,7 @@ public class BinaryController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         for (int i = 0; i!= pattern.Length; i++)
         {
@@ -39,6 +39,6 @@ public class BinaryController : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
