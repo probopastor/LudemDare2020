@@ -37,7 +37,7 @@ public class StarErrorCheck : MonoBehaviour
         {
             pos++;
             StartCoroutine("ChangeColorGood");
-            FindObjectOfType<Path>().DrawLine();
+            //FindObjectOfType<Path>().DrawLine();
 
             if (pos == 8)
             {

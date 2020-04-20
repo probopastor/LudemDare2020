@@ -6,8 +6,6 @@ public class EmailGenerator : MonoBehaviour
 {
     public List<string> goodSubjects = new List<string>();
     public List<string> badSubjects = new List<string>();
-    public List<string> goodDateTime = new List<string>();
-    public List<string> badDateTime = new List<string>();
 
     //the responses will correspond with the same index as the good subject
     public List<string> goodResponse = new List<string>();
