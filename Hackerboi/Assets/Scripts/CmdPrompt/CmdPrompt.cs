@@ -61,6 +61,7 @@ public class CmdPrompt : MonoBehaviour
     public SceneTransitionerMainGameOut outro;
 
     private bool enterPressed;
+    private bool loseBool = true;
     #endregion
 
 
@@ -93,7 +94,7 @@ public class CmdPrompt : MonoBehaviour
         //If the command prompt is not running, decrease the hacker slider.
         if ((hackerSlider != null && !cmdPromptEnabled) || errorActive)
         {
-            if(LightController.instance.GetGameStarted())
+            if(LightController.instance.GetGameStarted() && loseBool == true)
             {
                 DecreaseHackerSlider();
             }
@@ -147,9 +148,10 @@ public class CmdPrompt : MonoBehaviour
             if(hackerSlider.value <= 0)
             {
                 print("bruh");
-                if (outro != null)
+                if (outro != null && loseBool == true)
                 {
                     outro.Lose();
+                    loseBool = false;
                 }
                 return;
             }
