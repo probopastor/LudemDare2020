@@ -10,6 +10,7 @@ public class CheckCoordinate : MonoBehaviour
     public bool isDone = false;
 
     public CompleteProgramError cpe;
+    public GameObject minGame;
 
     private AudioSource coordinateAudio;
     public AudioClip[] pressButton;
@@ -44,6 +45,7 @@ public class CheckCoordinate : MonoBehaviour
         {
             Debug.Log("correctCoor");
             //fix error
+            minGame.GetComponent<cmdMinimize>().ClickCoordinateMinigameMinimize();
             cpe.SolveProblem();
             coordinateAudio.PlayOneShot((solveButton), 0.6f);
         }
