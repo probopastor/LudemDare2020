@@ -23,10 +23,10 @@ public class SceneTransitionMainMenu : MonoBehaviour
 
     public void Transition(int scene)
     {
-        Invoke("SwitchOn", 2.5f);
+        Invoke("SwitchOn", 1.5f);
         ps.Play();
         settingParam = scene;
-        Invoke("AdvanceScene", 4f);
+        Invoke("AdvanceScene", 2.5f);
     }
 
     private void SwitchOn()
