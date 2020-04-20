@@ -134,12 +134,12 @@ public class LightController : MonoBehaviour
         if(!isOn)
         {
             isOn = true;
-            routerAudio.PlayOneShot(lightsounds[0], 0.9F);
+            routerAudio.PlayOneShot(lightsounds[0], 2.1F);
         }
         else if(isOn)
         {
             isOn = false;
-            routerAudio.PlayOneShot(lightsounds[2], 0.9F);
+            routerAudio.PlayOneShot(lightsounds[2], 2.1F);
         }
 
         CancelInvoke();
