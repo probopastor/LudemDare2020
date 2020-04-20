@@ -67,6 +67,7 @@ public class EmailBehaviour : MonoBehaviour
             //call for penalty
             Debug.Log("penalty");
             gameObject.SetActive(false);
+            e.BadEffect();
             emailAudio.PlayOneShot((badTrash), 0.8f);
         }
 
@@ -136,6 +137,7 @@ public class EmailBehaviour : MonoBehaviour
             //worst response
             //call for penalty
             Debug.Log("fuck");
+            e.BadEffect();
             emailAudio.PlayOneShot((badReply), 0.8f);
         }
 
