@@ -5,17 +5,18 @@ using UnityEngine;
 public class CompleteProgramError : Problem
 {
     private EmailManager emailManager;
-
+    private GameObject programEmail;
     public override void CauseProblem()
     {
         CmdPrompt.instance.ErrorActive(true);
 
         emailManager = FindObjectOfType<EmailManager>();
-        GameObject programEmail = emailManager.CreateProgramEmail();
+        programEmail = emailManager.CreateProgramEmail();
     }
 
     public override void SolveProblem()
     {
+        Destroy(programEmail);
         CmdPrompt.instance.ErrorActive(false);
     }
 }
