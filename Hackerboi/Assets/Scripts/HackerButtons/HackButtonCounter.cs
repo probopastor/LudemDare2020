@@ -133,7 +133,7 @@ public class HackButtonCounter : MonoBehaviour
     public void IncreaseHackCount()
     {
         hackCount++;
-        if (k <= buttonList.Length)
+    /*    if (k <= buttonList.Length)
         {
             buttonSource.PlayOneShot(buttonList[k]);
             k++;
@@ -141,7 +141,7 @@ public class HackButtonCounter : MonoBehaviour
             {
                 k = 0;
             }
-        }
+        }*/
     }
 
     /// <summary>
