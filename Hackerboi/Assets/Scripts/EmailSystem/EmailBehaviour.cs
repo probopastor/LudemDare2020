@@ -110,6 +110,7 @@ public class EmailBehaviour : MonoBehaviour
             //best response
             //gives a bonus?
             Debug.Log("good");
+            e.GoodEffect();
             emailAudio.PlayOneShot((goodReply), 0.8f);
         }
 
@@ -118,6 +119,7 @@ public class EmailBehaviour : MonoBehaviour
             //ok response
             //just passed no good or bad
             Debug.Log("eh");
+            e.NeutralEffect();
             emailAudio.PlayOneShot((mehReply), 0.8f);
         }
 
