@@ -52,7 +52,7 @@ public class EmailGenerator : MonoBehaviour
     public GameObject GenerateBadEmails()
     {
         int randSubject = Random.Range(0, badSubjects.Count);
-        int randContact = Random.Range(0, contacts.Count);
+        int randContact = Random.Range(0, phoneyContacts.Count);
 
         //Determine random hour and minute for email header
         int randomHour = Random.Range(0, 24);
