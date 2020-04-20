@@ -137,8 +137,7 @@ public class EmailGenerator : MonoBehaviour
 
         GameObject g = Instantiate(eventEmailPrefab, emailPanel.transform);
         g.GetComponent<Email>().SetEventVars(emailEventSubjects[1], thisTime.GetTime() + " " + thisTime.GetDate(), contacts[randContact], "I cracked the code! Use " + programs[randProgram] + " to continue your hack! " +
-            "Check your error for what you have to input" +
-            "I've sent the executable to your desktop! ", "not needed", programs[randProgram]);
+            "I've sent the executable to your desktop! " + "Check your error for what you have to input" , "not needed", programs[randProgram]);
         g.GetComponent<Email>().SetEventText();
 
         programIcons[randProgram].SetActive(true);

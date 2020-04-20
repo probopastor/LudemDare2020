@@ -7,6 +7,7 @@ public class StartGameManager : MonoBehaviour
 {
     public GameObject hackerSlider;
     public bool gameHasStarted = false;
+    
 
     private IEnumerator coroutine;
 
@@ -19,6 +20,8 @@ public class StartGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (LightController.instance.GetGameStarted() && !gameHasStarted)
         {
             StartCoroutine(FillBar());
