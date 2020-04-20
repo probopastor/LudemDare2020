@@ -7,12 +7,9 @@ public class ScoringManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public static int currentScore = 0;
-
-    private CmdPrompt cmdPrompt;
     
     public void Start()
     {
-        cmdPrompt = FindObjectOfType<CmdPrompt>();
         InvokeRepeating("IncreaseScore", 1, 1);
     }
 
@@ -21,7 +18,7 @@ public class ScoringManager : MonoBehaviour
     /// </summary>
     void IncreaseScore()
     {
-        if(cmdPrompt.CommandPromptOpen() && LightController.instance.GetRouterStatus() && LightController.instance.GetGameStarted())
+        if(CmdPrompt.instance.CommandPromptOpen() && !CmdPrompt.instance.GetErrorActive() && LightController.instance.GetRouterStatus() && LightController.instance.GetGameStarted())
         {
             currentScore++;
             scoreText.text = "Hacker Score: " + currentScore.ToString();

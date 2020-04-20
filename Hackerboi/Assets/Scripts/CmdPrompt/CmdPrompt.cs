@@ -81,7 +81,7 @@ public class CmdPrompt : MonoBehaviour
     public void Update()
     {
         //If the Command Prompt is running, increase the hacker slider.
-        if (hackerSlider != null && cmdPromptEnabled)
+        if ((hackerSlider != null && cmdPromptEnabled) && !errorActive)
         {
             if(LightController.instance.GetGameStarted())
             {
@@ -90,7 +90,7 @@ public class CmdPrompt : MonoBehaviour
         }
 
         //If the command prompt is not running, decrease the hacker slider.
-        if (hackerSlider != null && !cmdPromptEnabled)
+        if ((hackerSlider != null && !cmdPromptEnabled) || errorActive)
         {
             if(LightController.instance.GetGameStarted())
             {
@@ -315,6 +315,15 @@ public class CmdPrompt : MonoBehaviour
     public void ErrorActive(bool errorRunning)
     {
         errorActive = errorRunning;
+    }
+
+    /// <summary>
+    /// Returns true if an error is active, false if there are no errors.
+    /// </summary>
+    /// <returns></returns>
+    public bool GetErrorActive()
+    {
+        return errorActive;
     }
 
     public void SetPasswordError(string password)
