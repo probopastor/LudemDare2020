@@ -18,7 +18,7 @@ public class CreateEmailEvents : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (LightController.instance.GetGameStarted())
         {
