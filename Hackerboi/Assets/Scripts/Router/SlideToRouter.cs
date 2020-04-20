@@ -61,7 +61,7 @@ using UnityEngine.EventSystems;
                 sliding = false;
                 gameObject.SetActive(false);
                 otherArrow.SetActive(true);
-                //arrowNoise = true;
+                arrowNoise = true;
             }
         } 
     }
