@@ -122,7 +122,10 @@ public class CmdPrompt : MonoBehaviour
 
         if (timeTillIncrease <= currentTimeTillIncrease)
         {
-            hackSource.PlayOneShot(ad);
+            if(hackerSlider.value < 7)
+            {
+                hackSource.PlayOneShot(ad);
+            }
             hackerSlider.value++;
             currentTimeTillIncrease = 0;
         }
