@@ -63,31 +63,31 @@ public class WifiUIController : MonoBehaviour
         //    wifiBand4.SetActive(false);
         //    noWifiSymbol.SetActive(false);
         //}
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            LightController.instance.Compromise(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            LightController.instance.Compromise(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            LightController.instance.Compromise(2);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    LightController.instance.Compromise(0);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha5))
+        //{
+        //    LightController.instance.Compromise(1);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha6))
+        //{
+        //    LightController.instance.Compromise(2);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            LightController.instance.Lose(0);
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            LightController.instance.Lose(1);
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            LightController.instance.Lose(2);
-        }
+        //if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    LightController.instance.Lose(0);
+        //}
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+        //    LightController.instance.Lose(1);
+        //}
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    LightController.instance.Lose(2);
+        //}
     }
 
     private void CheckOnComputerScreen()

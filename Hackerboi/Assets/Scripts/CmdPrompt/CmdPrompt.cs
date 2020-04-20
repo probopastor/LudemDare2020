@@ -33,7 +33,6 @@ public class CmdPrompt : MonoBehaviour
     public Slider hackerSlider;
     
     public TextMeshProUGUI hackerText;
-    public TextMeshProUGUI errorText;
 
     [Header("Increase Slider Values")]
     public float increaseSliderSpeed = 1;
@@ -52,9 +51,6 @@ public class CmdPrompt : MonoBehaviour
 
     private bool passwordError;
     private string passwordToEnter;
-    private bool displayPasswordIncorrectOnce;
-
-    private string lastPasswordAttempt;
 
     private bool emailProgramError;
     private GameObject managerProgramNeeded;
@@ -72,7 +68,6 @@ public class CmdPrompt : MonoBehaviour
         instance = this;
 
         eventManager = FindObjectOfType<EventManager>();
-        errorText.text = " ";
         cmdTextErrorClear = false;
         showOnceUntilEnabledInternet = false;
     }
@@ -80,12 +75,6 @@ public class CmdPrompt : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-            CompleteProgramError cpe = FindObjectOfType<CompleteProgramError>();
-            cpe.SolveProblem();
-        }
-
         //If the Command Prompt is running, increase the hacker slider.
         if ((hackerSlider != null && cmdPromptEnabled) && !errorActive)
         {
@@ -209,24 +198,25 @@ public class CmdPrompt : MonoBehaviour
 
             if (passwordError)
             {
-                if(currentText.text == passwordToEnter)
-                {
-                    passwordError = false;
-                    SubmitPasswordError submitPasswordError = FindObjectOfType<SubmitPasswordError>();
-                    submitPasswordError.SolveProblem();
-                    currentText.text = " ";
-                    hackerText.text += "\n<color=blue>" + ">>Error Solved" + "</color>";
-                }
-                else if(!displayPasswordIncorrectOnce)
-                {
-                    displayPasswordIncorrectOnce = true;
-                    lastPasswordAttempt = currentText.text;
-                    hackerText.text += "\n<color=red>" + ">>PASSWORD INCORRECT" + "</color>";
-                }
 
-                if(currentText.text != lastPasswordAttempt)
+                if (currentText.text == passwordToEnter)
                 {
-                    displayPasswordIncorrectOnce = false;
+                    if(Input.GetKeyDown(KeyCode.Return))
+                    {
+                        passwordError = false;
+                        SubmitPasswordError submitPasswordError = FindObjectOfType<SubmitPasswordError>();
+                        submitPasswordError.SolveProblem();
+                        currentText.text = " ";
+                        hackerText.text += "\n<color=blue>" + ">>Error Solved" + "</color>";
+                    }
+                }
+                else if(currentText.text != passwordToEnter)
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        currentText.text = " ";
+                        hackerText.text += "\n<color=red>" + ">>PASSWORD INCORRECT" + "</color>";
+                    }
                 }
             }
 
@@ -244,6 +234,11 @@ public class CmdPrompt : MonoBehaviour
     {
         string errorString = errorMessages[index];
         hackerText.text += "\n<color=red>" + errorString + "</color>";
+    }
+
+    public void AddToErrorString(string addition)
+    {
+        hackerText.text += "\n<color=red>" + addition + "</color>";
     }
 
     //THIS IS OLD I WANT TO REFERENCE THE CODE HERE, PLEASE SAVE:
@@ -336,7 +331,6 @@ public class CmdPrompt : MonoBehaviour
     {
         passwordToEnter = password;
         passwordError = true;
-        displayPasswordIncorrectOnce = false;
     }
 
     public void SetProgramError(string programName)

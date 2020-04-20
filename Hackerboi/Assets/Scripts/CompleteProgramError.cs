@@ -30,11 +30,13 @@ public class CompleteProgramError : Problem
             pass = se.GenerateError();
         }
 
-        CmdPrompt.instance.errorText.text += pass;
+        CmdPrompt.instance.AddToErrorString(pass);
     }
 
     public override void SolveProblem()
     {
+
+        
         GameObject[] icons = emailManager.GetEmailGenerator().GetProgramIcons();
 
         for(int i = 0; i < icons.Length; i++)
