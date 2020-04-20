@@ -99,7 +99,7 @@ public class LightController : MonoBehaviour
 
         foreach (Animator anim in animators)
         {
-            cmdPromptScript.decreaseSliderSpeed *= 1.4f;
+            cmdPromptScript.decreaseSliderSpeed *= 1.2f;
             if (anim.GetBool("Lost") == false) return;
         }
 
