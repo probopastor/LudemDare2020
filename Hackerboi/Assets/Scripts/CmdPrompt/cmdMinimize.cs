@@ -41,6 +41,7 @@ public class cmdMinimize : MonoBehaviour
 
     public void MinimizePatternMinigame()
     {
+        windowAudio.PlayOneShot(minimize);
         emailAnimator.SetBool("patternOff", true);
         emailAnimator.SetBool("patternOn", false);
     }
