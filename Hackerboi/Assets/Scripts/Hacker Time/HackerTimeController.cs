@@ -7,13 +7,13 @@ public class HackerTimeController : MonoBehaviour
 {
     public RectTransform slider;
 
-    public int range;
+    public float range;
 
-    public int moneyZone;
+    public float moneyZone;
 
-    public int speed;
+    public float speed;
 
-    private int offset;
+    private float offset;
 
     private bool movingRight;
     private HackTimeManager hackTimeManager;
