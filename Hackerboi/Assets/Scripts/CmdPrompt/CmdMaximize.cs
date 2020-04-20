@@ -14,6 +14,8 @@ public class CmdMaximize : MonoBehaviour
 
     public Animator patternAnimator;
 
+    public Animator coordinateAnimator;
+
     public bool doOnce;
 
     private AudioSource windowAudio;
@@ -73,5 +75,11 @@ public class CmdMaximize : MonoBehaviour
         howToPlayAnimator.SetBool("HowToPlayMaximized", true);
         howToPlayAnimator.SetBool("HowToPlayMinimized", false);
         
+    }
+
+    public void ClickCoordinateMinigameMaximize()
+    {
+        coordinateAnimator.SetBool("CoorOn", true);
+        coordinateAnimator.SetBool("CoorOff", false);
     }
 }

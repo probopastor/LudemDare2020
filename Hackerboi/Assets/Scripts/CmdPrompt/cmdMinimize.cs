@@ -12,6 +12,8 @@ public class cmdMinimize : MonoBehaviour
 
     public Animator patternAnimator;
 
+    public Animator coordinateAnimator;
+
     private AudioSource windowAudio;
     public AudioClip minimize;
 
@@ -54,5 +56,11 @@ public class cmdMinimize : MonoBehaviour
         howToPlayAnimator.SetBool("HowToPlayMaximized", false);
         howToPlayAnimator.SetBool("HowToPlayMinimized", true);
 
+    }
+
+    public void ClickCoordinateMinigameMinimize()
+    {
+        coordinateAnimator.SetBool("CoorOff", true);
+        coordinateAnimator.SetBool("CoorOn", false);
     }
 }
