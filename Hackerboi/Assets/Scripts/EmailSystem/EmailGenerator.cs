@@ -109,7 +109,7 @@ public class EmailGenerator : MonoBehaviour
         else if(phonyInformation < 74)
         {
             subjectToUse = randBadSubject;
-            theSubject = badSubjects[contactToUse];
+            theSubject = badSubjects[subjectToUse];
         }
         else if(phonyInformation < 99)
         {
@@ -150,7 +150,6 @@ public class EmailGenerator : MonoBehaviour
         g.GetComponent<Email>().SetEventVars(emailEventSubjects[0] + " the hak0r ", thisTime.GetTime() + " " + thisTime.GetDate(), contacts[randContact], "im on your side ~ i found this pswd on" +
             "the darkweb, try it: " + pass, pass, "not needed");
         g.GetComponent<Email>().SetEventText();
-        g.GetComponent<EmailBehaviour>().DisableDeleteButton();
 
         return g;
     }
@@ -168,7 +167,6 @@ public class EmailGenerator : MonoBehaviour
         g.GetComponent<Email>().SetEventText();
 
         programIcons[randProgram].SetActive(true);
-        g.GetComponent<EmailBehaviour>().DisableDeleteButton();
 
         return g;
     }

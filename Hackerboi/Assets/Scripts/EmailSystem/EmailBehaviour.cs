@@ -19,8 +19,6 @@ public class EmailBehaviour : MonoBehaviour
     private AudioSource emailAudio;
     public AudioClip goodSend, badSend, badTrash, goodReply, mehReply, badReply, trashed;
 
-    private bool disableDelete;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -50,11 +48,6 @@ public class EmailBehaviour : MonoBehaviour
         //    deleteButton.SetActive(false);
         //    disableDelete = false;
         //}
-    }
-
-    public void DisableDeleteButton()
-    {
-        disableDelete = true;
     }
 
     public void DeleteButton()
@@ -93,8 +86,9 @@ public class EmailBehaviour : MonoBehaviour
             //wrong response for bad email
             //call for penalty
             Debug.Log("penalty");
-            gameObject.SetActive(false);
             e.BadEffect();
+            gameObject.SetActive(false);
+            
             emailAudio.PlayOneShot((badSend), 0.8f);
         }
 
@@ -116,12 +110,6 @@ public class EmailBehaviour : MonoBehaviour
 
         bodyImg.SetActive(true);
 
-        if (disableDelete)
-        {
-            Debug.Log("here");
-            deleteButton.SetActive(false);
-            disableDelete = false;
-        }
     }
 
     public void ResponseActions(ResponseBehaviour rb)
