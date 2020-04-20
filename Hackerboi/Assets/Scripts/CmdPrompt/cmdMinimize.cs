@@ -46,8 +46,8 @@ public class cmdMinimize : MonoBehaviour
     public void MinimizePatternMinigame()
     {
         windowAudio.PlayOneShot(minimize);
-        patternAnimator.SetBool("patternOff", true);
-        patternAnimator.SetBool("patternOn", false);
+        patternAnimator.SetBool("PatternOff", true);
+        patternAnimator.SetBool("PatternOn", false);
     }
 
     public void ClickHowToPlayMinimize()
