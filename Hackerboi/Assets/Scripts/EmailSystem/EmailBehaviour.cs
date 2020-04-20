@@ -67,7 +67,7 @@ public class EmailBehaviour : MonoBehaviour
             //call for penalty
             Debug.Log("penalty");
             gameObject.SetActive(false);
-            e.BadEffect();
+            //e.BadEffect();
             emailAudio.PlayOneShot((badTrash), 0.8f);
         }
 
