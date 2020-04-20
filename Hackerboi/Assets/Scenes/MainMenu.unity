@@ -5459,6 +5459,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0fd59933bf5706c4e9cb3c431a311056, type: 3}
   - {fileID: 8300000, guid: 60916dab17f971b48876ae35b3fdabd4, type: 3}
   - {fileID: 8300000, guid: 95403350cc6e58745974bd62736fa4b6, type: 3}
+  rightArrow: {fileID: 0}
+  leftArrow: {fileID: 0}
 --- !u!82 &1210368592
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15781,7 +15783,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

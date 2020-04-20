@@ -11,15 +11,21 @@ public class CheckCoordinate : MonoBehaviour
 
     public CompleteProgramError cpe;
 
+    private AudioSource coordinateAudio;
+    public AudioClip[] pressButton;
+    public AudioClip unpressButton, solveButton;
+
     public void Start()
     {
         manager = gameObject.GetComponent<CoordinateManager>();
+        coordinateAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
     public void AreaClicked(GameObject g)
     {
         if (g.GetComponent<CoordinateButtonBehaviour>().isPressed == false)
         {
             g.GetComponent<CoordinateButtonBehaviour>().isPressed = true;
+            coordinateAudio.PlayOneShot(pressButton[Random.Range(0, pressButton.Length)], 1.2F);
 
             g.GetComponent<Image>().color = Color.white;
         }
@@ -27,6 +33,7 @@ public class CheckCoordinate : MonoBehaviour
         else if (g.GetComponent<CoordinateButtonBehaviour>().isPressed == true)
         {
             g.GetComponent<CoordinateButtonBehaviour>().isPressed = false;
+            coordinateAudio.PlayOneShot((unpressButton), 1.2f);
 
             g.GetComponent<Image>().color = new Color(.18f, .18f, .18f, 1);
         }
@@ -38,6 +45,7 @@ public class CheckCoordinate : MonoBehaviour
             Debug.Log("correctCoor");
             //fix error
             cpe.SolveProblem();
+            coordinateAudio.PlayOneShot((solveButton), 0.6f);
         }
     }
 
