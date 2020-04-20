@@ -18,12 +18,20 @@ public class HackButtonCounter : MonoBehaviour
 
     public HackButtonsManager hackButtonsManager;
 
+    private AudioSource buttonSource;
+    public AudioClip[] buttonList;
+    private int k = 0;
+    private bool randomSet;
+    private int randomButton;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         hackButtonsManager = FindObjectOfType<HackButtonsManager>();
         hackCount = 0;
+        buttonSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+
 
         //Converts seconds set in timer to timeskips
         timer /= 0.02f;
@@ -76,19 +84,18 @@ public class HackButtonCounter : MonoBehaviour
         //Determines buttonPressesToSucceed amount of random number of GameObjects from buttonObjects[] to enable.
         for (int i = 0; i < buttonPressesToSucceed; i++)
         {
-            int randomButton = Random.Range(0, buttonObjects.Length);
-
-            if(buttonObjects[randomButton].activeSelf)
+            if(randomSet == true)
             {
-                if(randomButton == 0)
-                {
-                    randomButton++;
-                }
-                else
-                {
-                    randomButton--;
-                }
+                randomButton = Random.Range(0, buttonObjects.Length);
+                randomSet = false;
             }
+
+            randomButton++;
+
+                if(randomButton == 10)
+                {
+                    randomButton = 0;
+                }
 
             //Enable chosen button
             buttonObjects[randomButton].SetActive(true);
@@ -108,7 +115,7 @@ public class HackButtonCounter : MonoBehaviour
         {
             buttonObjects[i].SetActive(false);
         }
-
+        randomSet = true;
         hackButtonsManager.SolveProblem();
     }
 
@@ -126,6 +133,15 @@ public class HackButtonCounter : MonoBehaviour
     public void IncreaseHackCount()
     {
         hackCount++;
+    /*    if (k <= buttonList.Length)
+        {
+            buttonSource.PlayOneShot(buttonList[k]);
+            k++;
+            if (k == 5)
+            {
+                k = 0;
+            }
+        }*/
     }
 
     /// <summary>
@@ -137,3 +153,4 @@ public class HackButtonCounter : MonoBehaviour
         return hackCount;
     }
 }
+
