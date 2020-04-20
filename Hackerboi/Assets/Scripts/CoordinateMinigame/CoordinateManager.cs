@@ -26,10 +26,7 @@ public class CoordinateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if(Input.GetKeyDown(KeyCode.V))
-        {
-            CreateErrorString();
-        }
+     
     }
 
     public void UpdateTemp()
