@@ -18,11 +18,15 @@ public class HackerTimeController : MonoBehaviour
     private bool movingRight;
     private HackTimeManager hackTimeManager;
 
+    private AudioSource barSource;
+    public AudioClip pass, fail;
+
     // Start is called before the first frame update
     void Start()
     {
         hackTimeManager = FindObjectOfType<HackTimeManager>();
         offset = -range;
+        barSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,10 +53,11 @@ public class HackerTimeController : MonoBehaviour
         Debug.Log(offset);
         if (offset >= -56 && offset <= 32)
         {
-                
+            barSource.PlayOneShot(pass, 0.25f);
         } else
         {
             LightController.instance.Lose();
+            barSource.PlayOneShot(fail, 0.25f);
         }
         hackTimeManager.SolveProblem();
         Destroy(gameObject);

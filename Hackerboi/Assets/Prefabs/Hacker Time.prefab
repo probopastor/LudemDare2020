@@ -280,6 +280,8 @@ MonoBehaviour:
   range: 192
   moneyZone: 36
   speed: 8
+  pass: {fileID: 8300000, guid: c08ff8a5d8a8a26449fc05876dd4d46b, type: 3}
+  fail: {fileID: 8300000, guid: f4d9e4a1fbb1d6b4db8e183e1362b1f7, type: 3}
 --- !u!222 &1282906973332595776
 CanvasRenderer:
   m_ObjectHideFlags: 0
