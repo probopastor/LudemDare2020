@@ -63,8 +63,8 @@ public class CmdMaximize : MonoBehaviour
 
     public void ClickPatternMinigameMaximize()
     {
-        patternAnimator.SetBool("patternOn", true);
-        patternAnimator.SetBool("patternOff", false);
+        patternAnimator.SetBool("PatternOn", true);
+        patternAnimator.SetBool("PatternOff", false);
     }
 
     public void ClickHowToPlayMaximize()
