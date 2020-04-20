@@ -13482,25 +13482,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goodSubjects:
-  - This will help
-  - Good subject
-  - respond
+  - Cute Cat Video
+  - Work Schedule Update
+  - Surprise Birthday Party
+  - Join Ludum Dare
+  - I found a Meme for you
   badSubjects:
-  - mizspeld
-  - trojan horsse
-  - bad booi
+  - Congragulatiosn! You Won $$$$!
+  - Nigerian Prince Needs you Help
+  - Do you need Vitemin Suppplements?
+  - Increuse Your Credit Scoore
+  - Cure youre Diesase Now
   goodResponse:
-  - Thank you it helped
-  - Twas a great subject
-  - Here is the response
+  - Awww that was adorable. I loved that
+  - Thanks for letting me know it changed. Will be there.
+  - Awesome! I will be there, can't wait
+  - Of couse I'll join, wouldn't miss it
+  - Lol that was funny. Thanks
   neutralResponse:
-  - 'ok '
-  - eh
-  - i guess
+  - Thanks for the video
+  - Ok cool.
+  - I'll try to be there on time
+  - Might be able to join
+  - Nice
   badResponse:
-  - No it wont fuck you
-  - No it wasnt fuck you
-  - No fuck you
+  - Ew that was a boring video
+  - You took away like 10 of my hours
+  - I don't even like them
+  - .....
+  - .....great.....thanks
   emailEventSubjects:
   - 'Urgent: Use this'
   - 'Urgent: Try this'
