@@ -24,7 +24,6 @@ public class EmailBehaviour : MonoBehaviour
     {
         e = GetComponent<Email>();
         emailAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
-        disableDelete = false;
     }
 
     public void Update()
