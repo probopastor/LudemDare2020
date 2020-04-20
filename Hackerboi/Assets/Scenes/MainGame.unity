@@ -3308,7 +3308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTimeBeforeEvent: 10
   maxTimeBeforeEvent: 60
-  numberOfEvents: 2
   problems:
   - {fileID: 2139738948}
   - {fileID: 1861569664}
@@ -5333,7 +5332,7 @@ GameObject:
   - component: {fileID: 805366420}
   - component: {fileID: 805366419}
   m_Layer: 5
-  m_Name: CoordinateGameIcon
+  m_Name: KeyPadGameIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13159,9 +13158,8 @@ MonoBehaviour:
   - 'Urgent: Use this'
   - 'Urgent: Try this'
   programs:
-  - Program 1
-  - Program 2
-  - Program 3
+  - Coordinate.exe
+  - Pattern.exe
   contacts:
   - Bob
   emailPrefab: {fileID: 3289771479131961613, guid: 11433c2a2afacdb40bd16c28d8d9c489,
@@ -13169,6 +13167,9 @@ MonoBehaviour:
   emailPanel: {fileID: 110764189}
   eventEmailPrefab: {fileID: 5056432302353912971, guid: e5c0ca9c164f54345b1f87d51707a901,
     type: 3}
+  programIcons:
+  - {fileID: 805366417}
+  - {fileID: 5302897445100824127}
 --- !u!114 &1851508353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14282,7 +14283,7 @@ MonoBehaviour:
   - '>>PLEASE INITIATE THE HACK NOW.'
   - '>>ERROR: FROWNY FACE DETECTED.'
   - '>>ERROR: PASSCODE REQUIRED. PLEASE ENTER PASSCODE:'
-  - '>>ERROR: COMPLETE UNKNOWN PROGRAM: '
+  - '>>ERROR: *CENSORED* PROGRAM INPUT REQUIRED'
   currentText: {fileID: 941172487}
   possibleMessages:
   - 'struct group_info init_groups = { .usage = ATOMIC_INIT(2) }; '

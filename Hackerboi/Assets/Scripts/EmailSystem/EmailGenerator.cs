@@ -24,6 +24,16 @@ public class EmailGenerator : MonoBehaviour
 
     public GameObject eventEmailPrefab;
 
+    public GameObject[] programIcons;
+
+    private void Start()
+    {
+        for(int i = 0; i < programIcons.Length; i++)
+        {
+            programIcons[i].SetActive(false);
+        }
+    }
+
     public GameObject GenerateGoodEmails()
     {
         int randSubject = Random.Range(0, goodSubjects.Count);
@@ -63,13 +73,15 @@ public class EmailGenerator : MonoBehaviour
 
     public GameObject GeneratePasswordEmail()
     {
-        int randDateTime = Random.Range(0, goodDateTime.Count);
         int randContact = Random.Range(0, contacts.Count);
+
+        TimeManager thisTime = FindObjectOfType<TimeManager>();
 
         string pass = CreatePass();
 
         GameObject g = Instantiate(eventEmailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetEventVars(emailEventSubjects[0], goodDateTime[randDateTime], contacts[randContact], "Here use this -> " + pass, pass);
+        g.GetComponent<Email>().SetEventVars(emailEventSubjects[0] + " the hak0r ", thisTime.GetTime() + " " + thisTime.GetDate(), contacts[randContact], "im on your side ~ i found this pswd on" +
+            "the darkweb, try it: " + pass, pass);
         g.GetComponent<Email>().SetEventText();
 
         return g;
@@ -77,13 +89,17 @@ public class EmailGenerator : MonoBehaviour
 
     public GameObject GenerateProgramEmail()
     {
-        int randDateTime = Random.Range(0, badDateTime.Count);
         int randContact = Random.Range(0, contacts.Count);
         int randProgram = Random.Range(0, programs.Count);
 
+        TimeManager thisTime = FindObjectOfType<TimeManager>();
+
         GameObject g = Instantiate(eventEmailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetEventVars(emailEventSubjects[1], goodDateTime[randDateTime], contacts[randContact], "I recommend you try using " + programs[randProgram], "not needed");
+        g.GetComponent<Email>().SetEventVars(emailEventSubjects[1], thisTime.GetTime() + " " + thisTime.GetDate(), contacts[randContact], "I cracked the code! Use " + programs[randProgram] + " to continue your hack! " +
+            "I've sent the executable to your desktop! ", "not needed");
         g.GetComponent<Email>().SetEventText();
+
+        programIcons[randProgram].SetActive(true);
 
         return g;
     }

@@ -8,9 +8,9 @@ public class CompleteProgramError : Problem
 
     public override void CauseProblem()
     {
-        emailManager = FindObjectOfType<EmailManager>();
-
         CmdPrompt.instance.ErrorActive(true);
+
+        emailManager = FindObjectOfType<EmailManager>();
         GameObject programEmail = emailManager.CreateProgramEmail();
     }
 
