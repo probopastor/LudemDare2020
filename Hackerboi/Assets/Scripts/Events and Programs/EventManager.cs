@@ -42,7 +42,7 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Call this to generate a random error event. Make sure to add the problem to the array!
     /// </summary>
-    void ProblemTime()
+    public void ProblemTime()
     {
         int index = Random.Range(0, problems.Length);
 
