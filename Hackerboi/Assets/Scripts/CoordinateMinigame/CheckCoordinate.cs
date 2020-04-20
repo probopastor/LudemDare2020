@@ -35,7 +35,7 @@ public class CheckCoordinate : MonoBehaviour
 
         if(isDone == true)
         {
-            Debug.Log("correct");
+            Debug.Log("correctCoor");
             //fix error
             cpe.SolveProblem();
         }

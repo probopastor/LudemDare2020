@@ -1079,7 +1079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00018310547, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0.5, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &110764191
@@ -1096,11 +1096,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 3
-    m_Right: 3
+    m_Right: 15
     m_Top: 10
     m_Bottom: 3
   m_ChildAlignment: 1
-  m_Spacing: 0.25
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3.01
+  m_PixelsPerUnitMultiplier: 4
 --- !u!222 &110764193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8672,7 +8672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 00000000000000000000000000000000
   pos: 0
-  cpe: {fileID: 0}
+  cpe: {fileID: 21657755}
 --- !u!114 &1192042582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14095,7 +14095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDone: 0
-  cpe: {fileID: 0}
+  cpe: {fileID: 21657755}
 --- !u!114 &1888264338
 MonoBehaviour:
   m_ObjectHideFlags: 0

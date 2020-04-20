@@ -24,19 +24,19 @@ public class EmailBehaviour : MonoBehaviour
 
     public void Update()
     {
-        if(hasOpened == false && isTimed == true)
-        {
-            timeToOpen -= Time.deltaTime;
-        }
+        //if(hasOpened == false && isTimed == true)
+        //{
+        //    timeToOpen -= Time.deltaTime;
+        //}
 
-        if(timeToOpen <= 0)
-        {
-            //penalty
-            Debug.Log("did not open in time");
-            hasOpened = false;
-            timeToOpen = 10;
-            gameObject.SetActive(false);
-        }
+        //if(timeToOpen <= 0)
+        //{
+        //    //penalty
+        //    Debug.Log("did not open in time");
+        //    hasOpened = false;
+        //    timeToOpen = 10;
+        //    gameObject.SetActive(false);
+        //}
     }
 
     public void DeleteButton()

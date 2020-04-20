@@ -43,6 +43,13 @@ public class StarErrorCheck : MonoBehaviour
             {
                 //turn off error
                 Debug.Log("finsihed correct");
+                for(int i = 0; i < gameObject.GetComponent<StarError>().buttons.Count; i++)
+                {
+                    gameObject.GetComponent<StarError>().buttons[i].GetComponent<Image>().color = Color.white;
+                }
+
+                gameObject.GetComponent<StarError>().buttonParents.transform.GetChild(8).GetComponent<cmdMinimize>().MinimizePatternMinigame();
+
                 cpe.SolveProblem();
             }
         }
@@ -57,8 +64,8 @@ public class StarErrorCheck : MonoBehaviour
     IEnumerator ChangeColorGood()
     {
         GetComponent<StarError>().buttons[check - 1].GetComponent<Image>().color = Color.green;
-        yield return new WaitForSeconds(.25f);
-        GetComponent<StarError>().buttons[check - 1].GetComponent<Image>().color = Color.white;
+        yield return new WaitForSeconds(.01f);
+        //GetComponent<StarError>().buttons[check - 1].GetComponent<Image>().color = Color.white;
     }
 
     IEnumerator ChangeColorBad()
