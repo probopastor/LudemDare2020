@@ -103,4 +103,10 @@ public class EmailGenerator : MonoBehaviour
 
         return g;
     }
+
+    public GameObject[] GetProgramIcons()
+    {
+        return programIcons;
+    }
 }
+

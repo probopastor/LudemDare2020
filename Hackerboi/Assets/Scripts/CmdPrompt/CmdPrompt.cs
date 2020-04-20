@@ -80,6 +80,12 @@ public class CmdPrompt : MonoBehaviour
 
     public void Update()
     {
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            CompleteProgramError cpe = FindObjectOfType<CompleteProgramError>();
+            cpe.SolveProblem();
+        }
+
         //If the Command Prompt is running, increase the hacker slider.
         if ((hackerSlider != null && cmdPromptEnabled) && !errorActive)
         {

@@ -125,4 +125,9 @@ public class EmailManager : MonoBehaviour
         EmailNotificationOn();
         return eg.GenerateProgramEmail();
     }
+
+    public EmailGenerator GetEmailGenerator()
+    {
+        return eg;
+    }
 }
