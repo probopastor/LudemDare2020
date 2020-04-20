@@ -32,8 +32,9 @@ public class StartGameManager : MonoBehaviour
 
         for (int i = 0; i < 8; i++)
         {
+            yield return new WaitForSeconds(.6f);
             hackerSlider.GetComponent<Slider>().value++;
-            yield return new WaitForSeconds(.5f);
+           
         }
         
             
