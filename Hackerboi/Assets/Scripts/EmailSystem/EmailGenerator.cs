@@ -51,50 +51,71 @@ public class EmailGenerator : MonoBehaviour
 
     public GameObject GenerateBadEmails()
     {
-        int randSubject = Random.Range(0, badSubjects.Count);
-        int randContact = Random.Range(0, phoneyContacts.Count);
+        int randBadSubject = Random.Range(0, badSubjects.Count);
+        int randBadContact = Random.Range(0, phoneyContacts.Count);
 
-        //Determine random hour and minute for email header
-        int randomHour = Random.Range(0, 24);
-        int randomMinute = Random.Range(0, 60);
+        int randGoodSubject = Random.Range(0, goodSubjects.Count);
+        int randGoodContact = Random.Range(0, contacts.Count);
 
-        int randomMonth = Random.Range(0, 13);
-        int randomDay = Random.Range(0, 36);
-        int randomYear = Random.Range(2000, 2026);
-
-        string randomDate = randomMonth + "/" + randomDay + "/" + randomYear;
-
-        int generateRandomTime = Random.Range(0, 3);
+        int subjectToUse = Random.Range(0, goodSubjects.Count);
+        int contactToUse = Random.Range(0, contacts.Count);
 
         TimeManager thisTime = FindObjectOfType<TimeManager>();
-
         string phonyTime = thisTime.GetTime();
+        string randomDate = thisTime.GetDate();
 
-        if (generateRandomTime < 2)
+        int phonyInformation = Random.Range(0, 100);
+
+        if(phonyInformation < 24)
         {
-            //String of phony hour and minute
-            phonyTime = randomHour + ":" + randomMinute;
+            //Determine random hour and minute for email header
+            int randomHour = Random.Range(0, 24);
+            int randomMinute = Random.Range(0, 60);
 
-            //Generate a random number to check for easter egg time
-            int rareTimeChance = Random.Range(0, 100);
+            int generateRandomTime = Random.Range(0, 3);
 
-            //If rare time chance is 5 or lower, phonytime becomes easter egg time
-            if (rareTimeChance <= 5)
+            if (generateRandomTime < 2)
             {
-                phonyTime = "41 O'Clock AM";
-            }
+                //String of phony hour and minute
+                phonyTime = randomHour + ":" + randomMinute;
 
-            //If phony time randomly equals the real time, phony equals a fake time
-            if (thisTime.GetTime() == phonyTime)
-            {
-                phonyTime = "5 O'Clock";
+                //Generate a random number to check for easter egg time
+                int rareTimeChance = Random.Range(0, 100);
+
+                //If rare time chance is 5 or lower, phonytime becomes easter egg time
+                if (rareTimeChance <= 5)
+                {
+                    phonyTime = "41 O'Clock AM";
+                }
+
+                //If phony time randomly equals the real time, phony equals a fake time
+                if (thisTime.GetTime() == phonyTime)
+                {
+                    phonyTime = "5 O'Clock";
+                }
             }
         }
+        else if(phonyInformation < 49)
+        {
+            //Determine random day, month and year for email header
+            int randomMonth = Random.Range(0, 13);
+            int randomDay = Random.Range(0, 36);
+            int randomYear = Random.Range(2000, 2026);
+            randomDate = randomMonth + "/" + randomDay + "/" + randomYear;
+        }
+        else if(phonyInformation < 74)
+        {
+            subjectToUse = randBadSubject;
+        }
+        else if(phonyInformation < 99)
+        {
+            contactToUse = randBadContact;
+        }
+
 
         GameObject g = Instantiate(emailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetBadVars(badSubjects[randSubject], phonyTime + " " + randomDate, true, phoneyContacts[randContact]);
+        g.GetComponent<Email>().SetBadVars(subjectToUse.ToString(), phonyTime + " " + randomDate, true, contactToUse.ToString());
         g.GetComponent<Email>().SetText();
-        //g.GetComponent<Email>().BadEffect();
 
         return g;
     }
