@@ -13,10 +13,13 @@ public class StarErrorCheck : MonoBehaviour
 
     public CompleteProgramError cpe;
 
+    private AudioSource starAudio;
+    public AudioClip good, bad;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+       starAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class StarErrorCheck : MonoBehaviour
         if(order[pos].ToString().Equals(num.ToString()))
         {
             pos++;
+            starAudio.PlayOneShot((good), 0.7f);
             StartCoroutine("ChangeColorGood");
             //FindObjectOfType<Path>().DrawLine();
 
@@ -56,6 +60,7 @@ public class StarErrorCheck : MonoBehaviour
 
         else
         {
+            starAudio.PlayOneShot((bad), 0.7f);
             Debug.Log("incorrect");
             StartCoroutine("ChangeColorBad");
         }
