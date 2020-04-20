@@ -10,6 +10,7 @@ public class ScoringManager : MonoBehaviour
     
     public void Start()
     {
+        currentScore = 0;
         InvokeRepeating("IncreaseScore", 1, 1);
     }
 
