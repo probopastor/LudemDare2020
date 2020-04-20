@@ -5,6 +5,7 @@ using UnityEngine;
 public class SubmitPasswordError : Problem
 {
     private EmailManager emailManager;
+    private GameObject passwordEmail;
 
     public override void CauseProblem()
     {
@@ -18,5 +19,6 @@ public class SubmitPasswordError : Problem
     public override void SolveProblem()
     {
         CmdPrompt.instance.ErrorActive(false);
+        Destroy(passwordEmail);
     }
 }
