@@ -35,7 +35,7 @@ public class SceneTransitionMainGame : MonoBehaviour
         {
             ss.SetActive(false);
             canvas.SetActive(true);
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 0.1f);
         }
         
     }

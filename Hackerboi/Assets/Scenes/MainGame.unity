@@ -2039,7 +2039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 25.400452, y: 488.8003}
+  m_AnchoredPosition: {x: 25.40039, y: 488.8003}
   m_SizeDelta: {x: 181.4, y: 1080}
   m_Pivot: {x: 1.14, y: 0.45}
 --- !u!114 &239921575
@@ -3137,7 +3137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &380865297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3488,7 +3488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8144615280459232772, guid: a236fda4749ef064fbd8a8e48c9c1d69, type: 3}
-  canvas: {fileID: 380865299}
+  canvas: {fileID: 1429540760}
 --- !u!1 &415929494
 GameObject:
   m_ObjectHideFlags: 0
@@ -14281,17 +14281,17 @@ PrefabInstance:
     - target: {fileID: 969354918970688039, guid: 390298fd87ab48048875e849c52a7d7a,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.11237059
       objectReference: {fileID: 0}
     - target: {fileID: 969354918970688039, guid: 390298fd87ab48048875e849c52a7d7a,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 969354918970688039, guid: 390298fd87ab48048875e849c52a7d7a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.9999856
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 390298fd87ab48048875e849c52a7d7a, type: 3}
@@ -14497,7 +14497,7 @@ PrefabInstance:
     - target: {fileID: 6353380992193962650, guid: b96934946de056f46b1e4aca09fa1717,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b96934946de056f46b1e4aca09fa1717, type: 3}
@@ -14725,10 +14725,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   errorMessages:
-  - '>>PLEASE INITIATE THE HACK NOW.'
+  - '>>ERROR: INITIATE THE HACK NOW.'
   - '>>ERROR: FROWNY FACE DETECTED.'
   - '>>ERROR: PASSCODE REQUIRED. PLEASE ENTER PASSCODE:'
   - '>>ERROR: *CENSORED* PROGRAM INPUT REQUIRED'
+  - '>>ERROR: BINARY INPUT MISMATCH. PLEASE REVIEW.'
   currentText: {fileID: 941172487}
   possibleMessages:
   - 'struct group_info init_groups = { .usage = ATOMIC_INIT(2) }; '

@@ -6,7 +6,7 @@ public class BinaryManager : Problem
 {
     public GameObject prefab;
     private GameObject curPrefab;
-    public Canvas canvas;
+    public GameObject canvas;
 
     public override void CauseProblem()
     {
