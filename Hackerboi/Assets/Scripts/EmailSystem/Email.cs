@@ -191,5 +191,9 @@ public class Email : MonoBehaviour
     public void GoodEffect()
     {
         //TODO
+        Debug.Log(ScoringManager.currentScore);
+        ScoringManager.currentScore += 25;
+        Debug.Log(ScoringManager.currentScore);
+        FindObjectOfType<ScoringManager>().scoreText.text = "Hacker Score: " + ScoringManager.currentScore.ToString();
     }
 }

@@ -16,7 +16,7 @@ public class EmailGenerator : MonoBehaviour
     public List<string> programs = new List<string>();
     public List<string> contacts = new List<string>();
     public List<string> phoneyContacts = new List<string>();
-    private string characters = "0123456789abcdefghijklmnopqrstuvwxABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private string characters = "0123456789abcdefghijkmnopqrstuvwxABCDEFGHJKLMNOPQRSTUVWXYZ";
 
     public GameObject emailPrefab;
     public GameObject emailPanel;
@@ -44,7 +44,7 @@ public class EmailGenerator : MonoBehaviour
         g.GetComponent<Email>().SetGoodVars(goodSubjects[randSubject], thisTime.GetTime() + " " + thisTime.GetDate(), false, goodResponse[randSubject], neutralResponse[randSubject],
             badResponse[randSubject], contacts[randContact]);
         g.GetComponent<Email>().SetText();
-        g.GetComponent<Email>().GoodEffect();
+        //g.GetComponent<Email>().GoodEffect();
 
         return g;
     }
