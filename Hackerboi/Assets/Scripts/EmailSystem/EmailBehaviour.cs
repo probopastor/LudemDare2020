@@ -74,6 +74,7 @@ public class EmailBehaviour : MonoBehaviour
             //call for penalty
             Debug.Log("penalty");
             gameObject.SetActive(false);
+            e.BadEffect();
         }
 
         else
@@ -83,6 +84,7 @@ public class EmailBehaviour : MonoBehaviour
             deleteButton.SetActive(false);
 
             responseImg.SetActive(true);
+            e.GoodEffect();
         }
     }
 

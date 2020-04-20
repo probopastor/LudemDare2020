@@ -148,4 +148,45 @@ public class Email : MonoBehaviour
     {
         dateTimeText.GetComponent<TextMeshProUGUI>().text = tm.GetTime() + tm.GetDate(); //if it is good use time on computer
     }
+
+    public void BadEffect()
+    {
+        AdManager ads = FindObjectOfType<AdManager>();
+
+        int randomEffect = Random.Range(0, 8);
+
+        if(randomEffect == 0)
+        {
+            ads.SpawnAds();
+        }
+        else if(randomEffect == 2)
+        {
+            ads.HenkAdSpam();
+        }
+        else if (randomEffect == 3)
+        {
+            ads.BigEarsAdSpam();
+        }
+        else if (randomEffect == 4)
+        {
+            ads.NeedAFixSpam();
+        }
+        else if (randomEffect == 5)
+        {
+            ads.SpearAdSpam();
+        }
+        else if (randomEffect == 6)
+        {
+            ads.BlindsAdSpam();
+        }
+        else if (randomEffect == 7)
+        {
+            ads.RaveAdSpam();
+        }
+    }
+
+    public void GoodEffect()
+    {
+        //TODO
+    }
 }
