@@ -11,9 +11,9 @@ public class EventManager : MonoBehaviour
 
     private float eventWaitTime = 0;
 
-    public int numberOfEvents = 0;
+    //public int numberOfEvents = 0;
 
-    private int eventIndex = 0;
+    //private int eventIndex = 0;
 
     private bool errorSolved;
 
@@ -51,34 +51,34 @@ public class EventManager : MonoBehaviour
         HeadController.instance.Startle();
     }
 
-    private IEnumerator GenerateEvent()
-    {
-        eventWaitTime = Random.Range(minTimeBeforeEvent, maxTimeBeforeEvent);
-        yield return new WaitForSeconds(eventWaitTime);
+    //private IEnumerator GenerateEvent()
+    //{
+    //    eventWaitTime = Random.Range(minTimeBeforeEvent, maxTimeBeforeEvent);
+    //    yield return new WaitForSeconds(eventWaitTime);
 
-        eventIndex = Random.Range(1, numberOfEvents + 1);
-        errorSolved = false;
-        StartCoroutine(GenerateEvent());
-    }
+    //    eventIndex = Random.Range(1, numberOfEvents + 1);
+    //    errorSolved = false;
+    //    StartCoroutine(GenerateEvent());
+    //}
 
-    /// <summary>
-    /// Gets which event index should currently be running
-    /// </summary>
-    /// <returns></returns>
-    public int GetEventIndex()
-    {
-        if(!errorSolved)
-        {
-            return eventIndex;
-        }
-        else
-        {
-            return 0;
-        }
-    }
+    ///// <summary>
+    ///// Gets which event index should currently be running
+    ///// </summary>
+    ///// <returns></returns>
+    //public int GetEventIndex()
+    //{
+    //    if(!errorSolved)
+    //    {
+    //        return eventIndex;
+    //    }
+    //    else
+    //    {
+    //        return 0;
+    //    }
+    //}
 
-    public void SetErrorStatus(bool isSolved)
-    {
-        errorSolved = isSolved;
-    }
+    //public void SetErrorStatus(bool isSolved)
+    //{
+    //    errorSolved = isSolved;
+    //}
 }
