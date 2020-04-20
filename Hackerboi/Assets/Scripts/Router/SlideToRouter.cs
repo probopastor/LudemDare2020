@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
     {
     public GameObject computer;
     public GameObject router;
-    private int slideDistance;
+    public int slideDistance;
     public float slideSpeed;
 
     public GameObject otherArrow;
@@ -25,7 +25,7 @@ using UnityEngine.EventSystems;
 
     void Start()
     {
-        slideDistance = Screen.width;
+        //slideDistance = Screen.width;
         arrowAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
