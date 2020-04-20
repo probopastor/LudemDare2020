@@ -15,6 +15,7 @@ public class EmailGenerator : MonoBehaviour
     public List<string> emailEventSubjects = new List<string>();
     public List<string> programs = new List<string>();
     public List<string> contacts = new List<string>();
+    public List<string> phoneyContacts = new List<string>();
     private string characters = "0123456789abcdefghijklmnopqrstuvwxABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public GameObject emailPrefab;
@@ -35,11 +36,13 @@ public class EmailGenerator : MonoBehaviour
     public GameObject GenerateGoodEmails()
     {
         int randSubject = Random.Range(0, goodSubjects.Count);
+        int randContact = Random.Range(0, contacts.Count);
 
         TimeManager thisTime = FindObjectOfType<TimeManager>();
 
         GameObject g = Instantiate(emailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetGoodVars(goodSubjects[randSubject], thisTime.GetTime() + " " + thisTime.GetDate(), false, goodResponse[randSubject], neutralResponse[randSubject], badResponse[randSubject]);
+        g.GetComponent<Email>().SetGoodVars(goodSubjects[randSubject], thisTime.GetTime() + " " + thisTime.GetDate(), false, goodResponse[randSubject], neutralResponse[randSubject],
+            badResponse[randSubject], contacts[randContact]);
         g.GetComponent<Email>().SetText();
         g.GetComponent<Email>().GoodEffect();
 
@@ -49,6 +52,7 @@ public class EmailGenerator : MonoBehaviour
     public GameObject GenerateBadEmails()
     {
         int randSubject = Random.Range(0, badSubjects.Count);
+        int randContact = Random.Range(0, contacts.Count);
 
         //Determine random hour and minute for email header
         int randomHour = Random.Range(0, 24);
@@ -88,7 +92,7 @@ public class EmailGenerator : MonoBehaviour
         }
 
         GameObject g = Instantiate(emailPrefab, emailPanel.transform);
-        g.GetComponent<Email>().SetBadVars(badSubjects[randSubject], phonyTime + " " + randomDate, true);
+        g.GetComponent<Email>().SetBadVars(badSubjects[randSubject], phonyTime + " " + randomDate, true, phoneyContacts[randContact]);
         g.GetComponent<Email>().SetText();
         //g.GetComponent<Email>().BadEffect();
 
@@ -133,6 +137,7 @@ public class EmailGenerator : MonoBehaviour
 
         GameObject g = Instantiate(eventEmailPrefab, emailPanel.transform);
         g.GetComponent<Email>().SetEventVars(emailEventSubjects[1], thisTime.GetTime() + " " + thisTime.GetDate(), contacts[randContact], "I cracked the code! Use " + programs[randProgram] + " to continue your hack! " +
+            "Check your error for what you have to input" +
             "I've sent the executable to your desktop! ", "not needed", programs[randProgram]);
         g.GetComponent<Email>().SetEventText();
 

@@ -65,6 +65,7 @@ public class CmdMaximize : MonoBehaviour
 
     public void ClickPatternMinigameMaximize()
     {
+        windowAudio.PlayOneShot(maximize);
         patternAnimator.SetBool("PatternOn", true);
         patternAnimator.SetBool("PatternOff", false);
     }
@@ -79,6 +80,7 @@ public class CmdMaximize : MonoBehaviour
 
     public void ClickCoordinateMinigameMaximize()
     {
+        windowAudio.PlayOneShot(maximize);
         coordinateAnimator.SetBool("CoorOn", true);
         coordinateAnimator.SetBool("CoorOff", false);
     }

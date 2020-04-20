@@ -60,6 +60,7 @@ public class cmdMinimize : MonoBehaviour
 
     public void ClickCoordinateMinigameMinimize()
     {
+        windowAudio.PlayOneShot(minimize);
         coordinateAnimator.SetBool("CoorOff", true);
         coordinateAnimator.SetBool("CoorOn", false);
     }

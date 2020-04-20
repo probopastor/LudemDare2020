@@ -38,7 +38,7 @@ public class Email : MonoBehaviour
         }
     }
 
-    public void SetGoodVars(string s, string dt, bool isEvil, string gr, string nr, string br)
+    public void SetGoodVars(string s, string dt, bool isEvil, string gr, string nr, string br, string con)
     {
         subject = s;
         dateTime = dt;
@@ -46,13 +46,15 @@ public class Email : MonoBehaviour
         goodRes = gr;
         neutralRes = nr;
         badRes = br;
+        contact = con;
     }
 
-    public void SetBadVars(string s, string dt, bool isEvil)
+    public void SetBadVars(string s, string dt, bool isEvil, string con)
     {
         subject = s;
         dateTime = dt;
         isBad = isEvil;
+        contact = con;
     }
 
     public void SetEventVars(string s, string dt, string con, string bod, string pa, string prog)
@@ -69,6 +71,7 @@ public class Email : MonoBehaviour
     {
         subjectText.GetComponent<TextMeshProUGUI>().text = subject;
         dateTimeText.GetComponent<TextMeshProUGUI>().text = dateTime; //if it is bad set to the listed times
+        contactText.GetComponent<TextMeshProUGUI>().text = "From: " + contact;
 
         if(isBad == false)
         {
@@ -140,7 +143,7 @@ public class Email : MonoBehaviour
     {
         subjectText.GetComponent<TextMeshProUGUI>().text = subject;
         dateTimeText.GetComponent<TextMeshProUGUI>().text = tm.GetTime() + tm.GetDate();
-        contactText.GetComponent<TextMeshProUGUI>().text = contact;
+        contactText.GetComponent<TextMeshProUGUI>().text = "From: " + contact;
         bodyText.GetComponent<TextMeshProUGUI>().text = body;
     }
 
