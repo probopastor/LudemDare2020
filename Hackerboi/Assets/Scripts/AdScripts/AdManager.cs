@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class AdManager : MonoBehaviour
 {
+    public AudioSource MusicSource;
+    public AudioSource SecondMusicSource;
+
+    public AudioSource SoundEffectSource;
+
+    public AudioClip adPopupSound;
+
+    public AudioClip henkMusic;
+    public AudioClip bigEarsMusic;
+    public AudioClip needAFixMusic;
+    public AudioClip spearsMusic;
+    public AudioClip blindsMusic;
+    public AudioClip raveMusic;
+
+
     public GameObject[] ads;
     public List<int> selectedAds = new List<int>();
 
@@ -89,6 +104,8 @@ public class AdManager : MonoBehaviour
         if(adChosen)
         {
             ads[randomAd].SetActive(true);
+            SoundEffectSource.clip = adPopupSound;
+            SoundEffectSource.Play();
         }
         else if(!adChosen)
         {
@@ -101,49 +118,123 @@ public class AdManager : MonoBehaviour
 
     public void HenkAdSpam()
     {
-        for(int i = 0; i < henkAds.Length; i++)
+        MusicSource.Pause();
+        SecondMusicSource.clip = henkMusic;
+        SecondMusicSource.Play();
+
+        for (int i = 0; i < henkAds.Length; i++)
         {
             henkAds[i].SetActive(true);
+            SoundEffectSource.clip = adPopupSound;
+            SoundEffectSource.Play();
         }
+
+        StartCoroutine(StopAdMusic(henkAds));
     }
 
     public void BigEarsAdSpam()
     {
+        MusicSource.Pause();
+        SecondMusicSource.clip = bigEarsMusic;
+        SecondMusicSource.Play();
+
         for (int i = 0; i < bigEarsAds.Length; i++)
         {
             bigEarsAds[i].SetActive(true);
+            SoundEffectSource.clip = adPopupSound;
+            SoundEffectSource.Play();
         }
+
+        StartCoroutine(StopAdMusic(bigEarsAds));
     }
 
     public void NeedAFixSpam()
     {
+        MusicSource.Pause();
+        SecondMusicSource.clip = needAFixMusic;
+        SecondMusicSource.Play();
+
         for (int i = 0; i < needAFixAds.Length; i++)
         {
             needAFixAds[i].SetActive(true);
+            SoundEffectSource.clip = adPopupSound;
+            SoundEffectSource.Play();
         }
+
+        StartCoroutine(StopAdMusic(needAFixAds));
     }
 
     public void SpearAdSpam()
     {
+        MusicSource.Pause();
+        SecondMusicSource.clip = spearsMusic;
+        SecondMusicSource.Play();
+
         for (int i = 0; i < spearsAds.Length; i++)
         {
             spearsAds[i].SetActive(true);
+            SoundEffectSource.clip = adPopupSound;
+            SoundEffectSource.Play();
         }
+
+        StartCoroutine(StopAdMusic(spearsAds));
     }
 
     public void BlindsAdSpam()
     {
+        MusicSource.Pause();
+        SecondMusicSource.clip = blindsMusic;
+        SecondMusicSource.Play();
+
         for (int i = 0; i < blindsAds.Length; i++)
         {
             blindsAds[i].SetActive(true);
+            SoundEffectSource.clip = adPopupSound;
+            SoundEffectSource.Play();
         }
+
+        StartCoroutine(StopAdMusic(blindsAds));
     }
 
     public void RaveAdSpam()
     {
+        MusicSource.Pause();
+        SecondMusicSource.clip = raveMusic;
+        SecondMusicSource.Play();
+
         for (int i = 0; i < raveAds.Length; i++)
         {
             raveAds[i].SetActive(true);
+            SoundEffectSource.clip = adPopupSound;
+            SoundEffectSource.Play();
         }
+
+        StartCoroutine(StopAdMusic(raveAds));
+    }
+
+    private IEnumerator StopAdMusic(GameObject[] currentAdArray)
+    {
+        int objectsActive = 0;
+
+        for(int i = 0; i < currentAdArray.Length; i++)
+        {
+            if(currentAdArray[i].activeSelf)
+            {
+                objectsActive++;
+            }
+        }
+
+        if (objectsActive > 0)
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(StopAdMusic(currentAdArray));
+        }
+        else
+        {
+            SecondMusicSource.Pause();
+            MusicSource.UnPause();
+        }
+
+        yield return new WaitForEndOfFrame();
     }
 }
