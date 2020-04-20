@@ -6934,8 +6934,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 695, y: 1406}
-  m_SizeDelta: {x: 160.08, y: 161.5}
+  m_AnchoredPosition: {x: 976.6, y: 1400.2}
+  m_SizeDelta: {x: 317, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &977398362
 Animator:
@@ -11395,8 +11395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0.3}
-  m_SizeDelta: {x: 146.54, y: 148.99}
+  m_AnchoredPosition: {x: -0.0000076294, y: -0.000012543}
+  m_SizeDelta: {x: 295.02, y: 154.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530414720
 MonoBehaviour:
@@ -11416,11 +11416,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "How To Play.txt\n-Turn on your rotuer to start hacking\r\n-Open the Cmd
-    Prompt to fill hacking bar\r\n-Complete minigames or else your router will be
-    compromised\r\n-Turn router off/on in time or a line will be lost on the router
-    \n-Hacking bar depletes faster for each line lost on router\n-If the hacking
-    bar reaches 0 it's you who will be hacked >:)"
+  m_text: 'How To Play.txt
+
+    -Turn on your rotuer to start hacking
+
+    -Open
+    the Cmd Prompt to fill hacking bar
+
+    -Check your email for help but only
+    trust emails from those in your contacts list!
+
+    -Complete minigames or else
+    your router will be compromised
+
+    -Lines will be compromised periodically.
+    Turn router off/on to uncompromise a line
+
+    -Don''t save your lines in time
+    and they''ll be lost
+
+    -Hacking bar depletes faster for each line lost on
+    router
+
+    -If the hacking bar reaches 0 it''s you who will be hacked >:)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 405a5554c463f1b4ba2a1af0db2348c3, type: 2}
   m_sharedMaterial: {fileID: -1231854197590935178, guid: 405a5554c463f1b4ba2a1af0db2348c3,
@@ -11459,7 +11477,7 @@ MonoBehaviour:
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 38.3
+  m_lineSpacing: 73.1
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -11487,15 +11505,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 3.6042137, y: 12.726975, z: 4.4051776, w: 0}
+  m_margin: {x: 3.6042137, y: 11.881496, z: 4.4051776, w: 0}
   m_textInfo:
     textComponent: {fileID: 1530414720}
-    characterCount: 343
+    characterCount: 494
     spriteCount: 0
-    spaceCount: 64
-    wordCount: 65
+    spaceCount: 86
+    wordCount: 88
     linkCount: 0
-    lineCount: 11
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -12803,7 +12821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147.01, y: -12.99}
+  m_AnchoredPosition: {x: 303.4, y: -12.5}
   m_SizeDelta: {x: 95.21, y: 95.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728345295
