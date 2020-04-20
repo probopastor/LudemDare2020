@@ -19,7 +19,16 @@ using UnityEngine.EventSystems;
 
     private bool sliding;
 
-    public void OnPointerEnter(PointerEventData eventData)
+    //private AudioSource arrowAudio;
+    //public AudioClip[] arrowSounds;
+    private bool arrowNoise;
+
+    void Start()
+    {
+        //arrowAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+    }
+
+        public void OnPointerEnter(PointerEventData eventData)
     {
         if (!sliding)
         {
@@ -36,6 +45,12 @@ using UnityEngine.EventSystems;
     {
         if (sliding)
         {
+           /* if (arrowNoise)
+            {
+                arrowAudio.PlayOneShot(arrowSounds[Random.Range(0, 2)], 0.8F);
+                arrowNoise = false;
+            } */
+
             otherArrow.SetActive(false);
             myOffset += slideSpeed;
             computer.transform.Translate(new Vector3(slideSpeed, 0, 0));
@@ -46,6 +61,7 @@ using UnityEngine.EventSystems;
                 sliding = false;
                 gameObject.SetActive(false);
                 otherArrow.SetActive(true);
+                //arrowNoise = true;
             }
         } 
     }
