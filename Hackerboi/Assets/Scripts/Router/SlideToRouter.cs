@@ -19,13 +19,13 @@ using UnityEngine.EventSystems;
 
     private bool sliding;
 
-    //private AudioSource arrowAudio;
-    //public AudioClip[] arrowSounds;
+    private AudioSource arrowAudio;
+    public AudioClip[] arrowSounds;
     private bool arrowNoise;
 
     void Start()
     {
-        //arrowAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+        arrowAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -45,11 +45,11 @@ using UnityEngine.EventSystems;
     {
         if (sliding)
         {
-           /* if (arrowNoise)
+            if (arrowNoise)
             {
                 arrowAudio.PlayOneShot(arrowSounds[Random.Range(0, 2)], 0.8F);
                 arrowNoise = false;
-            } */
+            } 
 
             otherArrow.SetActive(false);
             myOffset += slideSpeed;
