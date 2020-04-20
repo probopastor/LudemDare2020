@@ -20,9 +20,10 @@ public class StarError : MonoBehaviour
     {
         //string s = GenerateErrorNum();
 
-        for(int i = 0; i < buttonParents.transform.childCount; i++)
+        for(int i = 0; i < buttonParents.GetComponent<ButtonStore>().children.Length; i++)
         {
             buttons.Add(buttonParents.GetComponent<ButtonStore>().children[i]);
+            temp.Add(buttonParents.GetComponent<ButtonStore>().children[i]);
         }
     }
 
@@ -42,7 +43,6 @@ public class StarError : MonoBehaviour
     {
         result = "";
         int index = 0;
-        temp = buttons;
         int count = temp.Count;
 
         for (int i = 0; i < count; i++)
