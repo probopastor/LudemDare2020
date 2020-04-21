@@ -40,5 +40,11 @@ public class MouseClick : MonoBehaviour
                 clickSource.PlayOneShot(clicking[Random.Range(0, clicking.Length)], 1.8F);
             }
         }
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+            Debug.Log("quit");
+        }
     }
 }
