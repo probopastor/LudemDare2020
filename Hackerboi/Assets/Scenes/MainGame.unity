@@ -15007,7 +15007,7 @@ MonoBehaviour:
   timeTillIncrease: 2
   currentTimeTillIncrease: 0
   decreaseSliderSpeed: 1
-  timeTillDecrease: 4
+  timeTillDecrease: 5
   currentTimeTillDecrease: 0
   outro: {fileID: 1749104443}
 --- !u!95 &1975414937
