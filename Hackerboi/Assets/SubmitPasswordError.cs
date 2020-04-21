@@ -12,7 +12,7 @@ public class SubmitPasswordError : Problem
         emailManager = FindObjectOfType<EmailManager>();
 
         CmdPrompt.instance.ErrorActive(true);
-        GameObject passwordEmail = emailManager.CreatePasswordEmail();
+        passwordEmail = emailManager.CreatePasswordEmail();
         CmdPrompt.instance.SetPasswordError(passwordEmail.GetComponent<Email>().pass);
     }
 
